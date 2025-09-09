@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjetas Archivadas - Flashcard App</title>
+    <link rel="stylesheet" href="/static/css/style.css?v=1.0.2">
+    <script src="/static/js/theme.js" defer></script>
+    <script src="/static/js/auth.js" defer></script>
+    <style>
+        /* Aumentar el ancho del contenedor solo para esta página */
+        .container.archived-container {
+            max-width: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container dashboard-container archived-container">
+        <a href="/dashboard" class="home-link" aria-label="Volver al Dashboard" title="Volver al Dashboard">🏠</a>
+        <h1>Tarjetas Archivadas</h1>
+        <p>Aquí puedes ver y gestionar las tarjetas que has dominado.</p>
+
+        <form id="unarchive-form">
+            <div id="archived-grid" class="archived-grid-container">
+                <!-- Las tarjetas se cargarán aquí -->
+            </div>
+            
+            <div id="pagination-controls" class="pagination-container">
+                <!-- Los controles de paginación se cargarán aquí -->
+            </div>
+
+            <div class="button-group">
+                <button type="submit" id="unarchive-btn" class="btn btn-primary">Desarchivar Seleccionadas</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const token = verificarAutenticacion();
+            if (!token) return;
+
+            const gridContainer = document.getElementById('archived-grid');
+            const paginationControls = document.getElementById('pagination-controls');
+            const unarchiveForm = document.getElementById('unarchive-form');
+            const unarchiveBtn = document.getElementById('unarchive-btn');
+
+            let currentPage = 1;
+
+            async function fetchAndRenderArchivedCards(page = 1) {
+                try {
+                    const response = await fetch(`/api/flashcards/archived?page=${page}`, {
+                        headers: { 'Authorization': `Bearer ${token}` }
+                    });
+                    if (!response.ok) throw new Error('Error en la respuesta del servidor.');
+                    
+                    const data = await response.json();
+                    
+                    if (data.status === 'success') {
+                        renderGrid(data.flashcards);
+                        renderPagination(data);
+                        currentPage = data.page;
+                    } else {
+                        gridContainer.innerHTML = `<p>Error al cargar tarjetas: ${data.message}</p>`;
+                    }
+                } catch (err) {
+                    console.error("Fetch error:", err);
+                    gridContainer.innerHTML = `<p>Error de red al cargar tarjetas archivadas.</p>`;
+                }
+            }
+
+            function renderGrid(cards) {
+                gridContainer.innerHTML = ''; // Limpiar la cuadrícula
+                if (cards.length === 0) {
+                    gridContainer.innerHTML = '<p>No tienes tarjetas archivadas aún.</p>';
+                    unarchiveBtn.style.display = 'none'; // Ocultar botón si no hay tarjetas
+                    return;
+                }
+
+                unarchiveBtn.style.display = 'block';
+                cards.forEach(card => {
+                    const cardDiv = document.createElement('div');
+                    cardDiv.className = 'archived-card-grid-item';
+                    cardDiv.innerHTML = `
+                        <div class="card-content">${card.front_content}</div>
+                        <div class="card-category">(${card.category})</div>
+                        <input type="checkbox" name="card_id" value="${card.id}" id="card-${card.id}">
+                    `;
+                    gridContainer.appendChild(cardDiv);
+                });
+            }
+
+            function renderPagination(data) {
+                paginationControls.innerHTML = '';
+                if (data.total_pages <= 1) return; // No mostrar paginación si solo hay una página
+
+                let paginationHtml = '';
+
+                // Botón Anterior
+                paginationHtml += `
+                    <button class="pagination-btn" id="prev-page" ${data.page === 1 ? 'disabled' : ''}>
+                        &larr; Anterior
+                    </button>
+                `;
+
+                // Información de página
+                paginationHtml += `<span class="pagination-info">Página ${data.page} de ${data.total_pages}</span>`;
+
+                // Botón Siguiente
+                paginationHtml += `
+                    <button class="pagination-btn" id="next-page" ${data.page === data.total_pages ? 'disabled' : ''}>
+                        Siguiente &rarr;
+                    </button>
+                `;
+
+                paginationControls.innerHTML = paginationHtml;
+            }
+
+            // --- Event Listeners ---
+            paginationControls.addEventListener('click', (event) => {
+                if (event.target.id === 'prev-page') {
+                    fetchAndRenderArchivedCards(currentPage - 1);
+                }
+                if (event.target.id === 'next-page') {
+                    fetchAndRenderArchivedCards(currentPage + 1);
+                }
+            });
+
+            unarchiveForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const selectedCheckboxes = document.querySelectorAll('input[name="card_id"]:checked');
+                const cardIdsToUnarchive = Array.from(selectedCheckboxes).map(cb => parseInt(cb.value));
+
+                if (cardIdsToUnarchive.length === 0) {
+                    alert('Por favor, selecciona al menos una tarjeta para desarchivar.');
+                    return;
+                }
+
+                try {
+                    const response = await fetch('/api/flashcards/unarchive', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify({ card_ids: cardIdsToUnarchive })
+                    });
+                    const result = await response.json();
+                    if (result.status === 'success') {
+                        alert(result.message);
+                        fetchAndRenderArchivedCards(currentPage); // Recargar la página actual
+                    } else {
+                        alert('Error al desarchivar: ' + result.message);
+                    }
+                } catch (error) {
+                    console.error('Error de red al desarchivar:', error);
+                    alert('Error de red al desarchivar tarjetas.');
+                }
+            });
+
+            // Carga inicial
+            fetchAndRenderArchivedCards();
+        });
+    </script>
+</body>
+</html>

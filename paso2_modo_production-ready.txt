@@ -1,0 +1,164 @@
+## Fase 1: Fundamentos del Código y Calidad (Core Code & Quality Foundations)
+_Estas prácticas son la base para un código robusto, mantenible y eficiente desde el inicio del desarrollo._
+
+1.  **Refactorización** [Estado: Pendiente]
+    → Reestructura el código para mejorar legibilidad y mantenibilidad sin cambiar su comportamiento externo. Elimina duplicados, funciones largas y acoplamiento innecesario.
+    → Superpoder: Implementar "Code Quality Gates" en el CI/CD (ej. SonarQube, CodeClimate) para forzar estándares de calidad y evitar que código "malo" llegue a producción.
+
+2.  **Aplicar DRY (Don’t Repeat Yourself)** [Estado: Pendiente]
+    → Asegúrate de que cada pieza de lógica o dato exista en un solo lugar. No copies y pegues código; extrae funciones, servicios o componentes reutilizables.
+    → Superpoder: Crear "Shared Libraries" o "Internal Packages" (npm packages, Python wheels, etc.) para componentes y lógica de negocio reutilizable entre microservicios o proyectos.
+
+3.  **Validación de Entradas (Input Validation)** [Estado: Pendiente]
+    → Valida y sanitiza todos los datos que ingresa el usuario (formularios, APIs, parámetros). Rechaza formatos inválidos (ej: correos mal escritos, contraseñas débiles).
+    → Superpoder: Añadir "API Gateway Validation" (ej. AWS API Gateway, Kong) y "Rate Limiting" a nivel de infraestructura para proteger los endpoints antes de que el tráfico llegue al backend.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+4.  **Manejo de Errores Elegante (Error Handling)** [Estado: Pendiente]
+    → Captura errores internos, no los expongas al cliente. Devuelve mensajes claros y códigos HTTP correctos (400, 401, 403, 500, etc.).
+    → Superpoder: Implementar "Centralized Error Monitoring & Alerting" (ej. Sentry, ELK Stack, Prometheus/Grafana) con notificaciones automáticas a equipos de desarrollo/operaciones.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+5.  **Pruebas Automáticas (Unitarias, Integración)** [Estado: Pendiente]
+    → Escribe pruebas para lógica crítica: autenticación, validaciones, servicios principales. Usa framework del lenguaje (Jest, PyTest, etc.). Ejecuta en CI.
+    → Superpoder: Expandir con "End-to-End (E2E) Testing" (ej. Cypress, Playwright) y "Performance Testing" (ej. JMeter, K6) para validar flujos completos y el rendimiento bajo carga.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+---
+
+## Fase 2: Seguridad y Autenticación (Security & Authentication)
+_Aspectos críticos que deben estar presentes desde las etapas tempranas del diseño y desarrollo para proteger el sistema y sus usuarios._
+
+6.  **Autenticación con JWT para Usuarios** [Estado: Pendiente]
+    → Implementa tokens JWT firmados para autenticar usuarios. Incluye expiración, refresh tokens y almacenamiento seguro (httpOnly + SameSite).
+    → Superpoder: Integrar "Multi-Factor Authentication (MFA)" y/o "Single Sign-On (SSO)" (ej. OAuth2, OpenID Connect) para una seguridad de acceso de nivel empresarial.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+7.  **Roles y Permisos (RBAC)** [Estado: Pendiente]
+    → Define al menos tres roles: usuario, admin, superadmin. Controla acceso a rutas, datos y acciones según el rol. Un usuario normal no puede eliminar datos críticos.
+    → Superpoder: Evolucionar a "Attribute-Based Access Control (ABAC)" para una granularidad de permisos dinámica basada en atributos de usuario, recurso y entorno.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+8.  **Seguridad Básica (Protección contra Inyecciones SQL, XSS, CSRF)** [Estado: Pendiente]
+    → Usa consultas parametrizadas, sanitiza HTML, y aplica tokens anti-CSRF en formularios. Bloquea cabeceras peligrosas y usa CORS seguro.
+    → Superpoder: Desplegar un "Web Application Firewall (WAF)" y configurar "Security Headers" (CSP, HSTS) a nivel de servidor/proxy, además de "Dependency Scanning" (ej. Snyk, OWASP Dependency-Check).
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+---
+
+## Fase 3: Infraestructura y Despliegue (Infrastructure & Deployment)
+_Prácticas relacionadas con cómo se empaqueta, se configura y se pone a funcionar el sistema en un entorno de producción._
+
+9.  **Dockerización del Sistema** [Estado: Pendiente]
+    → Empaqueta la aplicación y sus dependencias en contenedores Docker. Incluye Dockerfile y docker-compose.yml para desarrollo y producción.
+    → Superpoder: Orquestar contenedores con "Kubernetes" o "Docker Swarm" para despliegue, escalabilidad automática, auto-recuperación y gestión de secretos.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+10. **Optimización de Base de Datos (Índices, Consultas Eficientes)** [Estado: Pendiente]
+    → Usa índices en campos frecuentes (id, email, estado). Evita N+1. Implementa paginación en listados grandes (LIMIT, OFFSET o cursor-based).
+    → Superpoder: Implementar "Database Connection Pooling", "Read Replicas" y/o "Sharding" para escalar la base de datos horizontalmente y manejar grandes volúmenes de tráfico.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+11. **Caching (Almacenamiento Temporal)** [Estado: Pendiente]
+    → Almacena en caché respuestas o datos frecuentes (Redis, memoria). Usa TTL y invalidación clara. No caches datos sensibles sin cifrado.
+    → Superpoder: Utilizar "Content Delivery Networks (CDNs)" para activos estáticos y "Distributed Caching" (ej. Memcached, Redis Cluster) para datos dinámicos a gran escala.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+---
+
+## Fase 4: Operaciones y Observabilidad (Operations & Observability)
+_Prácticas esenciales para monitorear, mantener y asegurar la continuidad del servicio una vez que el sistema está en producción._
+
+12. **Logging (Registro de Eventos)** [Estado: Pendiente]
+    → Registra eventos clave: login, logout, errores, cambios importantes. Usa niveles (info, warning, error). No registres contraseñas ni datos sensibles.
+    → Superpoder: Adoptar "Structured Logging" (JSON) y "Log Aggregation" (ej. ELK Stack, Splunk) para facilitar la búsqueda, análisis y correlación de eventos de seguridad.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+13. **Documentación Automática de APIs (como con Swagger/OpenAPI)** [Estado: Pendiente]
+    → Genera documentación interactiva para todas las rutas de la API. Incluye ejemplos, códigos de respuesta y esquemas de entrada/salida.
+    → Superpoder: Añadir "API Versioning Strategy" (ej. v1, v2 en la URL o headers) y "Automated Documentation Testing" para asegurar que la documentación siempre esté sincronizada con el código.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+14. **Observabilidad (Métricas y Trazas)** [Estado: Pendiente]
+    → Recolecta métricas de rendimiento (CPU, memoria, latencia, errores) y trazas distribuidas para entender el flujo de las peticiones.
+    → Superpoder: Implementar herramientas de APM (Application Performance Monitoring) y sistemas de trazabilidad distribuida (ej. OpenTelemetry, Jaeger) para un monitoreo proactivo y depuración eficiente.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+15. **Recuperación ante Desastres y Alta Disponibilidad** [Estado: Pendiente]
+    → Implementar estrategias como backups automáticos, replicación de bases de datos, balanceo de carga y planes de recuperación.
+    → Superpoder: Diseñar arquitecturas multi-región/multi-zona de disponibilidad y automatizar los procesos de failover y recuperación.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+---
+
+## Fase 5: Experiencia de Usuario (UX) y Comodidad (User Experience & Comfort)
+_Características opcionales que mejoran significativamente la usabilidad, accesibilidad y la interacción general del usuario con el sistema._
+
+16. **Tema Visual Adaptable (Modo Día / Noche)** [Estado: Completado]
+    → Permite al usuario cambiar entre tema claro y oscuro. Guarda preferencia en localStorage o perfil. Respeta prefers-color-scheme del sistema.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+17. **Soporte de Idiomas (i18n)** [Estado: Pendiente]
+    → Implementa internacionalización básica: español, inglés. Usa archivos de traducción (JSON). Cambia idioma desde un selector en la UI.
+    → Superpoder: Añadir "Right-to-Left (RTL) Language Support" y "Automatic Language Detection" basada en la configuración del navegador o la IP del usuario.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+18. **Atajos de Teclado (Keyboard Shortcuts)** [Estado: Pendiente]
+    → Añade accesos rápidos: Ctrl + K (buscar), Esc (cerrar modal), Ctrl + S (guardar). Muestra ayuda con ?.
+    → Superpoder: Permitir "Customizable Shortcuts" donde el usuario pueda reasignar las combinaciones de teclas según sus preferencias.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+19. **Tooltips y Ayuda Contextual** [Estado: Pendiente]
+    → Muestra explicaciones breves al pasar el mouse sobre íconos, campos o botones complejos. Texto claro, máximo 10 palabras.
+    → Superpoder: Implementar "Interactive Product Tours" o "Walkthroughs" para guiar a los nuevos usuarios a través de las funcionalidades clave de forma dinámica.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+20. **Deshacer Acción (Undo / Historial ligero)** [Estado: Pendiente]
+    → Permite deshacer acciones comunes (eliminar, editar) dentro de un tiempo razonable (ej: 5 segundos). Muestra notificación con botón "Deshacer".
+    → Superpoder: Desarrollar un "Robust Version History" o "Audit Trail" para acciones críticas, permitiendo revertir cambios más allá de una simple acción inmediata.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+21. **Carga Diferida (Lazy Loading)** [Estado: Pendiente]
+    → Carga solo el contenido visible (imágenes, listas, secciones). Mejora rendimiento en pantallas con muchos elementos.
+    → Superpoder: Utilizar "Skeleton Screens" o "Progressive Image Loading" (ej. LQIP) para mejorar la percepción de velocidad y la experiencia de carga.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+22. **Notificaciones en Tiempo Real** [Estado: Pendiente]
+    → Avisa al usuario de eventos importantes: "Tu archivo se subió", "Hay una actualización disponible". Usa toast, banner o ícono de notificación.
+    → Superpoder: Implementar "Web Push Notifications" (para el navegador) y "Configurable Notification Preferences" para que el usuario elija cómo y cuándo recibir alertas.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+23. **Guías Interactivas (Onboarding Básico)** [Estado: Pendiente]
+    → Muestra pasos iniciales al primer uso: "Aquí puedes ver tus tareas", "Haz clic para crear una nueva". Máximo 3 pasos, con opción de saltar.
+    → Superpoder: Crear "Personalized Onboarding Flows" que se adapten al rol del usuario, sus primeras acciones o sus necesidades detectadas.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+24. **Preferencias de Usuario Guardadas** [Estado: Pendiente]
+    → Recuerda: tamaño de tabla, columnas visibles, filtros aplicados, orden. Restaura al volver.
+    → Superpoder: Habilitar la "Cross-Device Synchronization" de preferencias, para que la configuración del usuario se mantenga consistente en cualquier dispositivo.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+25. **Accesibilidad Básica (WCAG Nivel AA)** [Estado: Pendiente]
+    → Usa contraste alto, etiquetas ARIA, navegación con teclado, y soporte para lectores de pantalla. Evita solo colores para transmitir información.
+    → Superpoder: Apuntar a "WCAG Level AAA" para componentes críticos y/o integrar "Automated Accessibility Testing" en el CI/CD.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+26. **Vista Previa Rápida (Quick Preview)** [Estado: Pendiente]
+    → Permite ver contenido sin abrirlo: PDF, imagen, documento. Muestra en modal flotante al hacer clic.
+    → Superpoder: Extender a "Rich Media Previews" (video, audio) y/o "Inline Editing" dentro de la vista previa para una interacción más fluida.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+27. **Diseño Responsivo (Adaptación a Pantallas)** [Estado: Pendiente]
+    → Asegura que la interfaz se adapte y se vea bien en cualquier dispositivo (móvil, tablet, desktop). Usa Media Queries, grillas flexibles e imágenes fluidas.
+    → Superpoder: Implementar "Mobile-First Design" y probar la interfaz en una amplia gama de dispositivos y resoluciones.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+28. **Asistente de Contexto Instantáneo (Chat conversacional + Escuchador de eventos por selección de texto)** [Estado: Pendiente]
+    → Implementación opcional que permite al usuario seleccionar una palabra o frase y recibir 2-3 explicaciones breves y coloquiales. Usa reglas por rubro o Gemini API. Muestra respuesta en tooltip o ventana flotante. Desactivable vía configuración.
+    → Superpoder: Integrar con "External Knowledge Bases" (ej. Wikipedia, diccionarios especializados) y usar "Advanced NLP" para entender el contexto y ofrecer explicaciones aún más precisas y personalizadas.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.
+
+29. **Gestión de Tarjetas (CRUD)** [Estado: Pendiente]
+    → Permite al usuario crear, leer, actualizar y eliminar (CRUD) sus propias flashcards.
+    → Superpoder: Implementar importación/exportación de mazos en formato CSV o JSON.
+    → NOTA: Compaginar con las implementaciones (#1 y #2): Refactorización y DRY para seguir una coherencia.

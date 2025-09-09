@@ -1,0 +1,8002 @@
+[
+    {
+        "front": "a",
+        "back": "una",
+        "exampleSentences": {
+            "en": "I need a pen.",
+            "es": "Necesito una pluma."
+        }
+    },
+    {
+        "front": "ability",
+        "back": "capacidad",
+        "exampleSentences": {
+            "en": "She has the ability to learn quickly.",
+            "es": "Ella tiene la capacidad de aprender rápido."
+        }
+    },
+    {
+        "front": "able",
+        "back": "poder",
+        "exampleSentences": {
+            "en": "Are you able to help me?",
+            "es": "¿Puedes ayudarme?"
+        }
+    },
+    {
+        "front": "about",
+        "back": "acerca de",
+        "exampleSentences": {
+            "en": "Tell me about your day.",
+            "es": "Cuéntame acerca de tu día."
+        }
+    },
+    {
+        "front": "above",
+        "back": "encima",
+        "exampleSentences": {
+            "en": "The birds fly above the trees.",
+            "es": "Los pájaros vuelan encima de los árboles."
+        }
+    },
+    {
+        "front": "accept",
+        "back": "aceptar",
+        "exampleSentences": {
+            "en": "I accept your offer.",
+            "es": "Acepto tu oferta."
+        }
+    },
+    {
+        "front": "access",
+        "back": "acceso",
+        "exampleSentences": {
+            "en": "Do you have access to the internet?",
+            "es": "¿Tienes acceso a internet?"
+        }
+    },
+    {
+        "front": "accord",
+        "back": "acuerdo",
+        "exampleSentences": {
+            "en": "They reached an accord.",
+            "es": "Llegaron a un acuerdo."
+        }
+    },
+    {
+        "front": "account",
+        "back": "cuenta",
+        "exampleSentences": {
+            "en": "Please pay your account.",
+            "es": "Por favor, paga tu cuenta."
+        }
+    },
+    {
+        "front": "achieve",
+        "back": "lograr",
+        "exampleSentences": {
+            "en": "You can achieve your goals.",
+            "es": "Puedes lograr tus metas."
+        }
+    },
+    {
+        "front": "across",
+        "back": "a través de",
+        "exampleSentences": {
+            "en": "Walk across the street.",
+            "es": "Camina a través de la calle."
+        }
+    },
+    {
+        "front": "act",
+        "back": "acto",
+        "exampleSentences": {
+            "en": "It was an act of kindness.",
+            "es": "Fue un acto de bondad."
+        }
+    },
+    {
+        "front": "action",
+        "back": "acción",
+        "exampleSentences": {
+            "en": "His actions speak louder than words.",
+            "es": "Sus acciones hablan más fuerte que las palabras."
+        }
+    },
+    {
+        "front": "activity",
+        "back": "actividad",
+        "exampleSentences": {
+            "en": "Reading is a good activity.",
+            "es": "Leer es una buena actividad."
+        }
+    },
+    {
+        "front": "actually",
+        "back": "en realidad / de hecho",
+        "exampleSentences": {
+            "en": "I actually like it.",
+            "es": "En realidad me gusta."
+        }
+    },
+    {
+        "front": "add",
+        "back": "añadir",
+        "exampleSentences": {
+            "en": "Add sugar to the coffee.",
+            "es": "Añade azúcar al café."
+        }
+    },
+    {
+        "front": "addition",
+        "back": "adición",
+        "exampleSentences": {
+            "en": "In addition to that, I also...",
+            "es": "Además de eso, yo también..."
+        }
+    },
+    {
+        "front": "address",
+        "back": "dirección",
+        "exampleSentences": {
+            "en": "What is your address?",
+            "es": "¿Cuál es tu dirección?"
+        }
+    },
+    {
+        "front": "adult",
+        "back": "adulto",
+        "exampleSentences": {
+            "en": "He is an adult.",
+            "es": "Él es un adulto."
+        }
+    },
+    {
+        "front": "advance",
+        "back": "avanzar",
+        "exampleSentences": {
+            "en": "We need to advance our plans.",
+            "es": "Necesitamos avanzar nuestros planes."
+        }
+    },
+    {
+        "front": "advantage",
+        "back": "ventaja",
+        "exampleSentences": {
+            "en": "It gives you an advantage.",
+            "es": "Te da una ventaja."
+        }
+    },
+    {
+        "front": "affect",
+        "back": "afectar",
+        "exampleSentences": {
+            "en": "It will affect the outcome.",
+            "es": "Afectará el resultado."
+        }
+    },
+    {
+        "front": "after",
+        "back": "después",
+        "exampleSentences": {
+            "en": "See you after work.",
+            "es": "Te veo después del trabajo."
+        }
+    },
+    {
+        "front": "afternoon",
+        "back": "tarde",
+        "exampleSentences": {
+            "en": "Good afternoon!",
+            "es": "¡Buenas tardes!"
+        }
+    },
+    {
+        "front": "again",
+        "back": "otra vez",
+        "exampleSentences": {
+            "en": "Try again.",
+            "es": "Inténtalo otra vez."
+        }
+    },
+    {
+        "front": "against",
+        "back": "en contra",
+        "exampleSentences": {
+            "en": "Don't go against the rules.",
+            "es": "No vayas en contra de las reglas."
+        }
+    },
+    {
+        "front": "age",
+        "back": "años",
+        "exampleSentences": {
+            "en": "What is your age?",
+            "es": "¿Cuál es tu edad?"
+        }
+    },
+    {
+        "front": "agency",
+        "back": "agencia",
+        "exampleSentences": {
+            "en": "He works for a government agency.",
+            "es": "Él trabaja para una agencia del gobierno."
+        }
+    },
+    {
+        "front": "agent",
+        "back": "agente",
+        "exampleSentences": {
+            "en": "She is a secret agent.",
+            "es": "Ella es una agente secreta."
+        }
+    },
+    {
+        "front": "ago",
+        "back": "hace",
+        "exampleSentences": {
+            "en": "Long time ago.",
+            "es": "Hace mucho tiempo."
+        }
+    },
+    {
+        "front": "agree",
+        "back": "de acuerdo",
+        "exampleSentences": {
+            "en": "I agree with you.",
+            "es": "Estoy de acuerdo contigo."
+        }
+    },
+    {
+        "front": "agreement",
+        "back": "acuerdo",
+        "exampleSentences": {
+            "en": "We have an agreement.",
+            "es": "Tenemos un acuerdo."
+        }
+    },
+    {
+        "front": "ahead",
+        "back": "adelante",
+        "exampleSentences": {
+            "en": "Go straight ahead.",
+            "es": "Ve directamente adelante."
+        }
+    },
+    {
+        "front": "aim",
+        "back": "objetivo",
+        "exampleSentences": {
+            "en": "My aim is to finish this.",
+            "es": "Mi objetivo es terminar esto."
+        }
+    },
+    {
+        "front": "air",
+        "back": "aire",
+        "exampleSentences": {
+            "en": "Breathe fresh air.",
+            "es": "Respira aire fresco."
+        }
+    },
+    {
+        "front": "all",
+        "back": "todos",
+        "exampleSentences": {
+            "en": "All of us are here.",
+            "es": "Todos nosotros estamos aquí."
+        }
+    },
+    {
+        "front": "allow",
+        "back": "permitir",
+        "exampleSentences": {
+            "en": "Allow me to help you.",
+            "es": "Permíteme ayudarte."
+        }
+    },
+    {
+        "front": "almost",
+        "back": "casi",
+        "exampleSentences": {
+            "en": "It's almost ready.",
+            "es": "Casi está listo."
+        }
+    },
+    {
+        "front": "alone",
+        "back": "solo",
+        "exampleSentences": {
+            "en": "She likes to be alone.",
+            "es": "A ella le gusta estar sola."
+        }
+    },
+    {
+        "front": "along",
+        "back": "a lo largo",
+        "exampleSentences": {
+            "en": "Walk along the river.",
+            "es": "Camina a lo largo del río."
+        }
+    },
+    {
+        "front": "already",
+        "back": "ya",
+        "exampleSentences": {
+            "en": "I already finished.",
+            "es": "Ya terminé."
+        }
+    },
+    {
+        "front": "also",
+        "back": "además",
+        "exampleSentences": {
+            "en": "I also want to go.",
+            "es": "Yo también quiero ir."
+        }
+    },
+    {
+        "front": "although",
+        "back": "a pesar de que",
+        "exampleSentences": {
+            "en": "Although it's hard, I'll try.",
+            "es": "Aunque es difícil, lo intentaré."
+        }
+    },
+    {
+        "front": "always",
+        "back": "siempre",
+        "exampleSentences": {
+            "en": "I always drink coffee.",
+            "es": "Siempre bebo café."
+        }
+    },
+    {
+        "front": "among",
+        "back": "entre",
+        "exampleSentences": {
+            "en": "He is among friends.",
+            "es": "Él está entre amigos."
+        }
+    },
+    {
+        "front": "amount",
+        "back": "cantidad",
+        "exampleSentences": {
+            "en": "What is the amount?",
+            "es": "¿Cuál es la cantidad?"
+        }
+    },
+    {
+        "front": "analysis",
+        "back": "análisis",
+        "exampleSentences": {
+            "en": "We need a deeper analysis.",
+            "es": "Necesitamos un análisis más profundo."
+        }
+    },
+    {
+        "front": "and",
+        "back": "y",
+        "exampleSentences": {
+            "en": "You and I.",
+            "es": "Tú y yo."
+        }
+    },
+    {
+        "front": "animal",
+        "back": "animal",
+        "exampleSentences": {
+            "en": "A dog is an animal.",
+            "es": "Un perro es un animal."
+        }
+    },
+    {
+        "front": "another",
+        "back": "otro",
+        "exampleSentences": {
+            "en": "Can I have another one?",
+            "es": "¿Puedo tener otro?"
+        }
+    },
+    {
+        "front": "answer",
+        "back": "responder",
+        "exampleSentences": {
+            "en": "Please answer the question.",
+            "es": "Por favor, responde la pregunta."
+        }
+    },
+    {
+        "front": "any",
+        "back": "alguna",
+        "exampleSentences": {
+            "en": "Do you have any questions?",
+            "es": "¿Tienes alguna pregunta?"
+        }
+    },
+    {
+        "front": "anyone",
+        "back": "nadie",
+        "exampleSentences": {
+            "en": "Anyone can do it.",
+            "es": "Cualquiera puede hacerlo."
+        }
+    },
+    {
+        "front": "anything",
+        "back": "cualquier cosa",
+        "exampleSentences": {
+            "en": "I can do anything.",
+            "es": "Puedo hacer cualquier cosa."
+        }
+    },
+    {
+        "front": "anyway",
+        "back": "de todas formas",
+        "exampleSentences": {
+            "en": "Anyway, let's go.",
+            "es": "De todas formas, vámonos."
+        }
+    },
+    {
+        "front": "appear",
+        "back": "aparecer",
+        "exampleSentences": {
+            "en": "He will appear soon.",
+            "es": "Él aparecerá pronto."
+        }
+    },
+    {
+        "front": "application",
+        "back": "solicitud",
+        "exampleSentences": {
+            "en": "Fill out the application.",
+            "es": "Rellena la solicitud."
+        }
+    },
+    {
+        "front": "apply",
+        "back": "aplicar",
+        "exampleSentences": {
+            "en": "Apply for the job.",
+            "es": "Aplica para el trabajo."
+        }
+    },
+    {
+        "front": "approach",
+        "back": "enfoque",
+        "exampleSentences": {
+            "en": "What's your approach?",
+            "es": "¿Cuál es tu enfoque?"
+        }
+    },
+    {
+        "front": "area",
+        "back": "zona",
+        "exampleSentences": {
+            "en": "This is a restricted area.",
+            "es": "Esta es una zona restringida."
+        }
+    },
+    {
+        "front": "argue",
+        "back": "discutir",
+        "exampleSentences": {
+            "en": "Don't argue with me.",
+            "es": "No discutas conmigo."
+        }
+    },
+    {
+        "front": "argument",
+        "back": "argumento",
+        "exampleSentences": {
+            "en": "They had a long argument.",
+            "es": "Tuvieron un largo argumento."
+        }
+    },
+    {
+        "front": "arm",
+        "back": "brazo",
+        "exampleSentences": {
+            "en": "My arm hurts.",
+            "es": "Me duele el brazo."
+        }
+    },
+    {
+        "front": "around",
+        "back": "alrededor",
+        "exampleSentences": {
+            "en": "Look around you.",
+            "es": "Mira a tu alrededor."
+        }
+    },
+    {
+        "front": "arrive",
+        "back": "llegar",
+        "exampleSentences": {
+            "en": "When will you arrive?",
+            "es": "¿Cuándo llegarás?"
+        }
+    },
+    {
+        "front": "art",
+        "back": "arte",
+        "exampleSentences": {
+            "en": "I love modern art.",
+            "es": "Me encanta el arte moderno."
+        }
+    },
+    {
+        "front": "article",
+        "back": "artículo",
+        "exampleSentences": {
+            "en": "Read this article.",
+            "es": "Lee este artículo."
+        }
+    },
+    {
+        "front": "as",
+        "back": "como",
+        "exampleSentences": {
+            "en": "As you know.",
+            "es": "Como sabes."
+        }
+    },
+    {
+        "front": "ask",
+        "back": "pedir",
+        "exampleSentences": {
+            "en": "Ask me anything.",
+            "es": "Pregúntame cualquier cosa."
+        }
+    },
+    {
+        "front": "associate",
+        "back": "asociar",
+        "exampleSentences": {
+            "en": "I associate this with happiness.",
+            "es": "Asocio esto con la felicidad."
+        }
+    },
+    {
+        "front": "assume",
+        "back": "asumir",
+        "exampleSentences": {
+            "en": "Don't assume anything.",
+            "es": "No asumas nada."
+        }
+    },
+    {
+        "front": "at",
+        "back": "en",
+        "exampleSentences": {
+            "en": "I am at home.",
+            "es": "Estoy en casa."
+        }
+    },
+    {
+        "front": "attack",
+        "back": "ataque",
+        "exampleSentences": {
+            "en": "The army launched an attack.",
+            "es": "El ejército lanzó un ataque."
+        }
+    },
+    {
+        "front": "attempt",
+        "back": "intento",
+        "exampleSentences": {
+            "en": "Make an attempt.",
+            "es": "Haz un intento."
+        }
+    },
+    {
+        "front": "attend",
+        "back": "asistir",
+        "exampleSentences": {
+            "en": "I will attend the meeting.",
+            "es": "Asistiré a la reunión."
+        }
+    },
+    {
+        "front": "attention",
+        "back": "atención",
+        "exampleSentences": {
+            "en": "Pay attention!",
+            "es": "¡Presta atención!"
+        }
+    },
+    {
+        "front": "author",
+        "back": "autor",
+        "exampleSentences": {
+            "en": "Who is the author?",
+            "es": "¿Quién es el autor?"
+        }
+    },
+    {
+        "front": "available",
+        "back": "disponible",
+        "exampleSentences": {
+            "en": "Is it available?",
+            "es": "¿Está disponible?"
+        }
+    },
+    {
+        "front": "average",
+        "back": "promedio",
+        "exampleSentences": {
+            "en": "The average temperature is 20 degrees.",
+            "es": "La temperatura promedio es de 20 grados."
+        }
+    },
+    {
+        "front": "avoid",
+        "back": "evitar",
+        "exampleSentences": {
+            "en": "Avoid mistakes.",
+            "es": "Evita los errores."
+        }
+    },
+    {
+        "front": "away",
+        "back": "lejos",
+        "exampleSentences": {
+            "en": "Go away!",
+            "es": "¡Vete!"
+        }
+    },
+    {
+        "front": "baby",
+        "back": "bebé",
+        "exampleSentences": {
+            "en": "The baby is sleeping.",
+            "es": "El bebé está durmiendo."
+        }
+    },
+    {
+        "front": "back",
+        "back": "atrás",
+        "exampleSentences": {
+            "en": "Come back later.",
+            "es": "Vuelve más tarde."
+        }
+    },
+    {
+        "front": "bad",
+        "back": "malo",
+        "exampleSentences": {
+            "en": "It's a bad idea.",
+            "es": "Es una mala idea."
+        }
+    },
+    {
+        "front": "balance",
+        "back": "equilibrar",
+        "exampleSentences": {
+            "en": "Maintain a good balance.",
+            "es": "Mantén un buen equilibrio."
+        }
+    },
+    {
+        "front": "bank",
+        "back": "banco",
+        "exampleSentences": {
+            "en": "I need to go to the bank.",
+            "es": "Necesito ir al banco."
+        }
+    },
+    {
+        "front": "bar",
+        "back": "bar",
+        "exampleSentences": {
+            "en": "Let's meet at the bar.",
+            "es": "Encontrémonos en el bar."
+        }
+    },
+    {
+        "front": "base",
+        "back": "base",
+        "exampleSentences": {
+            "en": "This is the base of the problem.",
+            "es": "Esta es la base del problema."
+        }
+    },
+    {
+        "front": "basic",
+        "back": "básico",
+        "exampleSentences": {
+            "en": "Learn the basic rules.",
+            "es": "Aprende las reglas básicas."
+        }
+    },
+    {
+        "front": "basis",
+        "back": "base",
+        "exampleSentences": {
+            "en": "On a daily basis.",
+            "es": "Diariamente."
+        }
+    },
+    {
+        "front": "be",
+        "back": "ser o estar",
+        "exampleSentences": {
+            "en": "To be or not to be.",
+            "es": "Ser o no ser."
+        }
+    },
+    {
+        "front": "bear",
+        "back": "oso",
+        "exampleSentences": {
+            "en": "I saw a bear in the forest.",
+            "es": "Vi un oso en el bosque."
+        }
+    },
+    {
+        "front": "beautiful",
+        "back": "hermoso",
+        "exampleSentences": {
+            "en": "What a beautiful day!",
+            "es": "¡Qué día tan hermoso!"
+        }
+    },
+    {
+        "front": "because",
+        "back": "porque",
+        "exampleSentences": {
+            "en": "I'm happy because of you.",
+            "es": "Estoy feliz por ti."
+        }
+    },
+    {
+        "front": "become",
+        "back": "volverse",
+        "exampleSentences": {
+            "en": "He wants to become a doctor.",
+            "es": "Él quiere volverse médico."
+        }
+    },
+    {
+        "front": "bed",
+        "back": "cama",
+        "exampleSentences": {
+            "en": "Time to go to bed.",
+            "es": "Hora de ir a la cama."
+        }
+    },
+    {
+        "front": "before",
+        "back": "antes de",
+        "exampleSentences": {
+            "en": "Before you go.",
+            "es": "Antes de que te vayas."
+        }
+    },
+    {
+        "front": "begin",
+        "back": "empezar",
+        "exampleSentences": {
+            "en": "Let's begin.",
+            "es": "Empecemos."
+        }
+    },
+    {
+        "front": "behavior",
+        "back": "comportamiento",
+        "exampleSentences": {
+            "en": "His behavior was strange.",
+            "es": "Su comportamiento fue extraño."
+        }
+    },
+    {
+        "front": "behind",
+        "back": "detrás",
+        "exampleSentences": {
+            "en": "Look behind you.",
+            "es": "Mira detrás de ti."
+        }
+    },
+    {
+        "front": "believe",
+        "back": "creer",
+        "exampleSentences": {
+            "en": "I believe in you.",
+            "es": "Creo en ti."
+        }
+    },
+    {
+        "front": "below",
+        "back": "abajo",
+        "exampleSentences": {
+            "en": "The temperature is below zero.",
+            "es": "La temperatura está abajo de cero."
+        }
+    },
+    {
+        "front": "benefit",
+        "back": "beneficio",
+        "exampleSentences": {
+            "en": "It will benefit everyone.",
+            "es": "Beneficiará a todos."
+        }
+    },
+    {
+        "front": "between",
+        "back": "entre",
+        "exampleSentences": {
+            "en": "Between you and me.",
+            "es": "Entre tú y yo."
+        }
+    },
+    {
+        "front": "beyond",
+        "back": "más allá",
+        "exampleSentences": {
+            "en": "Beyond my expectations.",
+            "es": "Más allá de mis expectativas."
+        }
+    },
+    {
+        "front": "big",
+        "back": "grande",
+        "exampleSentences": {
+            "en": "That's a big house.",
+            "es": "Esa es una casa grande."
+        }
+    },
+    {
+        "front": "bill",
+        "back": "cuenta",
+        "exampleSentences": {
+            "en": "Can I have the bill, please?",
+            "es": "¿Me das la cuenta, por favor?"
+        }
+    },
+    {
+        "front": "bit",
+        "back": "poco",
+        "exampleSentences": {
+            "en": "Just a little bit.",
+            "es": "Solo un poquito."
+        }
+    },
+    {
+        "front": "black",
+        "back": "negro",
+        "exampleSentences": {
+            "en": "My favorite color is black.",
+            "es": "Mi color favorito es el negro."
+        }
+    },
+    {
+        "front": "blue",
+        "back": "azul",
+        "exampleSentences": {
+            "en": "The sky is blue.",
+            "es": "El cielo es azul."
+        }
+    },
+    {
+        "front": "board",
+        "back": "tablero",
+        "exampleSentences": {
+            "en": "Write on the board.",
+            "es": "Escribe en el tablero."
+        }
+    },
+    {
+        "front": "body",
+        "back": "cuerpo",
+        "exampleSentences": {
+            "en": "Your body needs rest.",
+            "es": "Tu cuerpo necesita descanso."
+        }
+    },
+    {
+        "front": "book",
+        "back": "libro",
+        "exampleSentences": {
+            "en": "Read a good book.",
+            "es": "Lee un buen libro."
+        }
+    },
+    {
+        "front": "both",
+        "back": "ambos",
+        "exampleSentences": {
+            "en": "Both of them are here.",
+            "es": "Ambos están aquí."
+        }
+    },
+    {
+        "front": "box",
+        "back": "caja",
+        "exampleSentences": {
+            "en": "Open the box.",
+            "es": "Abre la caja."
+        }
+    },
+    {
+        "front": "boy",
+        "back": "niño",
+        "exampleSentences": {
+            "en": "He is a good boy.",
+            "es": "Él es un buen niño."
+        }
+    },
+    {
+        "front": "break",
+        "back": "descanso",
+        "exampleSentences": {
+            "en": "Take a break.",
+            "es": "Toma un descanso."
+        }
+    },
+    {
+        "front": "bring",
+        "back": "traer",
+        "exampleSentences": {
+            "en": "Bring me a glass of water.",
+            "es": "Tráeme un vaso de agua."
+        }
+    },
+    {
+        "front": "brother",
+        "back": "hermano",
+        "exampleSentences": {
+            "en": "My brother is older.",
+            "es": "Mi hermano es mayor."
+        }
+    },
+    {
+        "front": "build",
+        "back": "construir",
+        "exampleSentences": {
+            "en": "We need to build a house.",
+            "es": "Necesitamos construir una casa."
+        }
+    },
+    {
+        "front": "bus",
+        "back": "autobús",
+        "exampleSentences": {
+            "en": "Take the bus.",
+            "es": "Toma el autobús."
+        }
+    },
+    {
+        "front": "business",
+        "back": "negocio",
+        "exampleSentences": {
+            "en": "It's a family business.",
+            "es": "Es un negocio familiar."
+        }
+    },
+    {
+        "front": "but",
+        "back": "pero",
+        "exampleSentences": {
+            "en": "I want to go, but I can't.",
+            "es": "Quiero ir, pero no puedo."
+        }
+    },
+    {
+        "front": "buy",
+        "back": "comprar",
+        "exampleSentences": {
+            "en": "I want to buy a new car.",
+            "es": "Quiero comprar un coche nuevo."
+        }
+    },
+    {
+        "front": "by",
+        "back": "por",
+        "exampleSentences": {
+            "en": "By the river.",
+            "es": "Por el río."
+        }
+    },
+    {
+        "front": "call",
+        "back": "llamada",
+        "exampleSentences": {
+            "en": "Give me a call.",
+            "es": "Hazme una llamada."
+        }
+    },
+    {
+        "front": "campaign",
+        "back": "campaña",
+        "exampleSentences": {
+            "en": "The political campaign.",
+            "es": "La campaña política."
+        }
+    },
+    {
+        "front": "can",
+        "back": "puede",
+        "exampleSentences": {
+            "en": "I can do it.",
+            "es": "Puedo hacerlo."
+        }
+    },
+    {
+        "front": "capital",
+        "back": "capital",
+        "exampleSentences": {
+            "en": "The capital of France is Paris.",
+            "es": "La capital de Francia es París."
+        }
+    },
+    {
+        "front": "car",
+        "back": "coche",
+        "exampleSentences": {
+            "en": "I drive a red car.",
+            "es": "Conduzco un coche rojo."
+        }
+    },
+    {
+        "front": "card",
+        "back": "tarjeta",
+        "exampleSentences": {
+            "en": "Here is my card.",
+            "es": "Aquí está mi tarjeta."
+        }
+    },
+    {
+        "front": "care",
+        "back": "cuidado",
+        "exampleSentences": {
+            "en": "Take care!",
+            "es": "¡Cuídate!"
+        }
+    },
+    {
+        "front": "career",
+        "back": "carrera",
+        "exampleSentences": {
+            "en": "What is your career?",
+            "es": "¿Cuál es tu carrera?"
+        }
+    },
+    {
+        "front": "carry",
+        "back": "llevar",
+        "exampleSentences": {
+            "en": "Carry the bag.",
+            "es": "Lleva la bolsa."
+        }
+    },
+    {
+        "front": "case",
+        "back": "caso",
+        "exampleSentences": {
+            "en": "In case of emergency.",
+            "es": "En caso de emergencia."
+        }
+    },
+    {
+        "front": "catch",
+        "back": "captura",
+        "exampleSentences": {
+            "en": "Catch the ball.",
+            "es": "Atrapa la pelota."
+        }
+    },
+    {
+        "front": "cause",
+        "back": "porque",
+        "exampleSentences": {
+            "en": "What was the cause?",
+            "es": "¿Cuál fue la causa?"
+        }
+    },
+    {
+        "front": "cell",
+        "back": "célula",
+        "exampleSentences": {
+            "en": "A cell phone.",
+            "es": "Un teléfono celular."
+        }
+    },
+    {
+        "front": "cent",
+        "back": "centavo",
+        "exampleSentences": {
+            "en": "One hundred cents.",
+            "es": "Cien centavos."
+        }
+    },
+    {
+        "front": "center",
+        "back": "centrar",
+        "exampleSentences": {
+            "en": "In the center of the city.",
+            "es": "En el centro de la ciudad."
+        }
+    },
+    {
+        "front": "central",
+        "back": "central",
+        "exampleSentences": {
+            "en": "The central idea.",
+            "es": "La idea central."
+        }
+    },
+    {
+        "front": "century",
+        "back": "siglo",
+        "exampleSentences": {
+            "en": "The 21st century.",
+            "es": "El siglo XXI."
+        }
+    },
+    {
+        "front": "certain",
+        "back": "cierto",
+        "exampleSentences": {
+            "en": "I am certain.",
+            "es": "Estoy seguro."
+        }
+    },
+    {
+        "front": "certainly",
+        "back": "ciertamente",
+        "exampleSentences": {
+            "en": "Certainly, I will help.",
+            "es": "Ciertamente, ayudaré."
+        }
+    },
+    {
+        "front": "challenge",
+        "back": "reto",
+        "exampleSentences": {
+            "en": "It's a big challenge.",
+            "es": "Es un gran reto."
+        }
+    },
+    {
+        "front": "chance",
+        "back": "oportunidad",
+        "exampleSentences": {
+            "en": "Give me a chance.",
+            "es": "Dame una oportunidad."
+        }
+    },
+    {
+        "front": "change",
+        "back": "cambio",
+        "exampleSentences": {
+            "en": "Change your clothes.",
+            "es": "Cambia tu ropa."
+        }
+    },
+    {
+        "front": "character",
+        "back": "personaje",
+        "exampleSentences": {
+            "en": "He has a strong character.",
+            "es": "Él tiene un carácter fuerte."
+        }
+    },
+    {
+        "front": "charge",
+        "back": "cargar",
+        "exampleSentences": {
+            "en": "Charge your phone.",
+            "es": "Carga tu teléfono."
+        }
+    },
+    {
+        "front": "check",
+        "back": "comprobar",
+        "exampleSentences": {
+            "en": "Check your email.",
+            "es": "Comprueba tu correo."
+        }
+    },
+    {
+        "front": "child",
+        "back": "niño",
+        "exampleSentences": {
+            "en": "A happy child.",
+            "es": "Un niño feliz."
+        }
+    },
+    {
+        "front": "choice",
+        "back": "elección",
+        "exampleSentences": {
+            "en": "It's your choice.",
+            "es": "Es tu elección."
+        }
+    },
+    {
+        "front": "choose",
+        "back": "escoger",
+        "exampleSentences": {
+            "en": "Choose wisely.",
+            "es": "Elige sabiamente."
+        }
+    },
+    {
+        "front": "church",
+        "back": "Iglesia",
+        "exampleSentences": {
+            "en": "Go to church.",
+            "es": "Ir a la Iglesia."
+        }
+    },
+    {
+        "front": "city",
+        "back": "ciudad",
+        "exampleSentences": {
+            "en": "I live in the city.",
+            "es": "Vivo en la ciudad."
+        }
+    },
+    {
+        "front": "claim",
+        "back": "reclamación",
+        "exampleSentences": {
+            "en": "Make a claim.",
+            "es": "Haz una reclamación."
+        }
+    },
+    {
+        "front": "class",
+        "back": "clase",
+        "exampleSentences": {
+            "en": "What class are you in?",
+            "es": "¿En qué clase estás?"
+        }
+    },
+    {
+        "front": "clean",
+        "back": "limpiar",
+        "exampleSentences": {
+            "en": "Clean your room.",
+            "es": "Limpia tu habitación."
+        }
+    },
+    {
+        "front": "clear",
+        "back": "claro",
+        "exampleSentences": {
+            "en": "The sky is clear.",
+            "es": "El cielo está claro."
+        }
+    },
+    {
+        "front": "clearly",
+        "back": "claramente",
+        "exampleSentences": {
+            "en": "Speak clearly.",
+            "es": "Habla claramente."
+        }
+    },
+    {
+        "front": "clock",
+        "back": "reloj",
+        "exampleSentences": {
+            "en": "Look at the clock.",
+            "es": "Mira el reloj."
+        }
+    },
+    {
+        "front": "close",
+        "back": "cerrar",
+        "exampleSentences": {
+            "en": "Close the door.",
+            "es": "Cierra la puerta."
+        }
+    },
+    {
+        "front": "clothes",
+        "back": "ropa",
+        "exampleSentences": {
+            "en": "Put on your clothes.",
+            "es": "Ponte tu ropa."
+        }
+    },
+    {
+        "front": "club",
+        "back": "club",
+        "exampleSentences": {
+            "en": "Join the club.",
+            "es": "Únete al club."
+        }
+    },
+    {
+        "front": "cold",
+        "back": "frío",
+        "exampleSentences": {
+            "en": "It's cold outside.",
+            "es": "Hace frío afuera."
+        }
+    },
+    {
+        "front": "college",
+        "back": "universidad",
+        "exampleSentences": {
+            "en": "I go to college.",
+            "es": "Voy a la universidad."
+        }
+    },
+    {
+        "front": "color",
+        "back": "color",
+        "exampleSentences": {
+            "en": "What is your favorite color?",
+            "es": "¿Cuál es tu color favorito?"
+        }
+    },
+    {
+        "front": "come",
+        "back": "ven",
+        "exampleSentences": {
+            "en": "Come here.",
+            "es": "Ven aquí."
+        }
+    },
+    {
+        "front": "comment",
+        "back": "comentario",
+        "exampleSentences": {
+            "en": "Leave a comment.",
+            "es": "Deja un comentario."
+        }
+    },
+    {
+        "front": "common",
+        "back": "común",
+        "exampleSentences": {
+            "en": "It's a common problem.",
+            "es": "Es un problema común."
+        }
+    },
+    {
+        "front": "communication",
+        "back": "comunicación",
+        "exampleSentences": {
+            "en": "Good communication is key.",
+            "es": "Una buena comunicación es clave."
+        }
+    },
+    {
+        "front": "community",
+        "back": "comunidad",
+        "exampleSentences": {
+            "en": "Our local community.",
+            "es": "Nuestra comunidad local."
+        }
+    },
+    {
+        "front": "company",
+        "back": "empresa",
+        "exampleSentences": {
+            "en": "He works for a big company.",
+            "es": "Él trabaja para una gran empresa."
+        }
+    },
+    {
+        "front": "compare",
+        "back": "comparar",
+        "exampleSentences": {
+            "en": "Compare the two options.",
+            "es": "Compara las dos opciones."
+        }
+    },
+    {
+        "front": "competition",
+        "back": "competencia",
+        "exampleSentences": {
+            "en": "La competencia es dura.",
+            "es": "La competencia es dura."
+        }
+    },
+    {
+        "front": "complete",
+        "back": "completar",
+        "exampleSentences": {
+            "en": "Complete the task.",
+            "es": "Completa la tarea."
+        }
+    },
+    {
+        "front": "completely",
+        "back": "completamente",
+        "exampleSentences": {
+            "en": "I completely agree.",
+            "es": "Estoy completamente de acuerdo."
+        }
+    },
+    {
+        "front": "computer",
+        "back": "computadora",
+        "exampleSentences": {
+            "en": "I need a new computer.",
+            "es": "Necesito una computadora nueva."
+        }
+    },
+    {
+        "front": "concern",
+        "back": "preocupación",
+        "exampleSentences": {
+            "en": "It's a major concern.",
+            "es": "Es una preocupación importante."
+        }
+    },
+    {
+        "front": "conclusion",
+        "back": "conclusión",
+        "exampleSentences": {
+            "en": "In conclusion, I would say...",
+            "es": "En conclusión, diría..."
+        }
+    },
+    {
+        "front": "condition",
+        "back": "condición",
+        "exampleSentences": {
+            "en": "What is the condition of the car?",
+            "es": "¿Cuál es la condición del coche?"
+        }
+    },
+    {
+        "front": "consider",
+        "back": "considerar",
+        "exampleSentences": {
+            "en": "Consider all options.",
+            "es": "Considera todas las opciones."
+        }
+    },
+    {
+        "front": "contact",
+        "back": "contacto",
+        "exampleSentences": {
+            "en": "Contact me later.",
+            "es": "Contáctame más tarde."
+        }
+    },
+    {
+        "front": "contain",
+        "back": "contiene",
+        "exampleSentences": {
+            "en": "This box contains toys.",
+            "es": "Esta caja contiene juguetes."
+        }
+    },
+    {
+        "front": "continue",
+        "back": "continuar",
+        "exampleSentences": {
+            "en": "Continue reading.",
+            "es": "Continúa leyendo."
+        }
+    },
+    {
+        "front": "contract",
+        "back": "contrato",
+        "exampleSentences": {
+            "en": "Sign the contract.",
+            "es": "Firma el contrato."
+        }
+    },
+    {
+        "front": "control",
+        "back": "controlar",
+        "exampleSentences": {
+            "en": "Take control.",
+            "es": "Toma el control."
+        }
+    },
+    {
+        "front": "conversation",
+        "back": "conversación",
+        "exampleSentences": {
+            "en": "Have a conversation.",
+            "es": "Ten una conversación."
+        }
+    },
+    {
+        "front": "cost",
+        "back": "costo",
+        "exampleSentences": {
+            "en": "What is the cost?",
+            "es": "¿Cuál es el costo?"
+        }
+    },
+    {
+        "front": "could",
+        "back": "podría",
+        "exampleSentences": {
+            "en": "I could help you.",
+            "es": "Podría ayudarte."
+        }
+    },
+    {
+        "front": "country",
+        "back": "país",
+        "exampleSentences": {
+            "en": "My home country.",
+            "es": "Mi país de origen."
+        }
+    },
+    {
+        "front": "couple",
+        "back": "Pareja",
+        "exampleSentences": {
+            "en": "A happy couple.",
+            "es": "Una pareja feliz."
+        }
+    },
+    {
+        "front": "course",
+        "back": "curso",
+        "exampleSentences": {
+            "en": "Of course!",
+            "es": "¡Por supuesto!"
+        }
+    },
+    {
+        "front": "court",
+        "back": "corte",
+        "exampleSentences": {
+            "en": "Go to court.",
+            "es": "Ir a la corte."
+        }
+    },
+    {
+        "front": "cover",
+        "back": "cubrir",
+        "exampleSentences": {
+            "en": "Cover the book.",
+            "es": "Cubre el libro."
+        }
+    },
+    {
+        "front": "create",
+        "back": "crear",
+        "exampleSentences": {
+            "en": "Create something new.",
+            "es": "Crea algo nuevo."
+        }
+    },
+    {
+        "front": "credit",
+        "back": "crédito",
+        "exampleSentences": {
+            "en": "Pay with credit card.",
+            "es": "Paga con tarjeta de crédito."
+        }
+    },
+    {
+        "front": "cross",
+        "back": "cruzar",
+        "exampleSentences": {
+            "en": "Cross the road.",
+            "es": "Cruza la carretera."
+        }
+    },
+    {
+        "front": "culture",
+        "back": "cultura",
+        "exampleSentences": {
+            "en": "Learn about different cultures.",
+            "es": "Aprende sobre diferentes culturas."
+        }
+    },
+    {
+        "front": "current",
+        "back": "actual",
+        "exampleSentences": {
+            "en": "The current situation.",
+            "es": "La situación actual."
+        }
+    },
+    {
+        "front": "customer",
+        "back": "cliente",
+        "exampleSentences": {
+            "en": "Serve the customer.",
+            "es": "Sirve al cliente."
+        }
+    },
+    {
+        "front": "cut",
+        "back": "cortar",
+        "exampleSentences": {
+            "en": "Cut the paper.",
+            "es": "Corta el papel."
+        }
+    },
+    {
+        "front": "daily",
+        "back": "diario",
+        "exampleSentences": {
+            "en": "Daily routine.",
+            "es": "Rutina diaria."
+        }
+    },
+    {
+        "front": "damage",
+        "back": "dañar",
+        "exampleSentences": {
+            "en": "Avoid damage.",
+            "es": "Evita daños."
+        }
+    },
+    {
+        "front": "dance",
+        "back": "baile / danza",
+        "exampleSentences": {
+            "en": "Let's dance!",
+            "es": "¡Vamos a bailar!"
+        }
+    },
+    {
+        "front": "dark",
+        "back": "oscuro",
+        "exampleSentences": {
+            "en": "It's getting dark.",
+            "es": "Está oscureciendo."
+        }
+    },
+    {
+        "front": "data",
+        "back": "datos",
+        "exampleSentences": {
+            "en": "Analyze the data.",
+            "es": "Analiza los datos."
+        }
+    },
+    {
+        "front": "date",
+        "back": "fecha",
+        "exampleSentences": {
+            "en": "What is the date today?",
+            "es": "¿Cuál es la fecha de hoy?"
+        }
+    },
+    {
+        "front": "daughter",
+        "back": "hija",
+        "exampleSentences": {
+            "en": "My daughter is 5 years old.",
+            "es": "Mi hija tiene 5 años."
+        }
+    },
+    {
+        "front": "day",
+        "back": "día",
+        "exampleSentences": {
+            "en": "Have a good day!",
+            "es": "¡Que tengas un buen día!"
+        }
+    },
+    {
+        "front": "dead",
+        "back": "muerto",
+        "exampleSentences": {
+            "en": "The plant is dead.",
+            "es": "La planta está muerta."
+        }
+    },
+    {
+        "front": "deal",
+        "back": "acuerdo",
+        "exampleSentences": {
+            "en": "We made a deal.",
+            "es": "Hicimos un acuerdo."
+        }
+    },
+    {
+        "front": "death",
+        "back": "muerte",
+        "exampleSentences": {
+            "en": "Life and death.",
+            "es": "Vida y muerte."
+        }
+    },
+    {
+        "front": "debate",
+        "back": "debate",
+        "exampleSentences": {
+            "en": "A political debate.",
+            "es": "Un debate político."
+        }
+    },
+    {
+        "front": "decide",
+        "back": "decidir",
+        "exampleSentences": {
+            "en": "You decide.",
+            "es": "Tú decides."
+        }
+    },
+    {
+        "front": "decision",
+        "back": "decisión",
+        "exampleSentences": {
+            "en": "Make a decision.",
+            "es": "Toma una decisión."
+        }
+    },
+    {
+        "front": "deep",
+        "back": "profundo",
+        "exampleSentences": {
+            "en": "A deep breath.",
+            "es": "Una respiración profunda."
+        }
+    },
+    {
+        "front": "define",
+        "back": "definir",
+        "exampleSentences": {
+            "en": "Define the term.",
+            "es": "Define el término."
+        }
+    },
+    {
+        "front": "degree",
+        "back": "la licenciatura",
+        "exampleSentences": {
+            "en": "I have a university degree.",
+            "es": "Tengo una licenciatura universitaria."
+        }
+    },
+    {
+        "front": "demand",
+        "back": "demanda",
+        "exampleSentences": {
+            "en": "High demand.",
+            "es": "Alta demanda."
+        }
+    },
+    {
+        "front": "department",
+        "back": "departamento",
+        "exampleSentences": {
+            "en": "The sales department.",
+            "es": "El departamento de ventas."
+        }
+    },
+    {
+        "front": "depend",
+        "back": "depender",
+        "exampleSentences": {
+            "en": "It depends on you.",
+            "es": "Depende de ti."
+        }
+    },
+    {
+        "front": "describe",
+        "back": "describir",
+        "exampleSentences": {
+            "en": "Describe the picture.",
+            "es": "Describe la imagen."
+        }
+    },
+    {
+        "front": "design",
+        "back": "diseño",
+        "exampleSentences": {
+            "en": "Good design.",
+            "es": "Buen diseño."
+        }
+    },
+    {
+        "front": "despite",
+        "back": "a pesar de",
+        "exampleSentences": {
+            "en": "Despite the rain, we went out.",
+            "es": "A pesar de la lluvia, salimos."
+        }
+    },
+    {
+        "front": "detail",
+        "back": "detalle",
+        "exampleSentences": {
+            "en": "Give me all the details.",
+            "es": "Dame todos los detalles."
+        }
+    },
+    {
+        "front": "determine",
+        "back": "determinar",
+        "exampleSentences": {
+            "en": "Determine the cause.",
+            "es": "Determina la causa."
+        }
+    },
+    {
+        "front": "develop",
+        "back": "desarrollar",
+        "exampleSentences": {
+            "en": "Develop new skills.",
+            "es": "Desarrolla nuevas habilidades."
+        }
+    },
+    {
+        "front": "development",
+        "back": "desarrollo",
+        "exampleSentences": {
+            "en": "Economic development.",
+            "es": "Desarrollo económico."
+        }
+    },
+    {
+        "front": "die",
+        "back": "morir",
+        "exampleSentences": {
+            "en": "Plants die without water.",
+            "es": "Las plantas mueren sin agua."
+        }
+    },
+    {
+        "front": "difference",
+        "back": "diferencia",
+        "exampleSentences": {
+            "en": "What's the difference?",
+            "es": "¿Cuál es la diferencia?"
+        }
+    },
+    {
+        "front": "different",
+        "back": "diferente",
+        "exampleSentences": {
+            "en": "Different colors.",
+            "es": "Diferentes colores."
+        }
+    },
+    {
+        "front": "difficult",
+        "back": "difícil",
+        "exampleSentences": {
+            "en": "It's a difficult task.",
+            "es": "Es una tarea difícil."
+        }
+    },
+    {
+        "front": "difficulty",
+        "back": "dificultad",
+        "exampleSentences": {
+            "en": "Face difficulties.",
+            "es": "Enfrenta dificultades."
+        }
+    },
+    {
+        "front": "direct",
+        "back": "directo",
+        "exampleSentences": {
+            "en": "Go direct to the point.",
+            "es": "Ve directo al grano."
+        }
+    },
+    {
+        "front": "direction",
+        "back": "dirección",
+        "exampleSentences": {
+            "en": "Which direction?",
+            "es": "¿Qué dirección?"
+        }
+    },
+    {
+        "front": "director",
+        "back": "director",
+        "exampleSentences": {
+            "en": "The film director.",
+            "es": "El director de cine."
+        }
+    },
+    {
+        "front": "discover",
+        "back": "descubrir",
+        "exampleSentences": {
+            "en": "Discover new places.",
+            "es": "Descubre nuevos lugares."
+        }
+    },
+    {
+        "front": "discuss",
+        "back": "discutir",
+        "exampleSentences": {
+            "en": "Discuss the topic.",
+            "es": "Discute el tema."
+        }
+    },
+    {
+        "front": "discussion",
+        "back": "discusión",
+        "exampleSentences": {
+            "en": "Have a discussion.",
+            "es": "Ten una discusión."
+        }
+    },
+    {
+        "front": "disease",
+        "back": "enfermedad",
+        "exampleSentences": {
+            "en": "Prevent disease.",
+            "es": "Prevenir enfermedades."
+        }
+    },
+    {
+        "front": "do",
+        "back": "hacer",
+        "exampleSentences": {
+            "en": "What do you do?",
+            "es": "¿Qué haces?"
+        }
+    },
+    {
+        "front": "doctor",
+        "back": "doctor",
+        "exampleSentences": {
+            "en": "Visit the doctor.",
+            "es": "Visita al doctor."
+        }
+    },
+    {
+        "front": "document",
+        "back": "documento",
+        "exampleSentences": {
+            "en": "Read the document.",
+            "es": "Lee el documento."
+        }
+    },
+    {
+        "front": "dog",
+        "back": "perro",
+        "exampleSentences": {
+            "en": "My dog is cute.",
+            "es": "Mi perro es lindo."
+        }
+    },
+    {
+        "front": "dollar",
+        "back": "dólar",
+        "exampleSentences": {
+            "en": "One dollar.",
+            "es": "Un dólar."
+        }
+    },
+    {
+        "front": "door",
+        "back": "puerta",
+        "exampleSentences": {
+            "en": "Open the door.",
+            "es": "Abre la puerta."
+        }
+    },
+    {
+        "front": "doubt",
+        "back": "duda",
+        "exampleSentences": {
+            "en": "I have no doubt.",
+            "es": "No tengo duda."
+        }
+    },
+    {
+        "front": "down",
+        "back": "abajo",
+        "exampleSentences": {
+            "en": "Sit down.",
+            "es": "Siéntate."
+        }
+    },
+    {
+        "front": "draw",
+        "back": "dibujar",
+        "exampleSentences": {
+            "en": "Draw a picture.",
+            "es": "Dibuja una imagen."
+        }
+    },
+    {
+        "front": "dream",
+        "back": "sueño",
+        "exampleSentences": {
+            "en": "Have a sweet dream.",
+            "es": "Ten un dulce sueño."
+        }
+    },
+    {
+        "front": "dress",
+        "back": "vestido",
+        "exampleSentences": {
+            "en": "Wear a nice dress.",
+            "es": "Usa un vestido bonito."
+        }
+    },
+    {
+        "front": "drink",
+        "back": "beber",
+        "exampleSentences": {
+            "en": "Drink water.",
+            "es": "Bebe agua."
+        }
+    },
+    {
+        "front": "drive",
+        "back": "conducir",
+        "exampleSentences": {
+            "en": "Drive carefully.",
+            "es": "Conduce con cuidado."
+        }
+    },
+    {
+        "front": "drop",
+        "back": "soltar",
+        "exampleSentences": {
+            "en": "Don't drop it.",
+            "es": "No lo sueltes."
+        }
+    },
+    {
+        "front": "drug",
+        "back": "fármaco",
+        "exampleSentences": {
+            "en": "Take your drug.",
+            "es": "Toma tu fármaco."
+        }
+    },
+    {
+        "front": "due",
+        "back": "debido",
+        "exampleSentences": {
+            "en": "Payment is due today.",
+            "es": "El pago es debido hoy."
+        }
+    },
+    {
+        "front": "during",
+        "back": "durante",
+        "exampleSentences": {
+            "en": "During the meeting.",
+            "es": "Durante la reunión."
+        }
+    },
+    {
+        "front": "each",
+        "back": "cada",
+        "exampleSentences": {
+            "en": "Each one is different.",
+            "es": "Cada uno es diferente."
+        }
+    },
+    {
+        "front": "early",
+        "back": "temprano",
+        "exampleSentences": {
+            "en": "Wake up early.",
+            "es": "Levántate temprano."
+        }
+    },
+    {
+        "front": "earn",
+        "back": "ganar",
+        "exampleSentences": {
+            "en": "Earn money.",
+            "es": "Gana dinero."
+        }
+    },
+    {
+        "front": "easily",
+        "back": "fácilmente",
+        "exampleSentences": {
+            "en": "Do it easily.",
+            "es": "Hazlo fácilmente."
+        }
+    },
+    {
+        "front": "easy",
+        "back": "fácil",
+        "exampleSentences": {
+            "en": "It's easy.",
+            "es": "Es fácil."
+        }
+    },
+    {
+        "front": "eat",
+        "back": "comer",
+        "exampleSentences": {
+            "en": "Eat healthy.",
+            "es": "Come saludable."
+        }
+    },
+    {
+        "front": "economic",
+        "back": "económico",
+        "exampleSentences": {
+            "en": "Economic growth.",
+            "es": "Crecimiento económico."
+        }
+    },
+    {
+        "front": "economy",
+        "back": "economía",
+        "exampleSentences": {
+            "en": "The global economy.",
+            "es": "La economía global."
+        }
+    },
+    {
+        "front": "education",
+        "back": "educación",
+        "exampleSentences": {
+            "en": "Importance of education.",
+            "es": "Importancia de la educación."
+        }
+    },
+    {
+        "front": "effect",
+        "back": "efecto",
+        "exampleSentences": {
+            "en": "What is the effect?",
+            "es": "¿Cuál es el efecto?"
+        }
+    },
+    {
+        "front": "effort",
+        "back": "esfuerzo",
+        "exampleSentences": {
+            "en": "Put in effort.",
+            "es": "Pon esfuerzo."
+        }
+    },
+    {
+        "front": "either",
+        "back": "ya sea",
+        "exampleSentences": {
+            "en": "Either you or me.",
+            "es": "O tú o yo."
+        }
+    },
+    {
+        "front": "election",
+        "back": "elección",
+        "exampleSentences": {
+            "en": "The next election.",
+            "es": "La próxima elección."
+        }
+    },
+    {
+        "front": "else",
+        "back": "más",
+        "exampleSentences": {
+            "en": "Who else?",
+            "es": "¿Quién más?"
+        }
+    },
+    {
+        "front": "employee",
+        "back": "empleado",
+        "exampleSentences": {
+            "en": "A new employee.",
+            "es": "Un nuevo empleado."
+        }
+    },
+    {
+        "front": "encourage",
+        "back": "animar",
+        "exampleSentences": {
+            "en": "Encourage others.",
+            "es": "Anima a los demás."
+        }
+    },
+    {
+        "front": "end",
+        "back": "fin",
+        "exampleSentences": {
+            "en": "The end of the road.",
+            "es": "El fin del camino."
+        }
+    },
+    {
+        "front": "energy",
+        "back": "energía",
+        "exampleSentences": {
+            "en": "Save energy.",
+            "es": "Ahorra energía."
+        }
+    },
+    {
+        "front": "enjoy",
+        "back": "disfrutar",
+        "exampleSentences": {
+            "en": "Enjoy your meal.",
+            "es": "Disfruta tu comida."
+        }
+    },
+    {
+        "front": "enoug",
+        "back": "suficiente",
+        "exampleSentences": {
+            "en": "That's enough.",
+            "es": "Eso es suficiente."
+        }
+    },
+    {
+        "front": "enter",
+        "back": "entrar",
+        "exampleSentences": {
+            "en": "Enter the room.",
+            "es": "Entra en la habitación."
+        }
+    },
+    {
+        "front": "environment",
+        "back": "ambiente",
+        "exampleSentences": {
+            "en": "Protect the environment.",
+            "es": "Protege el ambiente."
+        }
+    },
+    {
+        "front": "especially",
+        "back": "especialmente",
+        "exampleSentences": {
+            "en": "I like it, especially the color.",
+            "es": "Me gusta, especialmente el color."
+        }
+    },
+    {
+        "front": "establish",
+        "back": "establecer",
+        "exampleSentences": {
+            "en": "Establish a new rule.",
+            "es": "Establece una nueva regla."
+        }
+    },
+    {
+        "front": "estimate",
+        "back": "estimado",
+        "exampleSentences": {
+            "en": "Give me an estimate.",
+            "es": "Dame un estimado."
+        }
+    },
+    {
+        "front": "even",
+        "back": "incluso",
+        "exampleSentences": {
+            "en": "Even if it's hard.",
+            "es": "Incluso si es difícil."
+        }
+    },
+    {
+        "front": "evening",
+        "back": "noche",
+        "exampleSentences": {
+            "en": "Good evening!",
+            "es": "¡Buenas noches!"
+        }
+    },
+    {
+        "front": "event",
+        "back": "evento",
+        "exampleSentences": {
+            "en": "A special event.",
+            "es": "Un evento especial."
+        }
+    },
+    {
+        "front": "ever",
+        "back": "siempre",
+        "exampleSentences": {
+            "en": "Have you ever been there?",
+            "es": "¿Alguna vez has estado allí?"
+        }
+    },
+    {
+        "front": "every",
+        "back": "cada",
+        "exampleSentences": {
+            "en": "Every day.",
+            "es": "Cada día."
+        }
+    },
+    {
+        "front": "everybody",
+        "back": "todos",
+        "exampleSentences": {
+            "en": "Everybody is here.",
+            "es": "Todos están aquí."
+        }
+    },
+    {
+        "front": "everyone",
+        "back": "todo el mundo",
+        "exampleSentences": {
+            "en": "Everyone is welcome.",
+            "es": "Todo el mundo es bienvenido."
+        }
+    },
+    {
+        "front": "everything",
+        "back": "todo",
+        "exampleSentences": {
+            "en": "Everything is fine.",
+            "es": "Todo está bien."
+        }
+    },
+    {
+        "front": "evidence",
+        "back": "evidencia",
+        "exampleSentences": {
+            "en": "Lack of evidence.",
+            "es": "Falta de evidencia."
+        }
+    },
+    {
+        "front": "exactly",
+        "back": "exactamente",
+        "exampleSentences": {
+            "en": "Exactly what I needed.",
+            "es": "Exactamente lo que necesitaba."
+        }
+    },
+    {
+        "front": "example",
+        "back": "ejemplo",
+        "exampleSentences": {
+            "en": "For example.",
+            "es": "Por ejemplo."
+        }
+    },
+    {
+        "front": "except",
+        "back": "excepto",
+        "exampleSentences": {
+            "en": "Everyone except me.",
+            "es": "Todos excepto yo."
+        }
+    },
+    {
+        "front": "exercise",
+        "back": "ejercicio",
+        "exampleSentences": {
+            "en": "Do daily exercise.",
+            "es": "Haz ejercicio diario."
+        }
+    },
+    {
+        "front": "exist",
+        "back": "existe",
+        "exampleSentences": {
+            "en": "Does it exist?",
+            "es": "¿Existe?"
+        }
+    },
+    {
+        "front": "expect",
+        "back": "esperar",
+        "exampleSentences": {
+            "en": "I expect the best.",
+            "es": "Espero lo mejor."
+        }
+    },
+    {
+        "front": "experience",
+        "back": "experiencia",
+        "exampleSentences": {
+            "en": "Gain experience.",
+            "es": "Gana experiencia."
+        }
+    },
+    {
+        "front": "explain",
+        "back": "explique",
+        "exampleSentences": {
+            "en": "Explain it to me.",
+            "es": "Explícamelo."
+        }
+    },
+    {
+        "front": "express",
+        "back": "expresar",
+        "exampleSentences": {
+            "en": "Express your feelings.",
+            "es": "Expresa tus sentimientos."
+        }
+    },
+    {
+        "front": "extend",
+        "back": "ampliar",
+        "exampleSentences": {
+            "en": "Extend the deadline.",
+            "es": "Amplía la fecha límite."
+        }
+    },
+    {
+        "front": "eye",
+        "back": "ojo",
+        "exampleSentences": {
+            "en": "Open your eyes.",
+            "es": "Abre tus ojos."
+        }
+    },
+    {
+        "front": "face",
+        "back": "cara",
+        "exampleSentences": {
+            "en": "Wash your face.",
+            "es": "Lávate la cara."
+        }
+    },
+    {
+        "front": "facility",
+        "back": "instalaciones",
+        "exampleSentences": {
+            "en": "Sports facility.",
+            "es": "Instalaciones deportivas."
+        }
+    },
+    {
+        "front": "fact",
+        "back": "hecho",
+        "exampleSentences": {
+            "en": "It's a fact.",
+            "es": "Es un hecho."
+        }
+    },
+    {
+        "front": "factor",
+        "back": "factor",
+        "exampleSentences": {
+            "en": "Key factor.",
+            "es": "Factor clave."
+        }
+    },
+    {
+        "front": "fail",
+        "back": "fallar",
+        "exampleSentences": {
+            "en": "Don't fail.",
+            "es": "No falles."
+        }
+    },
+    {
+        "front": "fall",
+        "back": "otoño",
+        "exampleSentences": {
+            "en": "The leaves fall in autumn.",
+            "es": "Las hojas caen en otoño."
+        }
+    },
+    {
+        "front": "family",
+        "back": "familia",
+        "exampleSentences": {
+            "en": "My family is important.",
+            "es": "Mi familia es importante."
+        }
+    },
+    {
+        "front": "far",
+        "back": "lejos",
+        "exampleSentences": {
+            "en": "How far is it?",
+            "es": "¿Qué tan lejos está?"
+        }
+    },
+    {
+        "front": "fast",
+        "back": "rápido",
+        "exampleSentences": {
+            "en": "Run fast.",
+            "es": "Corre rápido."
+        }
+    },
+    {
+        "front": "father",
+        "back": "padre",
+        "exampleSentences": {
+            "en": "My father is tall.",
+            "es": "Mi padre es alto."
+        }
+    },
+    {
+        "front": "favorite",
+        "back": "favorito",
+        "exampleSentences": {
+            "en": "My favorite food.",
+            "es": "Mi comida favorita."
+        }
+    },
+    {
+        "front": "fear",
+        "back": "temor",
+        "exampleSentences": {
+            "en": "Overcome your fear.",
+            "es": "Supera tu temor."
+        }
+    },
+    {
+        "front": "feature",
+        "back": "característica",
+        "exampleSentences": {
+            "en": "New feature.",
+            "es": "Nueva característica."
+        }
+    },
+    {
+        "front": "feel",
+        "back": "sensación",
+        "exampleSentences": {
+            "en": "How do you feel?",
+            "es": "¿Cómo te sientes?"
+        }
+    },
+    {
+        "front": "female",
+        "back": "hembra",
+        "exampleSentences": {
+            "en": "Female artist.",
+            "es": "Artista femenina."
+        }
+    },
+    {
+        "front": "few",
+        "back": "pocos",
+        "exampleSentences": {
+            "en": "A few days ago.",
+            "es": "Hace pocos días."
+        }
+    },
+    {
+        "front": "field",
+        "back": "campo",
+        "exampleSentences": {
+            "en": "A green field.",
+            "es": "Un campo verde."
+        }
+    },
+    {
+        "front": "fight",
+        "back": "lucha",
+        "exampleSentences": {
+            "en": "Fight for your rights.",
+            "es": "Lucha por tus derechos."
+        }
+    },
+    {
+        "front": "figure",
+        "back": "figura",
+        "exampleSentences": {
+            "en": "A historical figure.",
+            "es": "Una figura histórica."
+        }
+    },
+    {
+        "front": "file",
+        "back": "expediente",
+        "exampleSentences": {
+            "en": "Save the file.",
+            "es": "Guarda el expediente."
+        }
+    },
+    {
+        "front": "fill",
+        "back": "llenar",
+        "exampleSentences": {
+            "en": "Fill the glass.",
+            "es": "Llena el vaso."
+        }
+    },
+    {
+        "front": "film",
+        "back": "película",
+        "exampleSentences": {
+            "en": "Watch a film.",
+            "es": "Mira una película."
+        }
+    },
+    {
+        "front": "final",
+        "back": "final",
+        "exampleSentences": {
+            "en": "The final decision.",
+            "es": "La decisión final."
+        }
+    },
+    {
+        "front": "finally",
+        "back": "finalmente",
+        "exampleSentences": {
+            "en": "Finally, it's done.",
+            "es": "Finalmente, está hecho."
+        }
+    },
+    {
+        "front": "financial",
+        "back": "financiero",
+        "exampleSentences": {
+            "en": "Financial advice.",
+            "es": "Consejo financiero."
+        }
+    },
+    {
+        "front": "find",
+        "back": "encontrar",
+        "exampleSentences": {
+            "en": "Find your keys.",
+            "es": "Encuentra tus llaves."
+        }
+    },
+    {
+        "front": "fine",
+        "back": "multa",
+        "exampleSentences": {
+            "en": "I'm fine, thank you.",
+            "es": "Estoy bien, gracias."
+        }
+    },
+    {
+        "front": "finish",
+        "back": "terminar",
+        "exampleSentences": {
+            "en": "Finish your homework.",
+            "es": "Termina tu tarea."
+        }
+    },
+    {
+        "front": "fire",
+        "back": "fuego",
+        "exampleSentences": {
+            "en": "A big fire.",
+            "es": "Un gran fuego."
+        }
+    },
+    {
+        "front": "firm",
+        "back": "sólido, firme",
+        "exampleSentences": {
+            "en": "A firm handshake.",
+            "es": "Un apretón de manos firme."
+        }
+    },
+    {
+        "front": "first",
+        "back": "primero",
+        "exampleSentences": {
+            "en": "First time.",
+            "es": "Primera vez."
+        }
+    },
+    {
+        "front": "fish",
+        "back": "pez",
+        "exampleSentences": {
+            "en": "Eat fish.",
+            "es": "Come pescado."
+        }
+    },
+    {
+        "front": "fit",
+        "back": "ajuste",
+        "exampleSentences": {
+            "en": "Does it fit?",
+            "es": "¿Encaja?"
+        }
+    },
+    {
+        "front": "fix",
+        "back": "fijar",
+        "exampleSentences": {
+            "en": "Fix the problem.",
+            "es": "Fija el problema."
+        }
+    },
+    {
+        "front": "floor",
+        "back": "piso",
+        "exampleSentences": {
+            "en": "Clean the floor.",
+            "es": "Limpia el piso."
+        }
+    },
+    {
+        "front": "fly",
+        "back": "volar",
+        "exampleSentences": {
+            "en": "Birds fly.",
+            "es": "Los pájaros vuelan."
+        }
+    },
+    {
+        "front": "focus",
+        "back": "atención",
+        "exampleSentences": {
+            "en": "Focus on your work.",
+            "es": "Concéntrate en tu trabajo."
+        }
+    },
+    {
+        "front": "follow",
+        "back": "seguir",
+        "exampleSentences": {
+            "en": "Follow me.",
+            "es": "Sígueme."
+        }
+    },
+    {
+        "front": "food",
+        "back": "comida",
+        "exampleSentences": {
+            "en": "Delicious food.",
+            "es": "Comida deliciosa."
+        }
+    },
+    {
+        "front": "foot",
+        "back": "pie",
+        "exampleSentences": {
+            "en": "My foot hurts.",
+            "es": "Me duele el pie."
+        }
+    },
+    {
+        "front": "for",
+        "back": "para",
+        "exampleSentences": {
+            "en": "This is for you.",
+            "es": "Esto es para ti."
+        }
+    },
+    {
+        "front": "force",
+        "back": "fuerza",
+        "exampleSentences": {
+            "en": "Use force.",
+            "es": "Usa la fuerza."
+        }
+    },
+    {
+        "front": "foreign",
+        "back": "extranjero",
+        "exampleSentences": {
+            "en": "Foreign language.",
+            "es": "Idioma extranjero."
+        }
+    },
+    {
+        "front": "forget",
+        "back": "olvidar",
+        "exampleSentences": {
+            "en": "Don't forget.",
+            "es": "No olvides."
+        }
+    },
+    {
+        "front": "form",
+        "back": "formar",
+        "exampleSentences": {
+            "en": "Fill out the form.",
+            "es": "Rellena el formulario."
+        }
+    },
+    {
+        "front": "former",
+        "back": "ex",
+        "exampleSentences": {
+            "en": "My former teacher.",
+            "es": "Mi ex profesor."
+        }
+    },
+    {
+        "front": "forward",
+        "back": "adelante",
+        "exampleSentences": {
+            "en": "Look forward.",
+            "es": "Mira hacia adelante."
+        }
+    },
+    {
+        "front": "free",
+        "back": "gratis",
+        "exampleSentences": {
+            "en": "Feel free.",
+            "es": "Siéntete libre."
+        }
+    },
+    {
+        "front": "friend",
+        "back": "amigo",
+        "exampleSentences": {
+            "en": "My best friend.",
+            "es": "Mi mejor amigo."
+        }
+    },
+    {
+        "front": "from",
+        "back": "desde",
+        "exampleSentences": {
+            "en": "From here to there.",
+            "es": "De aquí para allá."
+        }
+    },
+    {
+        "front": "front",
+        "back": "frente",
+        "exampleSentences": {
+            "en": "In front of the house.",
+            "es": "En frente de la casa."
+        }
+    },
+    {
+        "front": "full",
+        "back": "completo",
+        "exampleSentences": {
+            "en": "The glass is full.",
+            "es": "El vaso está lleno."
+        }
+    },
+    {
+        "front": "fun",
+        "back": "divertido",
+        "exampleSentences": {
+            "en": "Have fun!",
+            "es": "¡Diviértete!"
+        }
+    },
+    {
+        "front": "function",
+        "back": "función",
+        "exampleSentences": {
+            "en": "The function of the heart.",
+            "es": "La función del corazón."
+        }
+    },
+    {
+        "front": "fund",
+        "back": "financiar",
+        "exampleSentences": {
+            "en": "Raise funds.",
+            "es": "Recaudar fondos."
+        }
+    },
+    {
+        "front": "further",
+        "back": "promover",
+        "exampleSentences": {
+            "en": "Further details.",
+            "es": "Más detalles."
+        }
+    },
+    {
+        "front": "future",
+        "back": "futuro",
+        "exampleSentences": {
+            "en": "Plan your future.",
+            "es": "Planifica tu futuro."
+        }
+    },
+    {
+        "front": "gain",
+        "back": "ganancia",
+        "exampleSentences": {
+            "en": "Gain knowledge.",
+            "es": "Gana conocimiento."
+        }
+    },
+    {
+        "front": "game",
+        "back": "juego",
+        "exampleSentences": {
+            "en": "Play a game.",
+            "es": "Juega un juego."
+        }
+    },
+    {
+        "front": "garden",
+        "back": "jardín",
+        "exampleSentences": {
+            "en": "Walk in the garden.",
+            "es": "Camina en el jardín."
+        }
+    },
+    {
+        "front": "general",
+        "back": "general",
+        "exampleSentences": {
+            "en": "General knowledge.",
+            "es": "Conocimiento general."
+        }
+    },
+    {
+        "front": "generally",
+        "back": "generalmente",
+        "exampleSentences": {
+            "en": "Generally, I agree.",
+            "es": "Generalmente, estoy de acuerdo."
+        }
+    },
+    {
+        "front": "generation",
+        "back": "Generación",
+        "exampleSentences": {
+            "en": "The new generation.",
+            "es": "La nueva generación."
+        }
+    },
+    {
+        "front": "get",
+        "back": "obtener",
+        "exampleSentences": {
+            "en": "Get ready.",
+            "es": "Prepárate."
+        }
+    },
+    {
+        "front": "girl",
+        "back": "niña",
+        "exampleSentences": {
+            "en": "A beautiful girl.",
+            "es": "Una niña hermosa."
+        }
+    },
+    {
+        "front": "give",
+        "back": "dar",
+        "exampleSentences": {
+            "en": "Give me a hand.",
+            "es": "Dame una mano."
+        }
+    },
+    {
+        "front": "go",
+        "back": "ir",
+        "exampleSentences": {
+            "en": "Let's go!",
+            "es": "¡Vamos!"
+        }
+    },
+    {
+        "front": "goal",
+        "back": "gol",
+        "exampleSentences": {
+            "en": "Achieve your goal.",
+            "es": "Logra tu objetivo."
+        }
+    },
+    {
+        "front": "good",
+        "back": "bueno",
+        "exampleSentences": {
+            "en": "Have a good day.",
+            "es": "Que tengas un buen día."
+        }
+    },
+    {
+        "front": "government",
+        "back": "gobierno",
+        "exampleSentences": {
+            "en": "The government decided.",
+            "es": "El gobierno decidió."
+        }
+    },
+    {
+        "front": "great",
+        "back": "genial",
+        "exampleSentences": {
+            "en": "That's great!",
+            "es": "¡Eso es genial!"
+        }
+    },
+    {
+        "front": "green",
+        "back": "verde",
+        "exampleSentences": {
+            "en": "Green grass.",
+            "es": "Hierba verde."
+        }
+    },
+    {
+        "front": "ground",
+        "back": "suelo",
+        "exampleSentences": {
+            "en": "On the ground.",
+            "es": "En el suelo."
+        }
+    },
+    {
+        "front": "group",
+        "back": "grupo",
+        "exampleSentences": {
+            "en": "A small group.",
+            "es": "Un grupo pequeño."
+        }
+    },
+    {
+        "front": "grow",
+        "back": "crecer",
+        "exampleSentences": {
+            "en": "Plants grow fast.",
+            "es": "Las plantas crecen rápido."
+        }
+    },
+    {
+        "front": "growth",
+        "back": "crecimiento",
+        "exampleSentences": {
+            "en": "Economic growth.",
+            "es": "Crecimiento económico."
+        }
+    },
+    {
+        "front": "guess",
+        "back": "adivinar",
+        "exampleSentences": {
+            "en": "Guess what?",
+            "es": "¿Adivina qué?"
+        }
+    },
+    {
+        "front": "guy",
+        "back": "chico",
+        "exampleSentences": {
+            "en": "That guy is funny.",
+            "es": "Ese chico es divertido."
+        }
+    },
+    {
+        "front": "hair",
+        "back": "pelo",
+        "exampleSentences": {
+            "en": "Long hair.",
+            "es": "Pelo largo."
+        }
+    },
+    {
+        "front": "half",
+        "back": "mitad",
+        "exampleSentences": {
+            "en": "Half a glass.",
+            "es": "Medio vaso."
+        }
+    },
+    {
+        "front": "hand",
+        "back": "mano",
+        "exampleSentences": {
+            "en": "Shake my hand.",
+            "es": "Estrecha mi mano."
+        }
+    },
+    {
+        "front": "happen",
+        "back": "ocurrir",
+        "exampleSentences": {
+            "en": "What happened?",
+            "es": "¿Qué pasó?"
+        }
+    },
+    {
+        "front": "happy",
+        "back": "feliz",
+        "exampleSentences": {
+            "en": "I am happy.",
+            "es": "Estoy feliz."
+        }
+    },
+    {
+        "front": "hard",
+        "back": "difícil",
+        "exampleSentences": {
+            "en": "It's hard work.",
+            "es": "Es un trabajo difícil."
+        }
+    },
+    {
+        "front": "have",
+        "back": "tener",
+        "exampleSentences": {
+            "en": "I have a car.",
+            "es": "Tengo un coche."
+        }
+    },
+    {
+        "front": "he",
+        "back": "él",
+        "exampleSentences": {
+            "en": "He is my friend.",
+            "es": "Él es mi amigo."
+        }
+    },
+    {
+        "front": "head",
+        "back": "cabeza",
+        "exampleSentences": {
+            "en": "My head hurts.",
+            "es": "Me duele la cabeza."
+        }
+    },
+    {
+        "front": "health",
+        "back": "salud",
+        "exampleSentences": {
+            "en": "Good health.",
+            "es": "Buena salud."
+        }
+    },
+    {
+        "front": "hear",
+        "back": "oír",
+        "exampleSentences": {
+            "en": "Can you hear me?",
+            "es": "¿Puedes oírme?"
+        }
+    },
+    {
+        "front": "heart",
+        "back": "corazón",
+        "exampleSentences": {
+            "en": "My heart is beating.",
+            "es": "Mi corazón está latiendo."
+        }
+    },
+    {
+        "front": "help",
+        "back": "ayuda",
+        "exampleSentences": {
+            "en": "I need help.",
+            "es": "Necesito ayuda."
+        }
+    },
+    {
+        "front": "here",
+        "back": "aquí",
+        "exampleSentences": {
+            "en": "Come here.",
+            "es": "Ven aquí."
+        }
+    },
+    {
+        "front": "herself",
+        "back": "Ella misma",
+        "exampleSentences": {
+            "en": "She did it herself.",
+            "es": "Ella lo hizo ella misma."
+        }
+    },
+    {
+        "front": "high",
+        "back": "alto",
+        "exampleSentences": {
+            "en": "High mountains.",
+            "es": "Montañas altas."
+        }
+    },
+    {
+        "front": "himself",
+        "back": "él mismo",
+        "exampleSentences": {
+            "en": "He did it himself.",
+            "es": "Él lo hizo él mismo."
+        }
+    },
+    {
+        "front": "history",
+        "back": "historia",
+        "exampleSentences": {
+            "en": "Learn history.",
+            "es": "Aprende historia."
+        }
+    },
+    {
+        "front": "hit",
+        "back": "golpear",
+        "exampleSentences": {
+            "en": "Hit the ball.",
+            "es": "Golpea la pelota."
+        }
+    },
+    {
+        "front": "hold",
+        "back": "sostener",
+        "exampleSentences": {
+            "en": "Hold my hand.",
+            "es": "Sostén mi mano."
+        }
+    },
+    {
+        "front": "holiday",
+        "back": "vacaciones",
+        "exampleSentences": {
+            "en": "Happy holidays!",
+            "es": "¡Felices vacaciones!"
+        }
+    },
+    {
+        "front": "home",
+        "back": "casa",
+        "exampleSentences": {
+            "en": "Go home.",
+            "es": "Ve a casa."
+        }
+    },
+    {
+        "front": "hope",
+        "back": "esperanza",
+        "exampleSentences": {
+            "en": "I hope so.",
+            "es": "Espero que sí."
+        }
+    },
+    {
+        "front": "hospital",
+        "back": "hospital",
+        "exampleSentences": {
+            "en": "Go to the hospital.",
+            "es": "Ve al hospital."
+        }
+    },
+    {
+        "front": "hot",
+        "back": "caliente",
+        "exampleSentences": {
+            "en": "It's hot today.",
+            "es": "Hace calor hoy."
+        }
+    },
+    {
+        "front": "hotel",
+        "back": "hotel",
+        "exampleSentences": {
+            "en": "Stay at a hotel.",
+            "es": "Alójate en un hotel."
+        }
+    },
+    {
+        "front": "hour",
+        "back": "hora",
+        "exampleSentences": {
+            "en": "One hour.",
+            "es": "Una hora."
+        }
+    },
+    {
+        "front": "house",
+        "back": "casa",
+        "exampleSentences": {
+            "en": "A big house.",
+            "es": "Una casa grande."
+        }
+    },
+    {
+        "front": "how",
+        "back": "cómo",
+        "exampleSentences": {
+            "en": "How are you?",
+            "es": "¿Cómo estás?"
+        }
+    },
+    {
+        "front": "however",
+        "back": "sin embargo",
+        "exampleSentences": {
+            "en": "However, I disagree.",
+            "es": "Sin embargo, no estoy de acuerdo."
+        }
+    },
+    {
+        "front": "huge",
+        "back": "enorme",
+        "exampleSentences": {
+            "en": "A huge problem.",
+            "es": "Un problema enorme."
+        }
+    },
+    {
+        "front": "human",
+        "back": "humano",
+        "exampleSentences": {
+            "en": "Human rights.",
+            "es": "Derechos humanos."
+        }
+    },
+    {
+        "front": "husband",
+        "back": "marido",
+        "exampleSentences": {
+            "en": "My husband is kind.",
+            "es": "Mi marido es amable."
+        }
+    },
+    {
+        "front": "i",
+        "back": "yo",
+        "exampleSentences": {
+            "en": "I am happy.",
+            "es": "Yo estoy feliz."
+        }
+    },
+    {
+        "front": "idea",
+        "back": "idea",
+        "exampleSentences": {
+            "en": "Good idea!",
+            "es": "¡Buena idea!"
+        }
+    },
+    {
+        "front": "identify",
+        "back": "identificar",
+        "exampleSentences": {
+            "en": "Identify the problem.",
+            "es": "Identifica el problema."
+        }
+    },
+    {
+        "front": "if",
+        "back": "si",
+        "exampleSentences": {
+            "en": "If you want.",
+            "es": "Si quieres."
+        }
+    },
+    {
+        "front": "image",
+        "back": "imagen",
+        "exampleSentences": {
+            "en": "Look at the image.",
+            "es": "Mira la imagen."
+        }
+    },
+    {
+        "front": "imagine",
+        "back": "imagina",
+        "exampleSentences": {
+            "en": "Imagine a world.",
+            "es": "Imagina un mundo."
+        }
+    },
+    {
+        "front": "immediately",
+        "back": "inmediatamente",
+        "exampleSentences": {
+            "en": "Do it immediately.",
+            "es": "Hazlo inmediatamente."
+        }
+    },
+    {
+        "front": "important",
+        "back": "importante",
+        "exampleSentences": {
+            "en": "It's important.",
+            "es": "Es importante."
+        }
+    },
+    {
+        "front": "improve",
+        "back": "mejorar",
+        "exampleSentences": {
+            "en": "Improve your skills.",
+            "es": "Mejora tus habilidades."
+        }
+    },
+    {
+        "front": "in",
+        "back": "en",
+        "exampleSentences": {
+            "en": "In the box.",
+            "es": "En la caja."
+        }
+    },
+    {
+        "front": "include",
+        "back": "incluir",
+        "exampleSentences": {
+            "en": "Include all details.",
+            "es": "Incluye todos los detalles."
+        }
+    },
+    {
+        "front": "income",
+        "back": "ingresos",
+        "exampleSentences": {
+            "en": "High income.",
+            "es": "Altos ingresos."
+        }
+    },
+    {
+        "front": "increase",
+        "back": "incrementar",
+        "exampleSentences": {
+            "en": "Increase the volume.",
+            "es": "Incrementa el volumen."
+        }
+    },
+    {
+        "front": "indeed",
+        "back": "en efecto",
+        "exampleSentences": {
+            "en": "Indeed, it is.",
+            "es": "En efecto, lo es."
+        }
+    },
+    {
+        "front": "indicate",
+        "back": "indicar",
+        "exampleSentences": {
+            "en": "Indicate your choice.",
+            "es": "Indica tu elección."
+        }
+    },
+    {
+        "front": "individual",
+        "back": "individual",
+        "exampleSentences": {
+            "en": "An individual choice.",
+            "es": "Una elección individual."
+        }
+    },
+    {
+        "front": "industry",
+        "back": "industria",
+        "exampleSentences": {
+            "en": "The tech industry.",
+            "es": "La industria tecnológica."
+        }
+    },
+    {
+        "front": "influence",
+        "back": "influencia",
+        "exampleSentences": {
+            "en": "Have an influence.",
+            "es": "Tener influencia."
+        }
+    },
+    {
+        "front": "information",
+        "back": "información",
+        "exampleSentences": {
+            "en": "Get information.",
+            "es": "Obtén información."
+        }
+    },
+    {
+        "front": "inside",
+        "back": "dentro",
+        "exampleSentences": {
+            "en": "Inside the house.",
+            "es": "Dentro de la casa."
+        }
+    },
+    {
+        "front": "instance",
+        "back": "ejemplo",
+        "exampleSentences": {
+            "en": "For instance.",
+            "es": "Por ejemplo."
+        }
+    },
+    {
+        "front": "instead",
+        "back": "en lugar",
+        "exampleSentences": {
+            "en": "Instead of that.",
+            "es": "En lugar de eso."
+        }
+    },
+    {
+        "front": "interest",
+        "back": "interesar",
+        "exampleSentences": {
+            "en": "Show interest.",
+            "es": "Muestra interés."
+        }
+    },
+    {
+        "front": "international",
+        "back": "internacional",
+        "exampleSentences": {
+            "en": "International relations.",
+            "es": "Relaciones internacionales."
+        }
+    },
+    {
+        "front": "interview",
+        "back": "entrevista",
+        "exampleSentences": {
+            "en": "Job interview.",
+            "es": "Entrevista de trabajo."
+        }
+    },
+    {
+        "front": "into",
+        "back": "dentro",
+        "exampleSentences": {
+            "en": "Go into the room.",
+            "es": "Entra en la habitación."
+        }
+    },
+    {
+        "front": "introduce",
+        "back": "introducir",
+        "exampleSentences": {
+            "en": "Introduce yourself.",
+            "es": "Preséntate."
+        }
+    },
+    {
+        "front": "investment",
+        "back": "inversión",
+        "exampleSentences": {
+            "en": "Make an investment.",
+            "es": "Haz una inversión."
+        }
+    },
+    {
+        "front": "involve",
+        "back": "implicar",
+        "exampleSentences": {
+            "en": "It involves risk.",
+            "es": "Implica riesgo."
+        }
+    },
+    {
+        "front": "issue",
+        "back": "problema",
+        "exampleSentences": {
+            "en": "A serious issue.",
+            "es": "Un problema serio."
+        }
+    },
+    {
+        "front": "it",
+        "back": "eso",
+        "exampleSentences": {
+            "en": "It is cold.",
+            "es": "Hace frío."
+        }
+    },
+    {
+        "front": "item",
+        "back": "artículo",
+        "exampleSentences": {
+            "en": "A new item.",
+            "es": "Un nuevo artículo."
+        }
+    },
+    {
+        "front": "itself",
+        "back": "sí mismo",
+        "exampleSentences": {
+            "en": "The cat cleaned itself.",
+            "es": "El gato se limpió a sí mismo."
+        }
+    },
+    {
+        "front": "job",
+        "back": "trabajo",
+        "exampleSentences": {
+            "en": "Find a job.",
+            "es": "Encuentra un trabajo."
+        }
+    },
+    {
+        "front": "join",
+        "back": "unirse",
+        "exampleSentences": {
+            "en": "Join the team.",
+            "es": "Únete al equipo."
+        }
+    },
+    {
+        "front": "judge",
+        "back": "juez",
+        "exampleSentences": {
+            "en": "Don't judge.",
+            "es": "No juzgues."
+        }
+    },
+    {
+        "front": "just",
+        "back": "sólo",
+        "exampleSentences": {
+            "en": "Just a moment.",
+            "es": "Solo un momento."
+        }
+    },
+    {
+        "front": "keep",
+        "back": "mantener",
+        "exampleSentences": {
+            "en": "Keep going.",
+            "es": "Sigue adelante."
+        }
+    },
+    {
+        "front": "key",
+        "back": "llave",
+        "exampleSentences": {
+            "en": "The key to success.",
+            "es": "La llave del éxito."
+        }
+    },
+    {
+        "front": "kid",
+        "back": "niño",
+        "exampleSentences": {
+            "en": "A happy kid.",
+            "es": "Un niño feliz."
+        }
+    },
+    {
+        "front": "kill",
+        "back": "matar",
+        "exampleSentences": {
+            "en": "Kill the time.",
+            "es": "Mata el tiempo."
+        }
+    },
+    {
+        "front": "kind",
+        "back": "tipo",
+        "exampleSentences": {
+            "en": "What kind of music?",
+            "es": "¿Qué tipo de música?"
+        }
+    },
+    {
+        "front": "know",
+        "back": "saber",
+        "exampleSentences": {
+            "en": "I know the answer.",
+            "es": "Sé la respuesta."
+        }
+    },
+    {
+        "front": "knowledge",
+        "back": "conocimiento",
+        "exampleSentences": {
+            "en": "Gain knowledge.",
+            "es": "Gana conocimiento."
+        }
+    },
+    {
+        "front": "lack",
+        "back": "ausencia",
+        "exampleSentences": {
+            "en": "Lack of sleep.",
+            "es": "Falta de sueño."
+        }
+    },
+    {
+        "front": "land",
+        "back": "tierra",
+        "exampleSentences": {
+            "en": "Fertile land.",
+            "es": "Tierra fértil."
+        }
+    },
+    {
+        "front": "language",
+        "back": "idioma",
+        "exampleSentences": {
+            "en": "Learn a new language.",
+            "es": "Aprende un nuevo idioma."
+        }
+    },
+    {
+        "front": "large",
+        "back": "grande",
+        "exampleSentences": {
+            "en": "A large house.",
+            "es": "Una casa grande."
+        }
+    },
+    {
+        "front": "last",
+        "back": "último",
+        "exampleSentences": {
+            "en": "The last time.",
+            "es": "La última vez."
+        }
+    },
+    {
+        "front": "late",
+        "back": "tarde",
+        "exampleSentences": {
+            "en": "Don't be late.",
+            "es": "No llegues tarde."
+        }
+    },
+    {
+        "front": "laugh",
+        "back": "risa",
+        "exampleSentences": {
+            "en": "Laugh out loud.",
+            "es": "Ríe a carcajadas."
+        }
+    },
+    {
+        "front": "law",
+        "back": "ley",
+        "exampleSentences": {
+            "en": "Obey the law.",
+            "es": "Obedece la ley."
+        }
+    },
+    {
+        "front": "lead",
+        "back": "dirigir",
+        "exampleSentences": {
+            "en": "Lead the way.",
+            "es": "Dirige el camino."
+        }
+    },
+    {
+        "front": "leader",
+        "back": "líder",
+        "exampleSentences": {
+            "en": "A good leader.",
+            "es": "Un buen líder."
+        }
+    },
+    {
+        "front": "learn",
+        "back": "aprender",
+        "exampleSentences": {
+            "en": "Learn something new.",
+            "es": "Aprende algo nuevo."
+        }
+    },
+    {
+        "front": "least",
+        "back": "menos",
+        "exampleSentences": {
+            "en": "Al menos.",
+            "es": "Al menos."
+        }
+    },
+    {
+        "front": "leave",
+        "back": "salir",
+        "exampleSentences": {
+            "en": "Leave me alone.",
+            "es": "Déjame en paz."
+        }
+    },
+    {
+        "front": "legal",
+        "back": "legal",
+        "exampleSentences": {
+            "en": "Legal advice.",
+            "es": "Asesoramiento legal."
+        }
+    },
+    {
+        "front": "less",
+        "back": "menos",
+        "exampleSentences": {
+            "en": "Less sugar.",
+            "es": "Menos azúcar."
+        }
+    },
+    {
+        "front": "let",
+        "back": "dejar",
+        "exampleSentences": {
+            "en": "Let me see.",
+            "es": "Déjame ver."
+        }
+    },
+    {
+        "front": "letter",
+        "back": "carta",
+        "exampleSentences": {
+            "en": "Write a letter.",
+            "es": "Escribe una carta."
+        }
+    },
+    {
+        "front": "level",
+        "back": "nivel",
+        "exampleSentences": {
+            "en": "Next level.",
+            "es": "Siguiente nivel."
+        }
+    },
+    {
+        "front": "lie",
+        "back": "mentira",
+        "exampleSentences": {
+            "en": "Don't lie.",
+            "es": "No mientas."
+        }
+    },
+    {
+        "front": "life",
+        "back": "vida",
+        "exampleSentences": {
+            "en": "Enjoy life.",
+            "es": "Disfruta la vida."
+        }
+    },
+    {
+        "front": "light",
+        "back": "ligero",
+        "exampleSentences": {
+            "en": "Turn on the light.",
+            "es": "Enciende la luz."
+        }
+    },
+    {
+        "front": "like",
+        "back": "me gusta",
+        "exampleSentences": {
+            "en": "I like coffee.",
+            "es": "Me gusta el café."
+        }
+    },
+    {
+        "front": "likely",
+        "back": "probable",
+        "exampleSentences": {
+            "en": "It's likely to happen.",
+            "es": "Es probable que suceda."
+        }
+    },
+    {
+        "front": "limit",
+        "back": "límite",
+        "exampleSentences": {
+            "en": "Set a limit.",
+            "es": "Establece un límite."
+        }
+    },
+    {
+        "front": "line",
+        "back": "línea",
+        "exampleSentences": {
+            "en": "Dibuja una línea.",
+            "es": "Dibuja una línea."
+        }
+    },
+    {
+        "front": "link",
+        "back": "enlazar",
+        "exampleSentences": {
+            "en": "Click the link.",
+            "es": "Haz clic en el enlace."
+        }
+    },
+    {
+        "front": "list",
+        "back": "lista",
+        "exampleSentences": {
+            "en": "Make a list.",
+            "es": "Haz una lista."
+        }
+    },
+    {
+        "front": "listen",
+        "back": "escucha",
+        "exampleSentences": {
+            "en": "Listen to music.",
+            "es": "Escucha música."
+        }
+    },
+    {
+        "front": "little",
+        "back": "pequeño",
+        "exampleSentences": {
+            "en": "A little bit.",
+            "es": "Un poquito."
+        }
+    },
+    {
+        "front": "live",
+        "back": "vivir",
+        "exampleSentences": {
+            "en": "Live your life.",
+            "es": "Vive tu vida."
+        }
+    },
+    {
+        "front": "local",
+        "back": "local",
+        "exampleSentences": {
+            "en": "Local news.",
+            "es": "Noticias locales."
+        }
+    },
+    {
+        "front": "long",
+        "back": "largo",
+        "exampleSentences": {
+            "en": "A long time.",
+            "es": "Mucho tiempo."
+        }
+    },
+    {
+        "front": "look",
+        "back": "mira",
+        "exampleSentences": {
+            "en": "Look at me.",
+            "es": "Mírame."
+        }
+    },
+    {
+        "front": "lose",
+        "back": "perder",
+        "exampleSentences": {
+            "en": "Don't lose hope.",
+            "es": "No pierdas la esperanza."
+        }
+    },
+    {
+        "front": "loss",
+        "back": "pérdida",
+        "exampleSentences": {
+            "en": "Financial loss.",
+            "es": "Pérdida financiera."
+        }
+    },
+    {
+        "front": "lot",
+        "back": "mucho",
+        "exampleSentences": {
+            "en": "A lot of people.",
+            "es": "Mucha gente."
+        }
+    },
+    {
+        "front": "love",
+        "back": "amor",
+        "exampleSentences": {
+            "en": "I love you.",
+            "es": "Te amo."
+        }
+    },
+    {
+        "front": "low",
+        "back": "bajo",
+        "exampleSentences": {
+            "en": "Low price.",
+            "es": "Precio bajo."
+        }
+    },
+    {
+        "front": "machine",
+        "back": "máquina",
+        "exampleSentences": {
+            "en": "A washing machine.",
+            "es": "Una lavadora."
+        }
+    },
+    {
+        "front": "magazine",
+        "back": "revista",
+        "exampleSentences": {
+            "en": "Read a magazine.",
+            "es": "Lee una revista."
+        }
+    },
+    {
+        "front": "main",
+        "back": "principal",
+        "exampleSentences": {
+            "en": "The main reason.",
+            "es": "La razón principal."
+        }
+    },
+    {
+        "front": "maintain",
+        "back": "mantener",
+        "exampleSentences": {
+            "en": "Maintain a good attitude.",
+            "es": "Mantén una buena actitud."
+        }
+    },
+    {
+        "front": "major",
+        "back": "mayor",
+        "exampleSentences": {
+            "en": "A major problem.",
+            "es": "Un problema mayor."
+        }
+    },
+    {
+        "front": "make",
+        "back": "hacer",
+        "exampleSentences": {
+            "en": "Make a cake.",
+            "es": "Haz un pastel."
+        }
+    },
+    {
+        "front": "male",
+        "back": "masculino",
+        "exampleSentences": {
+            "en": "Male or female?",
+            "es": "¿Masculino o femenino?"
+        }
+    },
+    {
+        "front": "man",
+        "back": "hombre",
+        "exampleSentences": {
+            "en": "A tall man.",
+            "es": "Un hombre alto."
+        }
+    },
+    {
+        "front": "manage",
+        "back": "gestionar",
+        "exampleSentences": {
+            "en": "Manage your time.",
+            "es": "Gestiona tu tiempo."
+        }
+    },
+    {
+        "front": "management",
+        "back": "administración",
+        "exampleSentences": {
+            "en": "Good management.",
+            "es": "Buena administración."
+        }
+    },
+    {
+        "front": "manager",
+        "back": "gerente",
+        "exampleSentences": {
+            "en": "The project manager.",
+            "es": "El gerente del proyecto."
+        }
+    },
+    {
+        "front": "many",
+        "back": "muchos",
+        "exampleSentences": {
+            "en": "Many people.",
+            "es": "Mucha gente."
+        }
+    },
+    {
+        "front": "mark",
+        "back": "marca",
+        "exampleSentences": {
+            "en": "Make a mark.",
+            "es": "Haz una marca."
+        }
+    },
+    {
+        "front": "market",
+        "back": "mercado",
+        "exampleSentences": {
+            "en": "Go to the market.",
+            "es": "Ve al mercado."
+        }
+    },
+    {
+        "front": "marry",
+        "back": "casar",
+        "exampleSentences": {
+            "en": "Will you marry me?",
+            "es": "¿Te casarías conmigo?"
+        }
+    },
+    {
+        "front": "match",
+        "back": "partido",
+        "exampleSentences": {
+            "en": "A perfect match.",
+            "es": "Una combinación perfecta."
+        }
+    },
+    {
+        "front": "material",
+        "back": "material",
+        "exampleSentences": {
+            "en": "Building material.",
+            "es": "Material de construcción."
+        }
+    },
+    {
+        "front": "matter",
+        "back": "importar",
+        "exampleSentences": {
+            "en": "It doesn't matter.",
+            "es": "No importa."
+        }
+    },
+    {
+        "front": "may",
+        "back": "mayo",
+        "exampleSentences": {
+            "en": "May I help you?",
+            "es": "¿Puedo ayudarte?"
+        }
+    },
+    {
+        "front": "maybe",
+        "back": "tal vez",
+        "exampleSentences": {
+            "en": "Maybe tomorrow.",
+            "es": "Tal vez mañana."
+        }
+    },
+    {
+        "front": "mean",
+        "back": "media",
+        "exampleSentences": {
+            "en": "What do you mean?",
+            "es": "¿Qué quieres decir?"
+        }
+    },
+    {
+        "front": "measure",
+        "back": "medida",
+        "exampleSentences": {
+            "en": "Take a measure.",
+            "es": "Toma una medida."
+        }
+    },
+    {
+        "front": "medium",
+        "back": "medio",
+        "exampleSentences": {
+            "en": "Medium size.",
+            "es": "Tamaño medio."
+        }
+    },
+    {
+        "front": "meet",
+        "back": "reunirse",
+        "exampleSentences": {
+            "en": "Meet me there.",
+            "es": "Encuéntrame allí."
+        }
+    },
+    {
+        "front": "member",
+        "back": "miembro",
+        "exampleSentences": {
+            "en": "A team member.",
+            "es": "Un miembro del equipo."
+        }
+    },
+    {
+        "front": "memory",
+        "back": "memoria",
+        "exampleSentences": {
+            "en": "Good memory.",
+            "es": "Buena memoria."
+        }
+    },
+    {
+        "front": "mention",
+        "back": "mencionar",
+        "exampleSentences": {
+            "en": "Don't mention it.",
+            "es": "No lo menciones."
+        }
+    },
+    {
+        "front": "message",
+        "back": "mensaje",
+        "exampleSentences": {
+            "en": "Send a message.",
+            "es": "Envía un mensaje."
+        }
+    },
+    {
+        "front": "method",
+        "back": "método",
+        "exampleSentences": {
+            "en": "A new method.",
+            "es": "Un nuevo método."
+        }
+    },
+    {
+        "front": "middle",
+        "back": "medio",
+        "exampleSentences": {
+            "en": "In the middle.",
+            "es": "En el medio."
+        }
+    },
+    {
+        "front": "might",
+        "back": "podría",
+        "exampleSentences": {
+            "en": "It might rain.",
+            "es": "Podría llover."
+        }
+    },
+    {
+        "front": "mile",
+        "back": "milla",
+        "exampleSentences": {
+            "en": "One mile.",
+            "es": "Una milla."
+        }
+    },
+    {
+        "front": "military",
+        "back": "militar",
+        "exampleSentences": {
+            "en": "Military service.",
+            "es": "Servicio militar."
+        }
+    },
+    {
+        "front": "mind",
+        "back": "mente",
+        "exampleSentences": {
+            "en": "Keep in mind.",
+            "es": "Ten en mente."
+        }
+    },
+    {
+        "front": "mine",
+        "back": "mía",
+        "exampleSentences": {
+            "en": "That's mine.",
+            "es": "Eso es mío."
+        }
+    },
+    {
+        "front": "minute",
+        "back": "minuto",
+        "exampleSentences": {
+            "en": "Wait a minute.",
+            "es": "Espera un minuto."
+        }
+    },
+    {
+        "front": "miss",
+        "back": "perder",
+        "exampleSentences": {
+            "en": "I miss you.",
+            "es": "Te extraño."
+        }
+    },
+    {
+        "front": "model",
+        "back": "modelo",
+        "exampleSentences": {
+            "en": "A role model.",
+            "es": "Un modelo a seguir."
+        }
+    },
+    {
+        "front": "modern",
+        "back": "moderno",
+        "exampleSentences": {
+            "en": "Modern art.",
+            "es": "Arte moderno."
+        }
+    },
+    {
+        "front": "moment",
+        "back": "momento",
+        "exampleSentences": {
+            "en": "Just a moment.",
+            "es": "Solo un momento."
+        }
+    },
+    {
+        "front": "money",
+        "back": "dinero",
+        "exampleSentences": {
+            "en": "Save money.",
+            "es": "Ahorra dinero."
+        }
+    },
+    {
+        "front": "month",
+        "back": "mes",
+        "exampleSentences": {
+            "en": "Next month.",
+            "es": "El próximo mes."
+        }
+    },
+    {
+        "front": "more",
+        "back": "más",
+        "exampleSentences": {
+            "en": "More information.",
+            "es": "Más información."
+        }
+    },
+    {
+        "front": "morning",
+        "back": "mañana",
+        "exampleSentences": {
+            "en": "Good morning!",
+            "es": "¡Buenos días!"
+        }
+    },
+    {
+        "front": "most",
+        "back": "más",
+        "exampleSentences": {
+            "en": "Most people.",
+            "es": "La mayoría de la gente."
+        }
+    },
+    {
+        "front": "mother",
+        "back": "madre",
+        "exampleSentences": {
+            "en": "My mother is kind.",
+            "es": "Mi madre es amable."
+        }
+    },
+    {
+        "front": "move",
+        "back": "movimiento",
+        "exampleSentences": {
+            "en": "Move forward.",
+            "es": "Muévete hacia adelante."
+        }
+    },
+    {
+        "front": "movement",
+        "back": "movimiento",
+        "exampleSentences": {
+            "en": "Social movement.",
+            "es": "Movimiento social."
+        }
+    },
+    {
+        "front": "movie",
+        "back": "película",
+        "exampleSentences": {
+            "en": "Watch a movie.",
+            "es": "Mira una película."
+        }
+    },
+    {
+        "front": "much",
+        "back": "mucho",
+        "exampleSentences": {
+            "en": "Too much.",
+            "es": "Demasiado."
+        }
+    },
+    {
+        "front": "music",
+        "back": "música",
+        "exampleSentences": {
+            "en": "Listen to music.",
+            "es": "Escucha música."
+        }
+    },
+    {
+        "front": "must",
+        "back": "debe",
+        "exampleSentences": {
+            "en": "You must go.",
+            "es": "Debes ir."
+        }
+    },
+    {
+        "front": "myself",
+        "back": "mí mismo",
+        "exampleSentences": {
+            "en": "I did it myself.",
+            "es": "Lo hice yo mismo."
+        }
+    },
+    {
+        "front": "name",
+        "back": "nombre",
+        "exampleSentences": {
+            "en": "What is your name?",
+            "es": "¿Cuál es tu nombre?"
+        }
+    },
+    {
+        "front": "nation",
+        "back": "nación",
+        "exampleSentences": {
+            "en": "A proud nation.",
+            "es": "Una nación orgullosa."
+        }
+    },
+    {
+        "front": "national",
+        "back": "nacional",
+        "exampleSentences": {
+            "en": "National park.",
+            "es": "Parque nacional."
+        }
+    },
+    {
+        "front": "natural",
+        "back": "natural",
+        "exampleSentences": {
+            "en": "Natural beauty.",
+            "es": "Belleza natural."
+        }
+    },
+    {
+        "front": "nature",
+        "back": "naturaleza",
+        "exampleSentences": {
+            "en": "Love nature.",
+            "es": "Ama la naturaleza."
+        }
+    },
+    {
+        "front": "near",
+        "back": "cerca",
+        "exampleSentences": {
+            "en": "Near the river.",
+            "es": "Cerca del río."
+        }
+    },
+    {
+        "front": "nearly",
+        "back": "casi",
+        "exampleSentences": {
+            "en": "Nearly finished.",
+            "es": "Casi terminado."
+        }
+    },
+    {
+        "front": "necessary",
+        "back": "necesario",
+        "exampleSentences": {
+            "en": "It's necessary.",
+            "es": "Es necesario."
+        }
+    },
+    {
+        "front": "need",
+        "back": "necesitar",
+        "exampleSentences": {
+            "en": "I need help.",
+            "es": "Necesito ayuda."
+        }
+    },
+    {
+        "front": "network",
+        "back": "red",
+        "exampleSentences": {
+            "en": "Social network.",
+            "es": "Red social."
+        }
+    },
+    {
+        "front": "never",
+        "back": "nunca",
+        "exampleSentences": {
+            "en": "Never give up.",
+            "es": "Nunca te rindas."
+        }
+    },
+    {
+        "front": "new",
+        "back": "nuevo",
+        "exampleSentences": {
+            "en": "A new car.",
+            "es": "Un coche nuevo."
+        }
+    },
+    {
+        "front": "news",
+        "back": "noticias",
+        "exampleSentences": {
+            "en": "Read the news.",
+            "es": "Lee las noticias."
+        }
+    },
+    {
+        "front": "newspaper",
+        "back": "periódico",
+        "exampleSentences": {
+            "en": "Buy a newspaper.",
+            "es": "Compra un periódico."
+        }
+    },
+    {
+        "front": "next",
+        "back": "siguiente",
+        "exampleSentences": {
+            "en": "Next time.",
+            "es": "La próxima vez."
+        }
+    },
+    {
+        "front": "nice",
+        "back": "agradable",
+        "exampleSentences": {
+            "en": "Nice to meet you.",
+            "es": "Encantado de conocerte."
+        }
+    },
+    {
+        "front": "night",
+        "back": "noche",
+        "exampleSentences": {
+            "en": "Good night!",
+            "es": "¡Buenas noches!"
+        }
+    },
+    {
+        "front": "no",
+        "back": "no",
+        "exampleSentences": {
+            "en": "No, thank you.",
+            "es": "No, gracias."
+        }
+    },
+    {
+        "front": "nor",
+        "back": "ni",
+        "exampleSentences": {
+            "en": "Neither good nor bad.",
+            "es": "Ni bueno ni malo."
+        }
+    },
+    {
+        "front": "normal",
+        "back": "normal",
+        "exampleSentences": {
+            "en": "It's normal.",
+            "es": "Es normal."
+        }
+    },
+    {
+        "front": "not",
+        "back": "no",
+        "exampleSentences": {
+            "en": "Not now.",
+            "es": "Ahora no."
+        }
+    },
+    {
+        "front": "note",
+        "back": "nota",
+        "exampleSentences": {
+            "en": "Take a note.",
+            "es": "Toma una nota."
+        }
+    },
+    {
+        "front": "nothing",
+        "back": "nada",
+        "exampleSentences": {
+            "en": "Nothing to do.",
+            "es": "Nada que hacer."
+        }
+    },
+    {
+        "front": "notice",
+        "back": "darse cuenta",
+        "exampleSentences": {
+            "en": "Did you notice?",
+            "es": "¿Te diste cuenta?"
+        }
+    },
+    {
+        "front": "now",
+        "back": "ahora",
+        "exampleSentences": {
+            "en": "Do it now.",
+            "es": "Hazlo ahora."
+        }
+    },
+    {
+        "front": "number",
+        "back": "número",
+        "exampleSentences": {
+            "en": "What is your number?",
+            "es": "¿Cuál es tu número?"
+        }
+    },
+    {
+        "front": "object",
+        "back": "objeto",
+        "exampleSentences": {
+            "en": "A strange object.",
+            "es": "Un objeto extraño."
+        }
+    },
+    {
+        "front": "obviously",
+        "back": "obviamente",
+        "exampleSentences": {
+            "en": "Obviously, it's true.",
+            "es": "Obviamente, es verdad."
+        }
+    },
+    {
+        "front": "occur",
+        "back": "ocurrir",
+        "exampleSentences": {
+            "en": "It will occur soon.",
+            "es": "Ocurrirá pronto."
+        }
+    },
+    {
+        "front": "of",
+        "back": "de",
+        "exampleSentences": {
+            "en": "A cup of coffee.",
+            "es": "Una taza de café."
+        }
+    },
+    {
+        "front": "off",
+        "back": "apagado",
+        "exampleSentences": {
+            "en": "Turn off the light.",
+            "es": "Apaga la luz."
+        }
+    },
+    {
+        "front": "offer",
+        "back": "oferta",
+        "exampleSentences": {
+            "en": "Make an offer.",
+            "es": "Haz una oferta."
+        }
+    },
+    {
+        "front": "office",
+        "back": "oficina",
+        "exampleSentences": {
+            "en": "Go to the office.",
+            "es": "Ve a la oficina."
+        }
+    },
+    {
+        "front": "officer",
+        "back": "oficial",
+        "exampleSentences": {
+            "en": "Police officer.",
+            "es": "Oficial de policía."
+        }
+    },
+    {
+        "front": "official",
+        "back": "oficial",
+        "exampleSentences": {
+            "en": "Official document.",
+            "es": "Documento oficial."
+        }
+    },
+    {
+        "front": "often",
+        "back": "a menudo",
+        "exampleSentences": {
+            "en": "I often read books.",
+            "es": "A menudo leo libros."
+        }
+    },
+    {
+        "front": "oil",
+        "back": "petróleo",
+        "exampleSentences": {
+            "en": "Olive oil.",
+            "es": "Aceite de oliva."
+        }
+    },
+    {
+        "front": "okay",
+        "back": "bueno",
+        "exampleSentences": {
+            "en": "Okay, let's go.",
+            "es": "Bueno, vámonos."
+        }
+    },
+    {
+        "front": "old",
+        "back": "antiguo",
+        "exampleSentences": {
+            "en": "How old are you?",
+            "es": "¿Cuántos años tienes?"
+        }
+    },
+    {
+        "front": "on",
+        "back": "en",
+        "exampleSentences": {
+            "en": "On the table.",
+            "es": "En la mesa."
+        }
+    },
+    {
+        "front": "once",
+        "back": "una vez",
+        "exampleSentences": {
+            "en": "Once upon a time.",
+            "es": "Érase una vez."
+        }
+    },
+    {
+        "front": "one",
+        "back": "uno",
+        "exampleSentences": {
+            "en": "One more time.",
+            "es": "Una vez más."
+        }
+    },
+    {
+        "front": "only",
+        "back": "solamente",
+        "exampleSentences": {
+            "en": "Only you.",
+            "es": "Solo tú."
+        }
+    },
+    {
+        "front": "open",
+        "back": "abierto",
+        "exampleSentences": {
+            "en": "Open the window.",
+            "es": "Abre la ventana."
+        }
+    },
+    {
+        "front": "operate",
+        "back": "funcionar",
+        "exampleSentences": {
+            "en": "Operate the machine.",
+            "es": "Haz funcionar la máquina."
+        }
+    },
+    {
+        "front": "operation",
+        "back": "operación",
+        "exampleSentences": {
+            "en": "A complex operation.",
+            "es": "Una operación compleja."
+        }
+    },
+    {
+        "front": "opinion",
+        "back": "opinión",
+        "exampleSentences": {
+            "en": "What's your opinion?",
+            "es": "¿Cuál es tu opinión?"
+        }
+    },
+    {
+        "front": "opportunity",
+        "back": "oportunidad",
+        "exampleSentences": {
+            "en": "Seize the opportunity.",
+            "es": "Aprovecha la oportunidad."
+        }
+    },
+    {
+        "front": "option",
+        "back": "opción",
+        "exampleSentences": {
+            "en": "Choose an option.",
+            "es": "Elige una opción."
+        }
+    },
+    {
+        "front": "or",
+        "back": "o",
+        "exampleSentences": {
+            "en": "Coffee or tea?",
+            "es": "¿Café o té?"
+        }
+    },
+    {
+        "front": "order",
+        "back": "orden",
+        "exampleSentences": {
+            "en": "In order to.",
+            "es": "Para."
+        }
+    },
+    {
+        "front": "organization",
+        "back": "organización",
+        "exampleSentences": {
+            "en": "A non-profit organization.",
+            "es": "Una organización sin fines de lucro."
+        }
+    },
+    {
+        "front": "organize",
+        "back": "organizar",
+        "exampleSentences": {
+            "en": "Organize your files.",
+            "es": "Organiza tus archivos."
+        }
+    },
+    {
+        "front": "original",
+        "back": "original",
+        "exampleSentences": {
+            "en": "Original idea.",
+            "es": "Idea original."
+        }
+    },
+    {
+        "front": "other",
+        "back": "otro",
+        "exampleSentences": {
+            "en": "Other people.",
+            "es": "Otras personas."
+        }
+    },
+    {
+        "front": "out",
+        "back": "afuera",
+        "exampleSentences": {
+            "en": "Go out.",
+            "es": "Sal."
+        }
+    },
+    {
+        "front": "outside",
+        "back": "exterior",
+        "exampleSentences": {
+            "en": "Outside the house.",
+            "es": "Fuera de la casa."
+        }
+    },
+    {
+        "front": "over",
+        "back": "terminado",
+        "exampleSentences": {
+            "en": "It's over.",
+            "es": "Se acabó."
+        }
+    },
+    {
+        "front": "own",
+        "back": "propio",
+        "exampleSentences": {
+            "en": "My own car.",
+            "es": "Mi propio coche."
+        }
+    },
+    {
+        "front": "page",
+        "back": "página",
+        "exampleSentences": {
+            "en": "Turn the page.",
+            "es": "Pasa la página."
+        }
+    },
+    {
+        "front": "paint",
+        "back": "pintar",
+        "exampleSentences": {
+            "en": "Paint a picture.",
+            "es": "Pinta un cuadro."
+        }
+    },
+    {
+        "front": "paper",
+        "back": "papel",
+        "exampleSentences": {
+            "en": "Write on paper.",
+            "es": "Escribe en papel."
+        }
+    },
+    {
+        "front": "parent",
+        "back": "padre",
+        "exampleSentences": {
+            "en": "My parents.",
+            "es": "Mis padres."
+        }
+    },
+    {
+        "front": "park",
+        "back": "parque",
+        "exampleSentences": {
+            "en": "Go to the park.",
+            "es": "Ve al parque."
+        }
+    },
+    {
+        "front": "part",
+        "back": "parte",
+        "exampleSentences": {
+            "en": "A small part.",
+            "es": "Una pequeña parte."
+        }
+    },
+    {
+        "front": "particular",
+        "back": "especial",
+        "exampleSentences": {
+            "en": "In particular.",
+            "es": "En particular."
+        }
+    },
+    {
+        "front": "particularly",
+        "back": "particularmente",
+        "exampleSentences": {
+            "en": "Particularly interesting.",
+            "es": "Particularmente interesante."
+        }
+    },
+    {
+        "front": "party",
+        "back": "partido",
+        "exampleSentences": {
+            "en": "Have a party.",
+            "es": "Haz una fiesta."
+        }
+    },
+    {
+        "front": "pass",
+        "back": "pasar",
+        "exampleSentences": {
+            "en": "Pass the salt.",
+            "es": "Pasa la sal."
+        }
+    },
+    {
+        "front": "past",
+        "back": "pasado",
+        "exampleSentences": {
+            "en": "In the past.",
+            "es": "En el pasado."
+        }
+    },
+    {
+        "front": "patient",
+        "back": "paciente",
+        "exampleSentences": {
+            "en": "Be patient.",
+            "es": "Sé paciente."
+        }
+    },
+    {
+        "front": "pattern",
+        "back": "modelo",
+        "exampleSentences": {
+            "en": "A repeating pattern.",
+            "es": "Un modelo que se repite."
+        }
+    },
+    {
+        "front": "pause",
+        "back": "pausa",
+        "exampleSentences": {
+            "en": "Take a pause.",
+            "es": "Toma una pausa."
+        }
+    },
+    {
+        "front": "pay",
+        "back": "paga",
+        "exampleSentences": {
+            "en": "Pay attention.",
+            "es": "Presta atención."
+        }
+    },
+    {
+        "front": "people",
+        "back": "gente",
+        "exampleSentences": {
+            "en": "Many people.",
+            "es": "Mucha gente."
+        }
+    },
+    {
+        "front": "per",
+        "back": "por",
+        "exampleSentences": {
+            "en": "Per hour.",
+            "es": "Por hora."
+        }
+    },
+    {
+        "front": "percent",
+        "back": "por ciento",
+        "exampleSentences": {
+            "en": "Ten percent.",
+            "es": "Diez por ciento."
+        }
+    },
+    {
+        "front": "perform",
+        "back": "realizar",
+        "exampleSentences": {
+            "en": "Perform a task.",
+            "es": "Realiza una tarea."
+        }
+    },
+    {
+        "front": "performance",
+        "back": "actuación",
+        "exampleSentences": {
+            "en": "Good performance.",
+            "es": "Buena actuación."
+        }
+    },
+    {
+        "front": "perhaps",
+        "back": "quizás",
+        "exampleSentences": {
+            "en": "Perhaps tomorrow.",
+            "es": "Quizás mañana."
+        }
+    },
+    {
+        "front": "period",
+        "back": "período",
+        "exampleSentences": {
+            "en": "A long period.",
+            "es": "Un período largo."
+        }
+    },
+    {
+        "front": "person",
+        "back": "persona",
+        "exampleSentences": {
+            "en": "A good person.",
+            "es": "Una buena persona."
+        }
+    },
+    {
+        "front": "personal",
+        "back": "personal",
+        "exampleSentences": {
+            "en": "Personal opinion.",
+            "es": "Opinión personal."
+        }
+    },
+    {
+        "front": "phone",
+        "back": "teléfono",
+        "exampleSentences": {
+            "en": "Call me on the phone.",
+            "es": "Llámame por teléfono."
+        }
+    },
+    {
+        "front": "pick",
+        "back": "recoger",
+        "exampleSentences": {
+            "en": "Pick a card.",
+            "es": "Elige una tarjeta."
+        }
+    },
+    {
+        "front": "picture",
+        "back": "imagen",
+        "exampleSentences": {
+            "en": "Take a picture.",
+            "es": "Toma una imagen."
+        }
+    },
+    {
+        "front": "piece",
+        "back": "trozo",
+        "exampleSentences": {
+            "en": "A piece of cake.",
+            "es": "Un trozo de pastel."
+        }
+    },
+    {
+        "front": "place",
+        "back": "lugar",
+        "exampleSentences": {
+            "en": "This is a nice place.",
+            "es": "Este es un buen lugar."
+        }
+    },
+    {
+        "front": "plan",
+        "back": "plan",
+        "exampleSentences": {
+            "en": "Make a plan.",
+            "es": "Haz un plan."
+        }
+    },
+    {
+        "front": "plant",
+        "back": "planta",
+        "exampleSentences": {
+            "en": "Water the plant.",
+            "es": "Riega la planta."
+        }
+    },
+    {
+        "front": "play",
+        "back": "jugar",
+        "exampleSentences": {
+            "en": "Let's play a game.",
+            "es": "Vamos a jugar un juego."
+        }
+    },
+    {
+        "front": "player",
+        "back": "jugador",
+        "exampleSentences": {
+            "en": "A good player.",
+            "es": "Un buen jugador."
+        }
+    },
+    {
+        "front": "please",
+        "back": "por favor",
+        "exampleSentences": {
+            "en": "Please help me.",
+            "es": "Por favor, ayúdame."
+        }
+    },
+    {
+        "front": "point",
+        "back": "punto",
+        "exampleSentences": {
+            "en": "What's your point?",
+            "es": "¿Cuál es tu punto?"
+        }
+    },
+    {
+        "front": "police",
+        "back": "policía",
+        "exampleSentences": {
+            "en": "Call the police.",
+            "es": "Llama a la policía."
+        }
+    },
+    {
+        "front": "policy",
+        "back": "política",
+        "exampleSentences": {
+            "en": "Company policy.",
+            "es": "Política de la empresa."
+        }
+    },
+    {
+        "front": "political",
+        "back": "político",
+        "exampleSentences": {
+            "en": "Political issues.",
+            "es": "Cuestiones políticas."
+        }
+    },
+    {
+        "front": "poor",
+        "back": "pobre",
+        "exampleSentences": {
+            "en": "Poor quality.",
+            "es": "Mala calidad."
+        }
+    },
+    {
+        "front": "popular",
+        "back": "popular",
+        "exampleSentences": {
+            "en": "A popular song.",
+            "es": "Una canción popular."
+        }
+    },
+    {
+        "front": "population",
+        "back": "población",
+        "exampleSentences": {
+            "en": "World population.",
+            "es": "Población mundial."
+        }
+    },
+    {
+        "front": "position",
+        "back": "posición",
+        "exampleSentences": {
+            "en": "What is your position?",
+            "es": "¿Cuál es tu posición?"
+        }
+    },
+    {
+        "front": "positive",
+        "back": "positivo",
+        "exampleSentences": {
+            "en": "Stay positive.",
+            "es": "Mantente positivo."
+        }
+    },
+    {
+        "front": "possibility",
+        "back": "posibilidad",
+        "exampleSentences": {
+            "en": "There is a possibility.",
+            "es": "Hay una posibilidad."
+        }
+    },
+    {
+        "front": "possible",
+        "back": "posible",
+        "exampleSentences": {
+            "en": "It's possible.",
+            "es": "Es posible."
+        }
+    },
+    {
+        "front": "post",
+        "back": "enviar",
+        "exampleSentences": {
+            "en": "Post a letter.",
+            "es": "Enviar una carta."
+        }
+    },
+    {
+        "front": "potential",
+        "back": "potencial",
+        "exampleSentences": {
+            "en": "Unlock your potential.",
+            "es": "Desbloquea tu potencial."
+        }
+    },
+    {
+        "front": "pound",
+        "back": "libra",
+        "exampleSentences": {
+            "en": "Five pounds of apples.",
+            "es": "Cinco libras de manzanas."
+        }
+    },
+    {
+        "front": "power",
+        "back": "poder",
+        "exampleSentences": {
+            "en": "Electric power.",
+            "es": "Energía eléctrica."
+        }
+    },
+    {
+        "front": "practice",
+        "back": "práctica",
+        "exampleSentences": {
+            "en": "Practice makes perfect.",
+            "es": "La práctica hace la perfección."
+        }
+    },
+    {
+        "front": "prefer",
+        "back": "preferir",
+        "exampleSentences": {
+            "en": "I prefer coffee.",
+            "es": "Prefiero el café."
+        }
+    },
+    {
+        "front": "prepare",
+        "back": "preparar",
+        "exampleSentences": {
+            "en": "Prepare for the exam.",
+            "es": "Prepárate para el examen."
+        }
+    },
+    {
+        "front": "present",
+        "back": "presente",
+        "exampleSentences": {
+            "en": "A birthday present.",
+            "es": "Un regalo de cumpleaños."
+        }
+    },
+    {
+        "front": "president",
+        "back": "presidente",
+        "exampleSentences": {
+            "en": "The president of the company.",
+            "es": "El presidente de la empresa."
+        }
+    },
+    {
+        "front": "press",
+        "back": "prensa",
+        "exampleSentences": {
+            "en": "Press the button.",
+            "es": "Pulsa el botón."
+        }
+    },
+    {
+        "front": "pressure",
+        "back": "presión",
+        "exampleSentences": {
+            "en": "Under pressure.",
+            "es": "Bajo presión."
+        }
+    },
+    {
+        "front": "pretty",
+        "back": "bonita",
+        "exampleSentences": {
+            "en": "She is pretty.",
+            "es": "Ella es bonita."
+        }
+    },
+    {
+        "front": "previous",
+        "back": "anterior",
+        "exampleSentences": {
+            "en": "Previous experience.",
+            "es": "Experiencia anterior."
+        }
+    },
+    {
+        "front": "price",
+        "back": "precio",
+        "exampleSentences": {
+            "en": "What is the price?",
+            "es": "¿Cuál es el precio?"
+        }
+    },
+    {
+        "front": "private",
+        "back": "privado",
+        "exampleSentences": {
+            "en": "Private property.",
+            "es": "Propiedad privada."
+        }
+    },
+    {
+        "front": "probably",
+        "back": "probablemente",
+        "exampleSentences": {
+            "en": "It will probably rain.",
+            "es": "Probablemente lloverá."
+        }
+    },
+    {
+        "front": "problem",
+        "back": "problema",
+        "exampleSentences": {
+            "en": "Solve the problem.",
+            "es": "Resuelve el problema."
+        }
+    },
+    {
+        "front": "process",
+        "back": "proceso",
+        "exampleSentences": {
+            "en": "The learning process.",
+            "es": "El proceso de aprendizaje."
+        }
+    },
+    {
+        "front": "produce",
+        "back": "Produce",
+        "exampleSentences": {
+            "en": "Produce goods.",
+            "es": "Produce bienes."
+        }
+    },
+    {
+        "front": "product",
+        "back": "producto",
+        "exampleSentences": {
+            "en": "New product.",
+            "es": "Nuevo producto."
+        }
+    },
+    {
+        "front": "production",
+        "back": "producción",
+        "exampleSentences": {
+            "en": "Mass production.",
+            "es": "Producción en masa."
+        }
+    },
+    {
+        "front": "professional",
+        "back": "profesional",
+        "exampleSentences": {
+            "en": "A professional athlete.",
+            "es": "Un atleta profesional."
+        }
+    },
+    {
+        "front": "profit",
+        "back": "lucro",
+        "exampleSentences": {
+            "en": "Make a profit.",
+            "es": "Obtener lucro."
+        }
+    },
+    {
+        "front": "program",
+        "back": "programa",
+        "exampleSentences": {
+            "en": "Computer program.",
+            "es": "Programa de computadora."
+        }
+    },
+    {
+        "front": "project",
+        "back": "proyecto",
+        "exampleSentences": {
+            "en": "A new project.",
+            "es": "Un nuevo proyecto."
+        }
+    },
+    {
+        "front": "promise",
+        "back": "promesa",
+        "exampleSentences": {
+            "en": "Keep your promise.",
+            "es": "Cumple tu promesa."
+        }
+    },
+    {
+        "front": "property",
+        "back": "propiedad",
+        "exampleSentences": {
+            "en": "Private property.",
+            "es": "Propiedad privada."
+        }
+    },
+    {
+        "front": "proposal",
+        "back": "propuesta",
+        "exampleSentences": {
+            "en": "Submit a proposal.",
+            "es": "Presenta una propuesta."
+        }
+    },
+    {
+        "front": "propose",
+        "back": "proponer",
+        "exampleSentences": {
+            "en": "Propose a solution.",
+            "es": "Propón una solución."
+        }
+    },
+    {
+        "front": "protect",
+        "back": "proteger",
+        "exampleSentences": {
+            "en": "Protect the environment.",
+            "es": "Protege el medio ambiente."
+        }
+    },
+    {
+        "front": "prove",
+        "back": "probar",
+        "exampleSentences": {
+            "en": "Prove your point.",
+            "es": "Prueba tu punto."
+        }
+    },
+    {
+        "front": "provide",
+        "back": "proporcionar",
+        "exampleSentences": {
+            "en": "Provide information.",
+            "es": "Proporciona información."
+        }
+    },
+    {
+        "front": "public",
+        "back": "público",
+        "exampleSentences": {
+            "en": "Public opinion.",
+            "es": "Opinión pública."
+        }
+    },
+    {
+        "front": "pull",
+        "back": "halar",
+        "exampleSentences": {
+            "en": "Pull the door.",
+            "es": "Hala la puerta."
+        }
+    },
+    {
+        "front": "purchase",
+        "back": "comprar",
+        "exampleSentences": {
+            "en": "Make a purchase.",
+            "es": "Haz una compra."
+        }
+    },
+    {
+        "front": "purpose",
+        "back": "propósito",
+        "exampleSentences": {
+            "en": "What is your purpose?",
+            "es": "¿Cuál es tu propósito?"
+        }
+    },
+    {
+        "front": "push",
+        "back": "empujar",
+        "exampleSentences": {
+            "en": "Push the button.",
+            "es": "Empuja el botón."
+        }
+    },
+    {
+        "front": "put",
+        "back": "poner",
+        "exampleSentences": {
+            "en": "Put it here.",
+            "es": "Ponlo aquí."
+        }
+    },
+    {
+        "front": "quality",
+        "back": "calidad",
+        "exampleSentences": {
+            "en": "Good quality.",
+            "es": "Buena calidad."
+        }
+    },
+    {
+        "front": "quarter",
+        "back": "trimestre",
+        "exampleSentences": {
+            "en": "A quarter of an hour.",
+            "es": "Un cuarto de hora."
+        }
+    },
+    {
+        "front": "question",
+        "back": "pregunta",
+        "exampleSentences": {
+            "en": "Ask a question.",
+            "es": "Haz una pregunta."
+        }
+    },
+    {
+        "front": "quickly",
+        "back": "con rapidez",
+        "exampleSentences": {
+            "en": "Do it quickly.",
+            "es": "Hazlo con rapidez."
+        }
+    },
+    {
+        "front": "quite",
+        "back": "bastante",
+        "exampleSentences": {
+            "en": "Quite good.",
+            "es": "Bastante bueno."
+        }
+    },
+    {
+        "front": "race",
+        "back": "carrera",
+        "exampleSentences": {
+            "en": "A car race.",
+            "es": "Una carrera de coches."
+        }
+    },
+    {
+        "front": "raise",
+        "back": "aumento",
+        "exampleSentences": {
+            "en": "Raise your hand.",
+            "es": "Levanta la mano."
+        }
+    },
+    {
+        "front": "range",
+        "back": "distancia",
+        "exampleSentences": {
+            "en": "A wide range.",
+            "es": "Un amplio rango."
+        }
+    },
+    {
+        "front": "rate",
+        "back": "tarifa",
+        "exampleSentences": {
+            "en": "The exchange rate.",
+            "es": "La tasa de cambio."
+        }
+    },
+    {
+        "front": "rather",
+        "back": "más bien",
+        "exampleSentences": {
+            "en": "Rather than that.",
+            "es": "Más bien que eso."
+        }
+    },
+    {
+        "front": "reach",
+        "back": "alcanzar",
+        "exampleSentences": {
+            "en": "Reach your goals.",
+            "es": "Alcanza tus metas."
+        }
+    },
+    {
+        "front": "read",
+        "back": "leer",
+        "exampleSentences": {
+            "en": "Read a book.",
+            "es": "Lee un libro."
+        }
+    },
+    {
+        "front": "ready",
+        "back": "listo",
+        "exampleSentences": {
+            "en": "Are you ready?",
+            "es": "¿Estás listo?"
+        }
+    },
+    {
+        "front": "real",
+        "back": "real",
+        "exampleSentences": {
+            "en": "Real life.",
+            "es": "Vida real."
+        }
+    },
+    {
+        "front": "realize",
+        "back": "darse cuenta de",
+        "exampleSentences": {
+            "en": "Realize your dreams.",
+            "es": "Darse cuenta de tus sueños."
+        }
+    },
+    {
+        "front": "really",
+        "back": "De Verdad",
+        "exampleSentences": {
+            "en": "Really good.",
+            "es": "De Verdad bueno."
+        }
+    },
+    {
+        "front": "reason",
+        "back": "razón",
+        "exampleSentences": {
+            "en": "What is the reason?",
+            "es": "¿Cuál es la razón?"
+        }
+    },
+    {
+        "front": "receive",
+        "back": "recibir",
+        "exampleSentences": {
+            "en": "Receive a gift.",
+            "es": "Recibe un regalo."
+        }
+    },
+    {
+        "front": "recent",
+        "back": "reciente",
+        "exampleSentences": {
+            "en": "Recent news.",
+            "es": "Noticias recientes."
+        }
+    },
+    {
+        "front": "recently",
+        "back": "recientemente",
+        "exampleSentences": {
+            "en": "I recently moved.",
+            "es": "Me mudé recientemente."
+        }
+    },
+    {
+        "front": "recognize",
+        "back": "reconocer",
+        "exampleSentences": {
+            "en": "Recognize the face.",
+            "es": "Reconoce la cara."
+        }
+    },
+    {
+        "front": "record",
+        "back": "grabar",
+        "exampleSentences": {
+            "en": "Record a song.",
+            "es": "Graba una canción."
+        }
+    },
+    {
+        "front": "red",
+        "back": "rojo",
+        "exampleSentences": {
+            "en": "A red car.",
+            "es": "Un coche rojo."
+        }
+    },
+    {
+        "front": "reduce",
+        "back": "reducir",
+        "exampleSentences": {
+            "en": "Reduce waste.",
+            "es": "Reduce los residuos."
+        }
+    },
+    {
+        "front": "refer",
+        "back": "referir",
+        "exampleSentences": {
+            "en": "Refer to the document.",
+            "es": "Refiérete al documento."
+        }
+    },
+    {
+        "front": "reference",
+        "back": "referencia",
+        "exampleSentences": {
+            "en": "For your reference.",
+            "es": "Para tu referencia."
+        }
+    },
+    {
+        "front": "reflect",
+        "back": "reflejar",
+        "exampleSentences": {
+            "en": "Reflect on your actions.",
+            "es": "Reflexiona sobre tus acciones."
+        }
+    },
+    {
+        "front": "regard",
+        "back": "considerar",
+        "exampleSentences": {
+            "en": "With regard to.",
+            "es": "Con respecto a."
+        }
+    },
+    {
+        "front": "region",
+        "back": "región",
+        "exampleSentences": {
+            "en": "A beautiful region.",
+            "es": "Una región hermosa."
+        }
+    },
+    {
+        "front": "relate",
+        "back": "relacionar",
+        "exampleSentences": {
+            "en": "Relate to others.",
+            "es": "Relacionarse con los demás."
+        }
+    },
+    {
+        "front": "relation",
+        "back": "relación",
+        "exampleSentences": {
+            "en": "Family relation.",
+            "es": "Relación familiar."
+        }
+    },
+    {
+        "front": "relationship",
+        "back": "relación",
+        "exampleSentences": {
+            "en": "A healthy relationship.",
+            "es": "Una relación saludable."
+        }
+    },
+    {
+        "front": "release",
+        "back": "lanzamiento",
+        "exampleSentences": {
+            "en": "Release the new product.",
+            "es": "Lanza el nuevo producto."
+        }
+    },
+    {
+        "front": "remain",
+        "back": "permanecer",
+        "exampleSentences": {
+            "en": "Remain calm.",
+            "es": "Permanece en calma."
+        }
+    },
+    {
+        "front": "remember",
+        "back": "recuerda",
+        "exampleSentences": {
+            "en": "Remember my name.",
+            "es": "Recuerda mi nombre."
+        }
+    },
+    {
+        "front": "replace",
+        "back": "Reemplazar",
+        "exampleSentences": {
+            "en": "Replace the old one.",
+            "es": "Reemplaza el viejo."
+        }
+    },
+    {
+        "front": "report",
+        "back": "informe",
+        "exampleSentences": {
+            "en": "Write a report.",
+            "es": "Escribe un informe."
+        }
+    },
+    {
+        "front": "represent",
+        "back": "representar",
+        "exampleSentences": {
+            "en": "Represent your country.",
+            "es": "Representa a tu país."
+        }
+    },
+    {
+        "front": "require",
+        "back": "exigir",
+        "exampleSentences": {
+            "en": "It requires effort.",
+            "es": "Requiere esfuerzo."
+        }
+    },
+    {
+        "front": "research",
+        "back": "investigación",
+        "exampleSentences": {
+            "en": "Do some research.",
+            "es": "Haz algo de investigación."
+        }
+    },
+    {
+        "front": "resource",
+        "back": "recurso",
+        "exampleSentences": {
+            "en": "Natural resources.",
+            "es": "Recursos naturales."
+        }
+    },
+    {
+        "front": "respect",
+        "back": "el respeto",
+        "exampleSentences": {
+            "en": "Show respect.",
+            "es": "Muestra el respeto."
+        }
+    },
+    {
+        "front": "response",
+        "back": "respuesta",
+        "exampleSentences": {
+            "en": "Wait for a response.",
+            "es": "Espera una respuesta."
+        }
+    },
+    {
+        "front": "responsibility",
+        "back": "responsabilidad",
+        "exampleSentences": {
+            "en": "Take responsibility.",
+            "es": "Asume la responsabilidad."
+        }
+    },
+    {
+        "front": "rest",
+        "back": "descanso",
+        "exampleSentences": {
+            "en": "Take a rest.",
+            "es": "Toma un descanso."
+        }
+    },
+    {
+        "front": "restaurant",
+        "back": "restaurante",
+        "exampleSentences": {
+            "en": "Go to a restaurant.",
+            "es": "Ve a un restaurante."
+        }
+    },
+    {
+        "front": "result",
+        "back": "resultado",
+        "exampleSentences": {
+            "en": "See the results.",
+            "es": "Mira los resultados."
+        }
+    },
+    {
+        "front": "return",
+        "back": "regreso",
+        "exampleSentences": {
+            "en": "Return home.",
+            "es": "Regresa a casa."
+        }
+    },
+    {
+        "front": "review",
+        "back": "revisión",
+        "exampleSentences": {
+            "en": "Write a review.",
+            "es": "Escribe una revisión."
+        }
+    },
+    {
+        "front": "right",
+        "back": "Correcto",
+        "exampleSentences": {
+            "en": "You are right.",
+            "es": "Tienes razón."
+        }
+    },
+    {
+        "front": "ring",
+        "back": "anillo",
+        "exampleSentences": {
+            "en": "Wear a ring.",
+            "es": "Usa un anillo."
+        }
+    },
+    {
+        "front": "rise",
+        "back": "subir",
+        "exampleSentences": {
+            "en": "The sun will rise.",
+            "es": "El sol saldrá."
+        }
+    },
+    {
+        "front": "risk",
+        "back": "riesgo",
+        "exampleSentences": {
+            "en": "Take a risk.",
+            "es": "Toma un riesgo."
+        }
+    },
+    {
+        "front": "road",
+        "back": "la carretera",
+        "exampleSentences": {
+            "en": "On the road.",
+            "es": "En la carretera."
+        }
+    },
+    {
+        "front": "rock",
+        "back": "rock",
+        "exampleSentences": {
+            "en": "Listen to rock music.",
+            "es": "Escucha música rock."
+        }
+    },
+    {
+        "front": "role",
+        "back": "papel",
+        "exampleSentences": {
+            "en": "Play a role.",
+            "es": "Juega un papel."
+        }
+    },
+    {
+        "front": "room",
+        "back": "habitación",
+        "exampleSentences": {
+            "en": "Clean your room.",
+            "es": "Limpia tu habitación."
+        }
+    },
+    {
+        "front": "round",
+        "back": "redondo",
+        "exampleSentences": {
+            "en": "A round table.",
+            "es": "Una mesa redonda."
+        }
+    },
+    {
+        "front": "rule",
+        "back": "regla",
+        "exampleSentences": {
+            "en": "Follow the rules.",
+            "es": "Sigue las reglas."
+        }
+    },
+    {
+        "front": "run",
+        "back": "correr",
+        "exampleSentences": {
+            "en": "Run fast.",
+            "es": "Corre rápido."
+        }
+    },
+    {
+        "front": "sale",
+        "back": "venta",
+        "exampleSentences": {
+            "en": "For sale.",
+            "es": "En venta."
+        }
+    },
+    {
+        "front": "same",
+        "back": "mismo",
+        "exampleSentences": {
+            "en": "The same thing.",
+            "es": "La misma cosa."
+        }
+    },
+    {
+        "front": "save",
+        "back": "salvar",
+        "exampleSentences": {
+            "en": "Save money.",
+            "es": "Ahorra dinero."
+        }
+    },
+    {
+        "front": "say",
+        "back": "decir",
+        "exampleSentences": {
+            "en": "What did you say?",
+            "es": "¿Qué dijiste?"
+        }
+    },
+    {
+        "front": "school",
+        "back": "colegio",
+        "exampleSentences": {
+            "en": "Go to school.",
+            "es": "Ve a la escuela."
+        }
+    },
+    {
+        "front": "science",
+        "back": "ciencia",
+        "exampleSentences": {
+            "en": "Study science.",
+            "es": "Estudia ciencia."
+        }
+    },
+    {
+        "front": "score",
+        "back": "Puntuación",
+        "exampleSentences": {
+            "en": "What's the score?",
+            "es": "¿Cuál es la Puntuación?"
+        }
+    },
+    {
+        "front": "screen",
+        "back": "pantalla",
+        "exampleSentences": {
+            "en": "Look at the screen.",
+            "es": "Mira la pantalla."
+        }
+    },
+    {
+        "front": "sea",
+        "back": "mar",
+        "exampleSentences": {
+            "en": "Swim in the sea.",
+            "es": "Nada en el mar."
+        }
+    },
+    {
+        "front": "search",
+        "back": "buscar",
+        "exampleSentences": {
+            "en": "Search for information.",
+            "es": "Busca información."
+        }
+    },
+    {
+        "front": "season",
+        "back": "temporada",
+        "exampleSentences": {
+            "en": "The four seasons.",
+            "es": "Las cuatro estaciones."
+        }
+    },
+    {
+        "front": "seat",
+        "back": "asiento",
+        "exampleSentences": {
+            "en": "Take a seat.",
+            "es": "Toma asiento."
+        }
+    },
+    {
+        "front": "second",
+        "back": "segundo",
+        "exampleSentences": {
+            "en": "Wait a second.",
+            "es": "Espera un segundo."
+        }
+    },
+    {
+        "front": "section",
+        "back": "sección",
+        "exampleSentences": {
+            "en": "Read this section.",
+            "es": "Lee esta sección."
+        }
+    },
+    {
+        "front": "security",
+        "back": "seguridad",
+        "exampleSentences": {
+            "en": "Home security.",
+            "es": "Seguridad del hogar."
+        }
+    },
+    {
+        "front": "see",
+        "back": "ver",
+        "exampleSentences": {
+            "en": "I see what you mean.",
+            "es": "Veo lo que quieres decir."
+        }
+    },
+    {
+        "front": "seek",
+        "back": "buscar",
+        "exampleSentences": {
+            "en": "Seek help.",
+            "es": "Busca ayuda."
+        }
+    },
+    {
+        "front": "seem",
+        "back": "parecer",
+        "exampleSentences": {
+            "en": "It seems difficult.",
+            "es": "Parece difícil."
+        }
+    },
+    {
+        "front": "sell",
+        "back": "vender",
+        "exampleSentences": {
+            "en": "Sell your car.",
+            "es": "Vende tu coche."
+        }
+    },
+    {
+        "front": "send",
+        "back": "enviar",
+        "exampleSentences": {
+            "en": "Send a message.",
+            "es": "Envía un mensaje."
+        }
+    },
+    {
+        "front": "sense",
+        "back": "sentido",
+        "exampleSentences": {
+            "en": "Common sense.",
+            "es": "Sentido común."
+        }
+    },
+    {
+        "front": "separate",
+        "back": "separar",
+        "exampleSentences": {
+            "en": "Separate the items.",
+            "es": "Separa los artículos."
+        }
+    },
+    {
+        "front": "series",
+        "back": "serie",
+        "exampleSentences": {
+            "en": "A TV series.",
+            "es": "Una serie de televisión."
+        }
+    },
+    {
+        "front": "serious",
+        "back": "grave",
+        "exampleSentences": {
+            "en": "A serious problem.",
+            "es": "Un problema grave."
+        }
+    },
+    {
+        "front": "serve",
+        "back": "servir",
+        "exampleSentences": {
+            "en": "Serve the food.",
+            "es": "Sirve la comida."
+        }
+    },
+    {
+        "front": "service",
+        "back": "servicio",
+        "exampleSentences": {
+            "en": "Customer service.",
+            "es": "Servicio al cliente."
+        }
+    },
+    {
+        "front": "set",
+        "back": "conjunto",
+        "exampleSentences": {
+            "en": "Set the table.",
+            "es": "Pon la mesa."
+        }
+    },
+    {
+        "front": "several",
+        "back": "varios",
+        "exampleSentences": {
+            "en": "Several times.",
+            "es": "Varias veces."
+        }
+    },
+    {
+        "front": "shall",
+        "back": "deberá",
+        "exampleSentences": {
+            "en": "What shall we do?",
+            "es": "¿Qué deberíamos hacer?"
+        }
+    },
+    {
+        "front": "shape",
+        "back": "forma",
+        "exampleSentences": {
+            "en": "A round shape.",
+            "es": "Una forma redonda."
+        }
+    },
+    {
+        "front": "share",
+        "back": "compartir",
+        "exampleSentences": {
+            "en": "Share your food.",
+            "es": "Comparte tu comida."
+        }
+    },
+    {
+        "front": "she",
+        "back": "ella",
+        "exampleSentences": {
+            "en": "She is my sister.",
+            "es": "Ella es mi hermana."
+        }
+    },
+    {
+        "front": "shop",
+        "back": "tienda",
+        "exampleSentences": {
+            "en": "Go shopping.",
+            "es": "Ir de compras."
+        }
+    },
+    {
+        "front": "short",
+        "back": "corto",
+        "exampleSentences": {
+            "en": "A short story.",
+            "es": "Una historia corta."
+        }
+    },
+    {
+        "front": "should",
+        "back": "debería",
+        "exampleSentences": {
+            "en": "You should go.",
+            "es": "Deberías ir."
+        }
+    },
+    {
+        "front": "show",
+        "back": "espectáculo",
+        "exampleSentences": {
+            "en": "Show me the way.",
+            "es": "Muéstrame el camino."
+        }
+    },
+    {
+        "front": "side",
+        "back": "lado",
+        "exampleSentences": {
+            "en": "On the other side.",
+            "es": "En el otro lado."
+        }
+    },
+    {
+        "front": "sign",
+        "back": "firmar",
+        "exampleSentences": {
+            "en": "Sign here.",
+            "es": "Firma aquí."
+        }
+    },
+    {
+        "front": "significant",
+        "back": "significativo",
+        "exampleSentences": {
+            "en": "A significant change.",
+            "es": "Un cambio significativo."
+        }
+    },
+    {
+        "front": "similar",
+        "back": "similar",
+        "exampleSentences": {
+            "en": "Similar to mine.",
+            "es": "Similar al mío."
+        }
+    },
+    {
+        "front": "simple",
+        "back": "sencillo",
+        "exampleSentences": {
+            "en": "A simple solution.",
+            "es": "Una solución sencilla."
+        }
+    },
+    {
+        "front": "simply",
+        "back": "simplemente",
+        "exampleSentences": {
+            "en": "Simply amazing.",
+            "es": "Simplemente asombroso."
+        }
+    },
+    {
+        "front": "since",
+        "back": "ya que",
+        "exampleSentences": {
+            "en": "Since yesterday.",
+            "es": "Desde ayer."
+        }
+    },
+    {
+        "front": "sing",
+        "back": "canta",
+        "exampleSentences": {
+            "en": "Sing a song.",
+            "es": "Canta una canción."
+        }
+    },
+    {
+        "front": "single",
+        "back": "soltero",
+        "exampleSentences": {
+            "en": "A single person.",
+            "es": "Una sola persona."
+        }
+    },
+    {
+        "front": "sister",
+        "back": "hermana",
+        "exampleSentences": {
+            "en": "My sister is older.",
+            "es": "Mi hermana es mayor."
+        }
+    },
+    {
+        "front": "sit",
+        "back": "sentar",
+        "exampleSentences": {
+            "en": "Sit down.",
+            "es": "Siéntate."
+        }
+    },
+    {
+        "front": "site",
+        "back": "sitio",
+        "exampleSentences": {
+            "en": "Visit the website.",
+            "es": "Visita el sitio web."
+        }
+    },
+    {
+        "front": "situation",
+        "back": "situación",
+        "exampleSentences": {
+            "en": "A difficult situation.",
+            "es": "Una situación difícil."
+        }
+    },
+    {
+        "front": "size",
+        "back": "tamaño",
+        "exampleSentences": {
+            "en": "What size is it?",
+            "es": "¿Qué tamaño es?"
+        }
+    },
+    {
+        "front": "skill",
+        "back": "habilidad",
+        "exampleSentences": {
+            "en": "Develop new skills.",
+            "es": "Desarrolla nuevas habilidades."
+        }
+    },
+    {
+        "front": "sleep",
+        "back": "dormir",
+        "exampleSentences": {
+            "en": "Go to sleep.",
+            "es": "Ir a dormir."
+        }
+    },
+    {
+        "front": "small",
+        "back": "pequeña",
+        "exampleSentences": {
+            "en": "A small house.",
+            "es": "Una casa pequeña."
+        }
+    },
+    {
+        "front": "smile",
+        "back": "sonreír",
+        "exampleSentences": {
+            "en": "Give a smile.",
+            "es": "Sonríe."
+        }
+    },
+    {
+        "front": "so",
+        "back": "entonces",
+        "exampleSentences": {
+            "en": "So, what happened?",
+            "es": "Entonces, ¿qué pasó?"
+        }
+    },
+    {
+        "front": "social",
+        "back": "social",
+        "exampleSentences": {
+            "en": "Social media.",
+            "es": "Redes sociales."
+        }
+    },
+    {
+        "front": "society",
+        "back": "sociedad",
+        "exampleSentences": {
+            "en": "Modern society.",
+            "es": "Sociedad moderna."
+        }
+    },
+    {
+        "front": "solution",
+        "back": "solución",
+        "exampleSentences": {
+            "en": "Find a solution.",
+            "es": "Encuentra una solución."
+        }
+    },
+    {
+        "front": "some",
+        "back": "algunos",
+        "exampleSentences": {
+            "en": "Some people.",
+            "es": "Algunas personas."
+        }
+    },
+    {
+        "front": "somebody",
+        "back": "alguien",
+        "exampleSentences": {
+            "en": "Somebody is here.",
+            "es": "Alguien está aquí."
+        }
+    },
+    {
+        "front": "someone",
+        "back": "alguien",
+        "exampleSentences": {
+            "en": "Someone is calling.",
+            "es": "Alguien está llamando."
+        }
+    },
+    {
+        "front": "something",
+        "back": "alguna cosa",
+        "exampleSentences": {
+            "en": "Something new.",
+            "es": "Algo nuevo."
+        }
+    },
+    {
+        "front": "sometimes",
+        "back": "algunas veces",
+        "exampleSentences": {
+            "en": "Sometimes I go.",
+            "es": "Algunas veces voy."
+        }
+    },
+    {
+        "front": "son",
+        "back": "hijo",
+        "exampleSentences": {
+            "en": "My son is young.",
+            "es": "Mi hijo es joven."
+        }
+    },
+    {
+        "front": "song",
+        "back": "canción",
+        "exampleSentences": {
+            "en": "Sing a song.",
+            "es": "Canta una canción."
+        }
+    },
+    {
+        "front": "soon",
+        "back": "pronto",
+        "exampleSentences": {
+            "en": "See you soon.",
+            "es": "Nos vemos pronto."
+        }
+    },
+    {
+        "front": "sorry",
+        "back": "lo siento",
+        "exampleSentences": {
+            "en": "I am sorry.",
+            "es": "Lo siento."
+        }
+    },
+    {
+        "front": "sort",
+        "back": "ordenar",
+        "exampleSentences": {
+            "en": "Sort the items.",
+            "es": "Ordena los artículos."
+        }
+    },
+    {
+        "front": "sound",
+        "back": "sonar",
+        "exampleSentences": {
+            "en": "What's that sound?",
+            "es": "¿Qué es ese sonido?"
+        }
+    },
+    {
+        "front": "source",
+        "back": "fuente",
+        "exampleSentences": {
+            "en": "Information source.",
+            "es": "Fuente de información."
+        }
+    },
+    {
+        "front": "space",
+        "back": "espacio",
+        "exampleSentences": {
+            "en": "Outer space.",
+            "es": "Espacio exterior."
+        }
+    },
+    {
+        "front": "speak",
+        "back": "hablar",
+        "exampleSentences": {
+            "en": "Speak English.",
+            "es": "Habla inglés."
+        }
+    },
+    {
+        "front": "special",
+        "back": "especial",
+        "exampleSentences": {
+            "en": "A special day.",
+            "es": "Un día especial."
+        }
+    },
+    {
+        "front": "specific",
+        "back": "específico",
+        "exampleSentences": {
+            "en": "Be specific.",
+            "es": "Sé específico."
+        }
+    },
+    {
+        "front": "speech",
+        "back": "habla",
+        "exampleSentences": {
+            "en": "Give a speech.",
+            "es": "Da un discurso."
+        }
+    },
+    {
+        "front": "spend",
+        "back": "gastar",
+        "exampleSentences": {
+            "en": "Spend money.",
+            "es": "Gasta dinero."
+        }
+    },
+    {
+        "front": "sport",
+        "back": "deporte",
+        "exampleSentences": {
+            "en": "Play a sport.",
+            "es": "Practica un deporte."
+        }
+    },
+    {
+        "front": "staff",
+        "back": "personal",
+        "exampleSentences": {
+            "en": "The hospital staff.",
+            "es": "El personal del hospital."
+        }
+    },
+    {
+        "front": "stage",
+        "back": "escenario",
+        "exampleSentences": {
+            "en": "On the stage.",
+            "es": "En el escenario."
+        }
+    },
+    {
+        "front": "stand",
+        "back": "estar",
+        "exampleSentences": {
+            "en": "Stand up.",
+            "es": "Ponte de pie."
+        }
+    },
+    {
+        "front": "standard",
+        "back": "estándar",
+        "exampleSentences": {
+            "en": "High standard.",
+            "es": "Alto estándar."
+        }
+    },
+    {
+        "front": "star",
+        "back": "estrella",
+        "exampleSentences": {
+            "en": "A bright star.",
+            "es": "Una estrella brillante."
+        }
+    },
+    {
+        "front": "start",
+        "back": "comienzo",
+        "exampleSentences": {
+            "en": "Start now.",
+            "es": "Empieza ahora."
+        }
+    },
+    {
+        "front": "state",
+        "back": "estado",
+        "exampleSentences": {
+            "en": "The state of the economy.",
+            "es": "El estado de la economía."
+        }
+    },
+    {
+        "front": "statement",
+        "back": "declaración",
+        "exampleSentences": {
+            "en": "Make a statement.",
+            "es": "Haz una declaración."
+        }
+    },
+    {
+        "front": "station",
+        "back": "estación",
+        "exampleSentences": {
+            "en": "Train station.",
+            "es": "Estación de tren."
+        }
+    },
+    {
+        "front": "stay",
+        "back": "permanecer",
+        "exampleSentences": {
+            "en": "Stay here.",
+            "es": "Quédate aquí."
+        }
+    },
+    {
+        "front": "step",
+        "back": "paso",
+        "exampleSentences": {
+            "en": "Take a step.",
+            "es": "Da un paso."
+        }
+    },
+    {
+        "front": "still",
+        "back": "todavía",
+        "exampleSentences": {
+            "en": "Still waiting.",
+            "es": "Todavía esperando."
+        }
+    },
+    {
+        "front": "stock",
+        "back": "valores",
+        "exampleSentences": {
+            "en": "Stock market.",
+            "es": "Mercado de valores."
+        }
+    },
+    {
+        "front": "stop",
+        "back": "detener",
+        "exampleSentences": {
+            "en": "Stop here.",
+            "es": "Detente aquí."
+        }
+    },
+    {
+        "front": "store",
+        "back": "almacenar",
+        "exampleSentences": {
+            "en": "Go to the store.",
+            "es": "Ve a la tienda."
+        }
+    },
+    {
+        "front": "story",
+        "back": "historia",
+        "exampleSentences": {
+            "en": "Tell a story.",
+            "es": "Cuenta una historia."
+        }
+    },
+    {
+        "front": "strategy",
+        "back": "estrategia",
+        "exampleSentences": {
+            "en": "Marketing strategy.",
+            "es": "Estrategia de marketing."
+        }
+    },
+    {
+        "front": "street",
+        "back": "calle",
+        "exampleSentences": {
+            "en": "Walk down the street.",
+            "es": "Camina por la calle."
+        }
+    },
+    {
+        "front": "strike",
+        "back": "Huelga",
+        "exampleSentences": {
+            "en": "Go on strike.",
+            "es": "Ir a la huelga."
+        }
+    },
+    {
+        "front": "strong",
+        "back": "fuerte",
+        "exampleSentences": {
+            "en": "A strong man.",
+            "es": "Un hombre fuerte."
+        }
+    },
+    {
+        "front": "structure",
+        "back": "estructura",
+        "exampleSentences": {
+            "en": "Building structure.",
+            "es": "Estructura del edificio."
+        }
+    },
+    {
+        "front": "student",
+        "back": "estudiante",
+        "exampleSentences": {
+            "en": "A university student.",
+            "es": "Un estudiante universitario."
+        }
+    },
+    {
+        "front": "study",
+        "back": "estudiar",
+        "exampleSentences": {
+            "en": "Study hard.",
+            "es": "Estudia mucho."
+        }
+    },
+    {
+        "front": "stuff",
+        "back": "cosas",
+        "exampleSentences": {
+            "en": "My stuff.",
+            "es": "Mis cosas."
+        }
+    },
+    {
+        "front": "style",
+        "back": "estilo",
+        "exampleSentences": {
+            "en": "Personal style.",
+            "es": "Estilo personal."
+        }
+    },
+    {
+        "front": "subject",
+        "back": "tema",
+        "exampleSentences": {
+            "en": "What is the subject?",
+            "es": "¿Cuál es el tema?"
+        }
+    },
+    {
+        "front": "success",
+        "back": "éxito",
+        "exampleSentences": {
+            "en": "Achieve success.",
+            "es": "Logra el éxito."
+        }
+    },
+    {
+        "front": "successful",
+        "back": "exitoso",
+        "exampleSentences": {
+            "en": "A successful project.",
+            "es": "Un proyecto exitoso."
+        }
+    },
+    {
+        "front": "such",
+        "back": "tal",
+        "exampleSentences": {
+            "en": "Such a beautiful day.",
+            "es": "Un día tan hermoso."
+        }
+    },
+    {
+        "front": "suddenly",
+        "back": "De repente",
+        "exampleSentences": {
+            "en": "Suddenly, it started raining.",
+            "es": "De repente, empezó a llover."
+        }
+    },
+    {
+        "front": "suffer",
+        "back": "sufrir",
+        "exampleSentences": {
+            "en": "Suffer from pain.",
+            "es": "Sufrir de dolor."
+        }
+    },
+    {
+        "front": "suggest",
+        "back": "sugerir",
+        "exampleSentences": {
+            "en": "Suggest an idea.",
+            "es": "Sugiere una idea."
+        }
+    },
+    {
+        "front": "summer",
+        "back": "verano",
+        "exampleSentences": {
+            "en": "Enjoy the summer.",
+            "es": "Disfruta el verano."
+        }
+    },
+    {
+        "front": "supply",
+        "back": "suministro",
+        "exampleSentences": {
+            "en": "Supply and demand.",
+            "es": "Oferta y demanda."
+        }
+    },
+    {
+        "front": "support",
+        "back": "apoyo",
+        "exampleSentences": {
+            "en": "Offer support.",
+            "es": "Ofrece apoyo."
+        }
+    },
+    {
+        "front": "suppose",
+        "back": "suponer",
+        "exampleSentences": {
+            "en": "I suppose so.",
+            "es": "Supongo que sí."
+        }
+    },
+    {
+        "front": "sure",
+        "back": "Por supuesto",
+        "exampleSentences": {
+            "en": "Are you sure?",
+            "es": "¿Estás seguro?"
+        }
+    },
+    {
+        "front": "surprise",
+        "back": "sorpresa",
+        "exampleSentences": {
+            "en": "A big surprise.",
+            "es": "Una gran sorpresa."
+        }
+    },
+    {
+        "front": "system",
+        "back": "sistema",
+        "exampleSentences": {
+            "en": "Computer system.",
+            "es": "Sistema informático."
+        }
+    },
+    {
+        "front": "table",
+        "back": "mesa",
+        "exampleSentences": {
+            "en": "Sit at the table.",
+            "es": "Siéntate en la mesa."
+        }
+    },
+    {
+        "front": "take",
+        "back": "tomar",
+        "exampleSentences": {
+            "en": "Take a break.",
+            "es": "Toma un descanso."
+        }
+    },
+    {
+        "front": "talk",
+        "back": "hablar",
+        "exampleSentences": {
+            "en": "Talk to me.",
+            "es": "Háblame."
+        }
+    },
+    {
+        "front": "target",
+        "back": "objetivo",
+        "exampleSentences": {
+            "en": "Hit the target.",
+            "es": "Alcanza el objetivo."
+        }
+    },
+    {
+        "front": "task",
+        "back": "tarea",
+        "exampleSentences": {
+            "en": "Complete the task.",
+            "es": "Completa la tarea."
+        }
+    },
+    {
+        "front": "tax",
+        "back": "impuesto",
+        "exampleSentences": {
+            "en": "Pay taxes.",
+            "es": "Paga impuestos."
+        }
+    },
+    {
+        "front": "teach",
+        "back": "enseñar",
+        "exampleSentences": {
+            "en": "Teach English.",
+            "es": "Enseña inglés."
+        }
+    },
+    {
+        "front": "teacher",
+        "back": "profesor",
+        "exampleSentences": {
+            "en": "My favorite teacher.",
+            "es": "Mi profesor favorito."
+        }
+    },
+    {
+        "front": "team",
+        "back": "equipo",
+        "exampleSentences": {
+            "en": "Work as a team.",
+            "es": "Trabaja en equipo."
+        }
+    },
+    {
+        "front": "technology",
+        "back": "tecnología",
+        "exampleSentences": {
+            "en": "New technology.",
+            "es": "Nueva tecnología."
+        }
+    },
+    {
+        "front": "television",
+        "back": "televisión",
+        "exampleSentences": {
+            "en": "Watch television.",
+            "es": "Mira la televisión."
+        }
+    },
+    {
+        "front": "tell",
+        "back": "contar",
+        "exampleSentences": {
+            "en": "Tell me a story.",
+            "es": "Cuéntame una historia."
+        }
+    },
+    {
+        "front": "tend",
+        "back": "tender",
+        "exampleSentences": {
+            "en": "Tend to be late.",
+            "es": "Tender a llegar tarde."
+        }
+    },
+    {
+        "front": "term",
+        "back": "término",
+        "exampleSentences": {
+            "en": "In the long term.",
+            "es": "A largo término."
+        }
+    },
+    {
+        "front": "test",
+        "back": "prueba",
+        "exampleSentences": {
+            "en": "Take a test.",
+            "es": "Haz una prueba."
+        }
+    },
+    {
+        "front": "than",
+        "back": "que",
+        "exampleSentences": {
+            "en": "Bigger than me.",
+            "es": "Más grande que yo."
+        }
+    },
+    {
+        "front": "thank",
+        "back": "gracias",
+        "exampleSentences": {
+            "en": "Thank you.",
+            "es": "Gracias."
+        }
+    },
+    {
+        "front": "that",
+        "back": "ese, eso",
+        "exampleSentences": {
+            "en": "That is good.",
+            "es": "Eso es bueno."
+        }
+    },
+    {
+        "front": "the",
+        "back": "el, la, los, las",
+        "exampleSentences": {
+            "en": "The dog.",
+            "es": "El perro."
+        }
+    },
+    {
+        "front": "themselves",
+        "back": "sí mismos",
+        "exampleSentences": {
+            "en": "They did it themselves.",
+            "es": "Ellos lo hicieron sí mismos."
+        }
+    },
+    {
+        "front": "then",
+        "back": "entonces",
+        "exampleSentences": {
+            "en": "First, then.",
+            "es": "Primero, entonces."
+        }
+    },
+    {
+        "front": "theory",
+        "back": "teoría",
+        "exampleSentences": {
+            "en": "Scientific theory.",
+            "es": "Teoría científica."
+        }
+    },
+    {
+        "front": "there",
+        "back": "ahí",
+        "exampleSentences": {
+            "en": "There it is.",
+            "es": "Ahí está."
+        }
+    },
+    {
+        "front": "therefore",
+        "back": "por lo tanto",
+        "exampleSentences": {
+            "en": "Therefore, I conclude.",
+            "es": "Por lo tanto, concluyo."
+        }
+    },
+    {
+        "front": "they",
+        "back": "ellos",
+        "exampleSentences": {
+            "en": "They are here.",
+            "es": "Ellos están aquí."
+        }
+    },
+    {
+        "front": "thing",
+        "back": "cosa",
+        "exampleSentences": {
+            "en": "One more thing.",
+            "es": "Una cosa más."
+        }
+    },
+    {
+        "front": "think",
+        "back": "pensar",
+        "exampleSentences": {
+            "en": "Think about it.",
+            "es": "Piensa en ello."
+        }
+    },
+    {
+        "front": "this",
+        "back": "esta",
+        "exampleSentences": {
+            "en": "This is my book.",
+            "es": "Este es mi libro."
+        }
+    },
+    {
+        "front": "though",
+        "back": "aunque",
+        "exampleSentences": {
+            "en": "Even though.",
+            "es": "Aunque."
+        }
+    },
+    {
+        "front": "through",
+        "back": "mediante",
+        "exampleSentences": {
+            "en": "Go through the tunnel.",
+            "es": "Pasa mediante el túnel."
+        }
+    },
+    {
+        "front": "throughout",
+        "back": "en todo",
+        "exampleSentences": {
+            "en": "Throughout the year.",
+            "es": "En todo el año."
+        }
+    },
+    {
+        "front": "throw",
+        "back": "lanzar",
+        "exampleSentences": {
+            "en": "Throw the ball.",
+            "es": "Lanza la pelota."
+        }
+    },
+    {
+        "front": "thus",
+        "back": "así",
+        "exampleSentences": {
+            "en": "Thus, it is done.",
+            "es": "Así, está hecho."
+        }
+    },
+    {
+        "front": "time",
+        "back": "hora",
+        "exampleSentences": {
+            "en": "What time is it?",
+            "es": "¿Qué hora es?"
+        }
+    },
+    {
+        "front": "to",
+        "back": "a",
+        "exampleSentences": {
+            "en": "Go to school.",
+            "es": "Ir a la escuela."
+        }
+    },
+    {
+        "front": "today",
+        "back": "hoy",
+        "exampleSentences": {
+            "en": "Today is a good day.",
+            "es": "Hoy es un buen día."
+        }
+    },
+    {
+        "front": "together",
+        "back": "juntos",
+        "exampleSentences": {
+            "en": "We are together.",
+            "es": "Estamos juntos."
+        }
+    },
+    {
+        "front": "tomorrow",
+        "back": "mañana",
+        "exampleSentences": {
+            "en": "See you tomorrow.",
+            "es": "Nos vemos mañana."
+        }
+    },
+    {
+        "front": "too",
+        "back": "también",
+        "exampleSentences": {
+            "en": "Me too.",
+            "es": "Yo también."
+        }
+    },
+    {
+        "front": "top",
+        "back": "parte superior",
+        "exampleSentences": {
+            "en": "On top of the mountain.",
+            "es": "En la parte superior de la montaña."
+        }
+    },
+    {
+        "front": "total",
+        "back": "total",
+        "exampleSentences": {
+            "en": "The total amount.",
+            "es": "La cantidad total."
+        }
+    },
+    {
+        "front": "touch",
+        "back": "toque",
+        "exampleSentences": {
+            "en": "Don't touch it.",
+            "es": "No lo toques."
+        }
+    },
+    {
+        "front": "toward",
+        "back": "hacia",
+        "exampleSentences": {
+            "en": "Walk toward the light.",
+            "es": "Camina hacia la luz."
+        }
+    },
+    {
+        "front": "town",
+        "back": "pueblo",
+        "exampleSentences": {
+            "en": "A small town.",
+            "es": "Un pueblo pequeño."
+        }
+    },
+    {
+        "front": "track",
+        "back": "pista",
+        "exampleSentences": {
+            "en": "Stay on track.",
+            "es": "Mantente en la pista."
+        }
+    },
+    {
+        "front": "trade",
+        "back": "comercio",
+        "exampleSentences": {
+            "en": "International trade.",
+            "es": "Comercio internacional."
+        }
+    },
+    {
+        "front": "traditional",
+        "back": "tradicional",
+        "exampleSentences": {
+            "en": "Traditional food.",
+            "es": "Comida tradicional."
+        }
+    },
+    {
+        "front": "train",
+        "back": "entrenar",
+        "exampleSentences": {
+            "en": "Take the train.",
+            "es": "Toma el tren."
+        }
+    },
+    {
+        "front": "travel",
+        "back": "viaje",
+        "exampleSentences": {
+            "en": "Travel the world.",
+            "es": "Viaja por el mundo."
+        }
+    },
+    {
+        "front": "treat",
+        "back": "tratar",
+        "exampleSentences": {
+            "en": "Treat others well.",
+            "es": "Trata bien a los demás."
+        }
+    },
+    {
+        "front": "treatment",
+        "back": "tratamiento",
+        "exampleSentences": {
+            "en": "Medical treatment.",
+            "es": "Tratamiento médico."
+        }
+    },
+    {
+        "front": "tree",
+        "back": "árbol",
+        "exampleSentences": {
+            "en": "A tall tree.",
+            "es": "Un árbol alto."
+        }
+    },
+    {
+        "front": "trip",
+        "back": "viaje",
+        "exampleSentences": {
+            "en": "Have a nice trip.",
+            "es": "Que tengas un buen viaje."
+        }
+    },
+    {
+        "front": "trouble",
+        "back": "problema",
+        "exampleSentences": {
+            "en": "I am in trouble.",
+            "es": "Estoy en problemas."
+        }
+    },
+    {
+        "front": "true",
+        "back": "cierto",
+        "exampleSentences": {
+            "en": "It's true.",
+            "es": "Es cierto."
+        }
+    },
+    {
+        "front": "try",
+        "back": "tratar",
+        "exampleSentences": {
+            "en": "Try again.",
+            "es": "Inténtalo de nuevo."
+        }
+    },
+    {
+        "front": "turn",
+        "back": "giro",
+        "exampleSentences": {
+            "en": "Turn left.",
+            "es": "Gira a la izquierda."
+        }
+    },
+    {
+        "front": "type",
+        "back": "tipo",
+        "exampleSentences": {
+            "en": "What type is it?",
+            "es": "¿Qué tipo es?"
+        }
+    },
+    {
+        "front": "unclear",
+        "back": "poco claro",
+        "exampleSentences": {
+            "en": "The instructions are unclear.",
+            "es": "Las instrucciones son poco claras."
+        }
+    },
+    {
+        "front": "under",
+        "back": "debajo",
+        "exampleSentences": {
+            "en": "Under the table.",
+            "es": "Debajo de la mesa."
+        }
+    },
+    {
+        "front": "understand",
+        "back": "entender",
+        "exampleSentences": {
+            "en": "Do you understand?",
+            "es": "¿Entiendes?"
+        }
+    },
+    {
+        "front": "unit",
+        "back": "unidad",
+        "exampleSentences": {
+            "en": "A small unit.",
+            "es": "Una unidad pequeña."
+        }
+    },
+    {
+        "front": "university",
+        "back": "universidad",
+        "exampleSentences": {
+            "en": "Go to university.",
+            "es": "Ir a la universidad."
+        }
+    },
+    {
+        "front": "until",
+        "back": "hasta",
+        "exampleSentences": {
+            "en": "Until tomorrow.",
+            "es": "Hasta mañana."
+        }
+    },
+    {
+        "front": "up",
+        "back": "arriba",
+        "exampleSentences": {
+            "en": "Look up.",
+            "es": "Mira arriba."
+        }
+    },
+    {
+        "front": "upon",
+        "back": "sobre",
+        "exampleSentences": {
+            "en": "Once upon a time.",
+            "es": "Érase una vez."
+        }
+    },
+    {
+        "front": "use",
+        "back": "utilizar",
+        "exampleSentences": {
+            "en": "Use your imagination.",
+            "es": "Utiliza tu imaginación."
+        }
+    },
+    {
+        "front": "useful",
+        "back": "útil",
+        "exampleSentences": {
+            "en": "A useful tool.",
+            "es": "Una herramienta útil."
+        }
+    },
+    {
+        "front": "usually",
+        "back": "generalmente",
+        "exampleSentences": {
+            "en": "I usually go.",
+            "es": "Generalmente voy."
+        }
+    },
+    {
+        "front": "value",
+        "back": "valor",
+        "exampleSentences": {
+            "en": "The value of money.",
+            "es": "El valor del dinero."
+        }
+    },
+    {
+        "front": "variety",
+        "back": "variedad",
+        "exampleSentences": {
+            "en": "A variety of options.",
+            "es": "Una variedad de opciones."
+        }
+    },
+    {
+        "front": "various",
+        "back": "varios",
+        "exampleSentences": {
+            "en": "Various reasons.",
+            "es": "Varias razones."
+        }
+    },
+    {
+        "front": "version",
+        "back": "versión",
+        "exampleSentences": {
+            "en": "The latest version.",
+            "es": "La última versión."
+        }
+    },
+    {
+        "front": "very",
+        "back": "muy",
+        "exampleSentences": {
+            "en": "Very good.",
+            "es": "Muy bueno."
+        }
+    },
+    {
+        "front": "view",
+        "back": "ver",
+        "exampleSentences": {
+            "en": "A beautiful view.",
+            "es": "Una vista hermosa."
+        }
+    },
+    {
+        "front": "village",
+        "back": "pueblo",
+        "exampleSentences": {
+            "en": "A small village.",
+            "es": "Un pueblo pequeño."
+        }
+    },
+    {
+        "front": "visit",
+        "back": "visitar",
+        "exampleSentences": {
+            "en": "Visit a friend.",
+            "es": "Visita a un amigo."
+        }
+    },
+    {
+        "front": "voice",
+        "back": "voz",
+        "exampleSentences": {
+            "en": "A clear voice.",
+            "es": "Una voz clara."
+        }
+    },
+    {
+        "front": "vote",
+        "back": "votar",
+        "exampleSentences": {
+            "en": "Cast your vote.",
+            "es": "Emite tu voto."
+        }
+    },
+    {
+        "front": "wait",
+        "back": "Espere",
+        "exampleSentences": {
+            "en": "Wait for me.",
+            "es": "Espérame."
+        }
+    },
+    {
+        "front": "walk",
+        "back": "caminar",
+        "exampleSentences": {
+            "en": "Go for a walk.",
+            "es": "Sal a caminar."
+        }
+    },
+    {
+        "front": "wall",
+        "back": "pared",
+        "exampleSentences": {
+            "en": "Paint the wall.",
+            "es": "Pinta la pared."
+        }
+    },
+    {
+        "front": "want",
+        "back": "querer",
+        "exampleSentences": {
+            "en": "I want to learn.",
+            "es": "Quiero aprender."
+        }
+    },
+    {
+        "front": "war",
+        "back": "guerra",
+        "exampleSentences": {
+            "en": "A long war.",
+            "es": "Una guerra larga."
+        }
+    },
+    {
+        "front": "watch",
+        "back": "reloj",
+        "exampleSentences": {
+            "en": "Watch a movie.",
+            "es": "Mira una película."
+        }
+    },
+    {
+        "front": "water",
+        "back": "agua",
+        "exampleSentences": {
+            "en": "Drink water.",
+            "es": "Bebe agua."
+        }
+    },
+    {
+        "front": "way",
+        "back": "camino",
+        "exampleSentences": {
+            "en": "This way.",
+            "es": "Por aquí."
+        }
+    },
+    {
+        "front": "we",
+        "back": "nosotros",
+        "exampleSentences": {
+            "en": "We are friends.",
+            "es": "Nosotros somos amigos."
+        }
+    },
+    {
+        "front": "wear",
+        "back": "vestir",
+        "exampleSentences": {
+            "en": "Wear a coat.",
+            "es": "Viste un abrigo."
+        }
+    },
+    {
+        "front": "week",
+        "back": "semana",
+        "exampleSentences": {
+            "en": "Next week.",
+            "es": "La próxima semana."
+        }
+    },
+    {
+        "front": "weekend",
+        "back": "fin de semana",
+        "exampleSentences": {
+            "en": "Enjoy your weekend.",
+            "es": "Disfruta tu fin de semana."
+        }
+    },
+    {
+        "front": "weight",
+        "back": "peso",
+        "exampleSentences": {
+            "en": "Lose weight.",
+            "es": "Pierde peso."
+        }
+    },
+    {
+        "front": "welcome",
+        "back": "bienvenido",
+        "exampleSentences": {
+            "en": "Welcome home.",
+            "es": "Bienvenido a casa."
+        }
+    },
+    {
+        "front": "well",
+        "back": "bien",
+        "exampleSentences": {
+            "en": "I am well.",
+            "es": "Estoy bien."
+        }
+    },
+    {
+        "front": "what",
+        "back": "qué",
+        "exampleSentences": {
+            "en": "What is this?",
+            "es": "¿Qué es esto?"
+        }
+    },
+    {
+        "front": "whatever",
+        "back": "lo que sea",
+        "exampleSentences": {
+            "en": "Whatever you want.",
+            "es": "Lo que sea que quieras."
+        }
+    },
+    {
+        "front": "when",
+        "back": "cuando",
+        "exampleSentences": {
+            "en": "When will you arrive?",
+            "es": "¿Cuándo llegarás?"
+        }
+    },
+    {
+        "front": "where",
+        "back": "dónde",
+        "exampleSentences": {
+            "en": "Where are you?",
+            "es": "¿Dónde estás?"
+        }
+    },
+    {
+        "front": "whether",
+        "back": "ya sea",
+        "exampleSentences": {
+            "en": "Whether you like it or not.",
+            "es": "Ya sea que te guste o no."
+        }
+    },
+    {
+        "front": "which",
+        "back": "cual",
+        "exampleSentences": {
+            "en": "Which one?",
+            "es": "¿Cuál?"
+        }
+    },
+    {
+        "front": "while",
+        "back": "mientras",
+        "exampleSentences": {
+            "en": "While I was sleeping.",
+            "es": "Mientras dormía."
+        }
+    },
+    {
+        "front": "white",
+        "back": "blanco",
+        "exampleSentences": {
+            "en": "White color.",
+            "es": "Color blanco."
+        }
+    },
+    {
+        "front": "who",
+        "back": "quien",
+        "exampleSentences": {
+            "en": "Who is he?",
+            "es": "¿Quién es él?"
+        }
+    },
+    {
+        "front": "whole",
+        "back": "todo",
+        "exampleSentences": {
+            "en": "The whole world.",
+            "es": "Todo el mundo."
+        }
+    },
+    {
+        "front": "why",
+        "back": "por qué",
+        "exampleSentences": {
+            "en": "Why are you here?",
+            "es": "¿Por qué estás aquí?"
+        }
+    },
+    {
+        "front": "wide",
+        "back": "amplio",
+        "exampleSentences": {
+            "en": "A wide road.",
+            "es": "Un camino amplio."
+        }
+    },
+    {
+        "front": "wife",
+        "back": "esposa",
+        "exampleSentences": {
+            "en": "My wife is kind.",
+            "es": "Mi esposa es amable."
+        }
+    },
+    {
+        "front": "will",
+        "back": "será",
+        "exampleSentences": {
+            "en": "I will go.",
+            "es": "Yo iré."
+        }
+    },
+    {
+        "front": "win",
+        "back": "ganar",
+        "exampleSentences": {
+            "en": "Win the game.",
+            "es": "Gana el juego."
+        }
+    },
+    {
+        "front": "window",
+        "back": "ventana",
+        "exampleSentences": {
+            "en": "Open the window.",
+            "es": "Abre la ventana."
+        }
+    },
+    {
+        "front": "wish",
+        "back": "deseo",
+        "exampleSentences": {
+            "en": "Make a wish.",
+            "es": "Pide un deseo."
+        }
+    },
+    {
+        "front": "with",
+        "back": "con",
+        "exampleSentences": {
+            "en": "With me.",
+            "es": "Conmigo."
+        }
+    },
+    {
+        "front": "within",
+        "back": "dentro",
+        "exampleSentences": {
+            "en": "Within the limits.",
+            "es": "Dentro de los límites."
+        }
+    },
+    {
+        "front": "without",
+        "back": "sin",
+        "exampleSentences": {
+            "en": "Without you.",
+            "es": "Sin ti."
+        }
+    },
+    {
+        "front": "woman",
+        "back": "mujer",
+        "exampleSentences": {
+            "en": "A strong woman.",
+            "es": "Una mujer fuerte."
+        }
+    },
+    {
+        "front": "wonder",
+        "back": "preguntarse",
+        "exampleSentences": {
+            "en": "I wonder why.",
+            "es": "Me pregunto por qué."
+        }
+    },
+    {
+        "front": "word",
+        "back": "palabra",
+        "exampleSentences": {
+            "en": "A new word.",
+            "es": "Una palabra nueva."
+        }
+    },
+    {
+        "front": "work",
+        "back": "trabajo",
+        "exampleSentences": {
+            "en": "Go to work.",
+            "es": "Ir al trabajo."
+        }
+    },
+    {
+        "front": "worker",
+        "back": "obrero",
+        "exampleSentences": {
+            "en": "A hard worker.",
+            "es": "Un obrero trabajador."
+        }
+    },
+    {
+        "front": "world",
+        "back": "mundo",
+        "exampleSentences": {
+            "en": "The whole world.",
+            "es": "Todo el mundo."
+        }
+    },
+    {
+        "front": "worry",
+        "back": "preocupación",
+        "exampleSentences": {
+            "en": "Don't worry.",
+            "es": "No te preocupes."
+        }
+    },
+    {
+        "front": "worth",
+        "back": "valor",
+        "exampleSentences": {
+            "en": "It's worth it.",
+            "es": "Vale la pena."
+        }
+    },
+    {
+        "front": "would",
+        "back": "haría",
+        "exampleSentences": {
+            "en": "I would like.",
+            "es": "Me gustaría."
+        }
+    },
+    {
+        "front": "write",
+        "back": "escribir",
+        "exampleSentences": {
+            "en": "Write a letter.",
+            "es": "Escribe una carta."
+        }
+    },
+    {
+        "front": "wrong",
+        "back": "incorrecto",
+        "exampleSentences": {
+            "en": "You are wrong.",
+            "es": "Estás equivocado."
+        }
+    },
+    {
+        "front": "yeah",
+        "back": "sí",
+        "exampleSentences": {
+            "en": "Yeah, I agree.",
+            "es": "Sí, estoy de acuerdo."
+        }
+    },
+    {
+        "front": "year",
+        "back": "año",
+        "exampleSentences": {
+            "en": "Next year.",
+            "es": "El próximo año."
+        }
+    },
+    {
+        "front": "yes",
+        "back": "sí",
+        "exampleSentences": {
+            "en": "Yes, I do.",
+            "es": "Sí, lo hago."
+        }
+    },
+    {
+        "front": "yesterday",
+        "back": "ayer",
+        "exampleSentences": {
+            "en": "Yesterday was fun.",
+            "es": "Ayer fue divertido."
+        }
+    },
+    {
+        "front": "yet",
+        "back": "todavía",
+        "exampleSentences": {
+            "en": "Not yet.",
+            "es": "Todavía no."
+        }
+    },
+    {
+        "front": "you",
+        "back": "tú",
+        "exampleSentences": {
+            "en": "You are kind.",
+            "es": "Tú eres amable."
+        }
+    },
+    {
+        "front": "young",
+        "back": "joven",
+        "exampleSentences": {
+            "en": "A young boy.",
+            "es": "Un niño joven."
+        }
+    },
+    {
+        "front": "yourself",
+        "back": "tú mismo",
+        "exampleSentences": {
+            "en": "Do it yourself.",
+            "es": "Hazlo tú mismo."
+        }
+    }
+]

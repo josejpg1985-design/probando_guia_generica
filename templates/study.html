@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudiando: {{ category }}</title>
+    <link rel="stylesheet" href="/static/css/style.css?v=1.0.1">
+    <script src="/static/js/theme.js" defer></script>
+    <script src="/static/js/auth.js" defer></script>
+</head>
+<body>
+    <div class="container study-container">
+        <a href="/dashboard" class="home-link" aria-label="Volver al Dashboard" title="Volver al Dashboard">🏠</a>
+        <h1>Estudiando: <span id="category-title">{{ category }}</span></h1>
+
+        <div class="flashcard-area">
+            <div class="flashcard" id="flashcard">
+                <div class="card-face card-front" id="card-front">
+                    <!-- Content will be injected by JS -->
+                </div>
+                <div class="card-face card-back" id="card-back">
+                    <!-- Content will be injected by JS -->
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <!-- El botón "Siguiente" se elimina ya que la calificación avanza la tarjeta -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const token = verificarAutenticacion();
+            if (!token) return; 
+
+            const category = "{{ category }}";
+            const flashcardEl = document.getElementById('flashcard');
+            const cardFrontEl = document.getElementById('card-front');
+            const cardBackEl = document.getElementById('card-back');
+
+            let flashcards = [];
+            let currentCardIndex = 0;
+
+            function shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+            }
+
+            function showCard(index) {
+                flashcardEl.classList.remove('is-flipped');
+                if (flashcards.length === 0) {
+                    cardFrontEl.innerHTML = '<p>¡Felicidades! Has completado todas las tarjetas de esta categoría.</p>';
+                    cardBackEl.innerHTML = '';
+                    document.querySelector('.navigation').innerHTML = '';
+                    return;
+                }
+                
+                const card = flashcards[index];
+                cardFrontEl.innerHTML = `<p>${card.front_content}</p>`;
+                
+                // Simplified structure for the back of the card
+                let backHtml = `
+                    <div class="card-content-display"><p>${card.back_content}</p></div>
+                    
+                    <div class="top-icons-container">
+                `;
+
+                if (card.example_en && card.example_es) {
+                    backHtml += `
+                        <div class="example-icon-container">
+                            <span class="example-icon">ℹ️</span>
+                            <div class="tooltip">
+                                <strong>EN:</strong> ${card.example_en}<br>
+                                <strong>ES:</strong> ${card.example_es}
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                backHtml += `
+                        <div class="edit-icon-container">
+                            <span class="edit-icon" data-card-id="${card.id}">✏️</span>
+                            <div class="tooltip">Editar tarjeta</div>
+                        </div>
+                        <div class="archive-icon-container">
+                            <span class="archive-icon" data-card-id="${card.id}">🗄️</span>
+                            <div class="tooltip">Archivar tarjeta</div>
+                        </div>
+                    </div>
+
+                    <div class="rating-buttons">
+                        <button class="btn btn-rating" data-rating="easy">Fácil</button>
+                        <button class="btn btn-rating" data-rating="normal">Normal</button>
+                        <button class="btn btn-rating" data-rating="hard">Difícil</button>
+                    </div>
+                `;
+
+                cardBackEl.innerHTML = backHtml;
+            }
+
+            function goNextCard() {
+                flashcardEl.classList.remove('is-flipped');
+                setTimeout(() => {
+                    if (flashcards.length === 0) {
+                        showCard(0); // Will show completion message
+                        return;
+                    }
+                    currentCardIndex = (currentCardIndex + 1) % flashcards.length;
+                    showCard(currentCardIndex);
+                }, 300); 
+            }
+
+            function enterEditMode() {
+                const card = flashcards[currentCardIndex];
+                const displayDiv = cardBackEl.querySelector('.card-content-display');
+                displayDiv.style.display = 'none';
+
+                let editHtml = `
+                    <div class="edit-mode-container">
+                        <textarea id="edit-textarea" class="edit-textarea">${card.back_content}</textarea>
+                        <div class="edit-controls">
+                            <button class="btn btn-primary save-btn">Guardar</button>
+                            <button class="btn cancel-btn">Cancelar</button>
+                            <button class="btn btn-danger delete-btn">Eliminar</button>
+                        </div>
+                    </div>
+                `;
+                cardBackEl.insertAdjacentHTML('beforeend', editHtml);
+                cardBackEl.querySelector('.rating-buttons').style.display = 'none';
+                cardBackEl.querySelector('.top-icons-container').style.display = 'none';
+            }
+
+            function exitEditMode(newContent = null) {
+                const card = flashcards[currentCardIndex];
+                if (newContent !== null) {
+                    card.back_content = newContent;
+                    flashcards[currentCardIndex].back_content = newContent;
+                }
+                
+                const editContainer = cardBackEl.querySelector('.edit-mode-container');
+                if(editContainer) editContainer.remove();
+                
+                const displayDiv = cardBackEl.querySelector('.card-content-display');
+                if(displayDiv) {
+                    displayDiv.innerHTML = `<p>${card.back_content}</p>`;
+                    displayDiv.style.display = 'block';
+                }
+
+                cardBackEl.querySelector('.rating-buttons').style.display = 'flex';
+                cardBackEl.querySelector('.top-icons-container').style.display = 'flex';
+            }
+
+            // --- Initial Data Fetch ---
+            fetch(`/api/flashcards/${category}`, { headers: { 'Authorization': `Bearer ${token}` } })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        flashcards = data.flashcards;
+                        if (flashcards.length > 0) {
+                            shuffleArray(flashcards);
+                            showCard(currentCardIndex);
+                        } else {
+                            showCard(0); // Shows empty message
+                        }
+                    } else {
+                        cardFrontEl.innerHTML = `<p>Error: ${data.message}</p>`;
+                    }
+                }).catch(err => cardFrontEl.innerHTML = `<p>Error de red.</p>`);
+
+            // --- Main Event Listeners ---
+            flashcardEl.addEventListener('click', (event) => {
+                const isIcon = event.target.closest('.top-icons-container, .rating-buttons, .edit-mode-container');
+                if (!flashcardEl.classList.contains('is-flipped') && !isIcon) {
+                    if(flashcards.length > 0) flashcardEl.classList.add('is-flipped');
+                }
+            });
+
+            cardBackEl.addEventListener('click', async (event) => {
+                const currentCard = flashcards[currentCardIndex];
+                if (!currentCard) return;
+
+                // --- Rating Logic ---
+                if (event.target.classList.contains('btn-rating')) {
+                    const ratingText = event.target.dataset.rating;
+                    const ratingValue = { 'easy': 3, 'normal': 2, 'hard': 1 }[ratingText];
+                    fetch('/api/flashcards/rate', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+                        body: JSON.stringify({ card_id: currentCard.id, rating: ratingValue })
+                    }).then(res => res.json()).then(data => {
+                        if (data.status === 'success') goNextCard();
+                        else alert('Error al calificar: ' + data.message);
+                    }).catch(err => alert('Error de red al calificar.'));
+                }
+
+                // --- Archive Logic ---
+                if (event.target.classList.contains('archive-icon')) {
+                    fetch('/api/flashcards/archive', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+                        body: JSON.stringify({ card_id: currentCard.id })
+                    }).then(res => res.json()).then(data => {
+                        if (data.status === 'success') {
+                            flashcards.splice(currentCardIndex, 1);
+                            goNextCard();
+                        } else alert('Error al archivar: ' + data.message);
+                    }).catch(err => alert('Error de red al archivar.'));
+                }
+
+                // --- Edit Mode Logic ---
+                if (event.target.classList.contains('edit-icon')) {
+                    enterEditMode();
+                }
+                if (event.target.classList.contains('cancel-btn')) {
+                    exitEditMode();
+                }
+                if (event.target.classList.contains('save-btn')) {
+                    const newContent = document.getElementById('edit-textarea').value;
+                    fetch(`/api/flashcards/${currentCard.id}`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+                        body: JSON.stringify({ back_content: newContent })
+                    }).then(res => res.json()).then(data => {
+                        if (data.status === 'success') exitEditMode(newContent);
+                        else alert('Error al guardar: ' + data.message);
+                    }).catch(err => alert('Error de red al guardar.'));
+                }
+
+                // --- Delete Logic ---
+                if (event.target.classList.contains('delete-btn')) {
+                    if (confirm('¿Estás seguro de que quieres eliminar esta tarjeta permanentemente?')) {
+                        if (confirm('Esta acción no se puede deshacer. ¿Confirmas la eliminación?')) {
+                            fetch(`/api/flashcards/${currentCard.id}`, {
+                                method: 'DELETE',
+                                headers: { 'Authorization': `Bearer ${token}` }
+                            }).then(res => res.json()).then(data => {
+                                if (data.status === 'success') {
+                                    flashcards.splice(currentCardIndex, 1);
+                                    goNextCard();
+                                } else alert('Error al eliminar: ' + data.message);
+                            }).catch(err => alert('Error de red al eliminar.'));
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

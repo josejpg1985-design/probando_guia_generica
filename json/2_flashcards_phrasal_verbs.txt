@@ -1,0 +1,1002 @@
+[
+    {
+        "front": "act on",
+        "back": "actuar según",
+        "exampleSentences": {
+            "en": "You should act on his advice.",
+            "es": "Deberías actuar según su consejo."
+        }
+    },
+    {
+        "front": "add up",
+        "back": "tener sentido",
+        "exampleSentences": {
+            "en": "His story just doesn't add up.",
+            "es": "Su historia simplemente no tiene sentido."
+        }
+    },
+    {
+        "front": "ask around",
+        "back": "preguntar por ahí",
+        "exampleSentences": {
+            "en": "I'll ask around to see if anyone knows.",
+            "es": "Preguntaré por ahí a ver si alguien sabe."
+        }
+    },
+    {
+        "front": "back out",
+        "back": "echarse atrás",
+        "exampleSentences": {
+            "en": "He backed out of the deal at the last minute.",
+            "es": "Se echó atrás en el trato en el último minuto."
+        }
+    },
+    {
+        "front": "bear with",
+        "back": "tener paciencia con",
+        "exampleSentences": {
+            "en": "Please bear with me for a moment.",
+            "es": "Por favor, ten paciencia conmigo un momento."
+        }
+    },
+    {
+        "front": "blow up",
+        "back": "explotar",
+        "exampleSentences": {
+            "en": "The old building was blown up.",
+            "es": "El viejo edificio fue volado."
+        }
+    },
+    {
+        "front": "break away",
+        "back": "escaparse, separarse",
+        "exampleSentences": {
+            "en": "He broke away from the group.",
+            "es": "Se separó del grupo."
+        }
+    },
+    {
+        "front": "break down",
+        "back": "averiarse",
+        "exampleSentences": {
+            "en": "My car broke down on the way to work.",
+            "es": "Mi coche se averió de camino al trabajo."
+        }
+    },
+    {
+        "front": "break free",
+        "back": "liberarse",
+        "exampleSentences": {
+            "en": "he could not break free",
+            "es": "él no pudo liberarse"
+        }
+    },
+    {
+        "front": "break in",
+        "back": "interrumpir, domar",
+        "exampleSentences": {
+            "en": "He broke in on our conversation.",
+            "es": "Interrumpió nuestra conversación."
+        }
+    },
+    {
+        "front": "break into",
+        "back": "entrar a la fuerza",
+        "exampleSentences": {
+            "en": "Someone broke into my house last night.",
+            "es": "Alguien entró a la fuerza en mi casa anoche."
+        }
+    },
+    {
+        "front": "break off",
+        "back": "romper (un trozo)",
+        "exampleSentences": {
+            "en": "He broke off a piece of chocolate.",
+            "es": "Rompió un trozo de chocolate."
+        }
+    },
+    {
+        "front": "break out",
+        "back": "escaparse, estallar",
+        "exampleSentences": {
+            "en": "The war broke out in 1914.",
+            "es": "La guerra estalló en 1914."
+        }
+    },
+    {
+        "front": "break up",
+        "back": "terminar una relación",
+        "exampleSentences": {
+            "en": "They broke up after five years.",
+            "es": "Rompieron después de cinco años."
+        }
+    },
+    {
+        "front": "bring about",
+        "back": "provocar",
+        "exampleSentences": {
+            "en": "The internet has brought about many changes.",
+            "es": "Internet ha provocado muchos cambios."
+        }
+    },
+    {
+        "front": "bring back",
+        "back": "devolver",
+        "exampleSentences": {
+            "en": "Can you bring back the book you borrowed?",
+            "es": "¿Puedes devolver el libro que te presté?"
+        }
+    },
+    {
+        "front": "bring in",
+        "back": "introducir, ganar",
+        "exampleSentences": {
+            "en": "The new policy brought in more revenue.",
+            "es": "La nueva política generó más ingresos."
+        }
+    },
+    {
+        "front": "bring off",
+        "back": "lograr con éxito",
+        "exampleSentences": {
+            "en": "They managed to bring off a difficult negotiation.",
+            "es": "Lograron con éxito una negociación difícil."
+        }
+    },
+    {
+        "front": "bring out",
+        "back": "sacar, publicar",
+        "exampleSentences": {
+            "en": "The company is bringing out a new product.",
+            "es": "La empresa va a sacar un nuevo producto."
+        }
+    },
+    {
+        "front": "bring up",
+        "back": "mencionar un tema",
+        "exampleSentences": {
+            "en": "She decided not to bring up the past.",
+            "es": "Ella decidió no sacar el tema del pasado."
+        }
+    },
+    {
+        "front": "build up",
+        "back": "acumular",
+        "exampleSentences": {
+            "en": "He's trying to build up his confidence.",
+            "es": "Está intentando acumular confianza."
+        }
+    },
+    {
+        "front": "call back",
+        "back": "devolver la llamada",
+        "exampleSentences": {
+            "en": "I'll call you back in 10 minutes.",
+            "es": "Te devolveré la llamada en 10 minutos."
+        }
+    },
+    {
+        "front": "call for",
+        "back": "requerir",
+        "exampleSentences": {
+            "en": "This situation calls for immediate action.",
+            "es": "Esta situación requiere acción inmediata."
+        }
+    },
+    {
+        "front": "call in",
+        "back": "llamar a alguien",
+        "exampleSentences": {
+            "en": "We need to call in an expert.",
+            "es": "Necesitamos llamar a un experto."
+        }
+    },
+    {
+        "front": "call off",
+        "back": "cancelar",
+        "exampleSentences": {
+            "en": "They had to call off the meeting due to the storm.",
+            "es": "Tuvieron que cancelar la reunión debido a la tormenta."
+        }
+    },
+    {
+        "front": "calm down",
+        "back": "calmarse",
+        "exampleSentences": {
+            "en": "Calm down, everything will be fine.",
+            "es": "Cálmate, todo estará bien."
+        }
+    },
+    {
+        "front": "carry off",
+        "back": "llevarse, lograr",
+        "exampleSentences": {
+            "en": "She carried off the first prize.",
+            "es": "Se llevó el primer premio."
+        }
+    },
+    {
+        "front": "carry on",
+        "back": "continuar",
+        "exampleSentences": {
+            "en": "Please carry on with your work.",
+            "es": "Por favor, continúa con tu trabajo."
+        }
+    },
+    {
+        "front": "carry on with",
+        "back": "continuar con",
+        "exampleSentences": {
+            "en": "Let's carry on with the meeting.",
+            "es": "Continuemos con la reunión."
+        }
+    },
+    {
+        "front": "carry out",
+        "back": "llevar a cabo",
+        "exampleSentences": {
+            "en": "We need to carry out the plan carefully.",
+            "es": "Necesitamos llevar a cabo el plan con cuidado."
+        }
+    },
+    {
+        "front": "catch on",
+        "back": "ponerse de moda, entender",
+        "exampleSentences": {
+            "en": "The new trend is really catching on.",
+            "es": "La nueva tendencia se está poniendo muy de moda."
+        }
+    },
+    {
+        "front": "catch up",
+        "back": "ponerse al día",
+        "exampleSentences": {
+            "en": "Let's catch up soon.",
+            "es": "Pongámonos al día pronto."
+        }
+    },
+    {
+        "front": "check in",
+        "back": "registrarse (hotel, aeropuerto)",
+        "exampleSentences": {
+            "en": "We need to check in two hours before the flight.",
+            "es": "Necesitamos registrarnos dos horas antes del vuelo."
+        }
+    },
+    {
+        "front": "check out",
+        "back": "echar un vistazo",
+        "exampleSentences": {
+            "en": "Let's check out that new restaurant.",
+            "es": "Vamos a echar un vistazo a ese nuevo restaurante."
+        }
+    },
+    {
+        "front": "check out of",
+        "back": "salir de (hotel)",
+        "exampleSentences": {
+            "en": "We need to check out of the hotel by noon.",
+            "es": "Necesitamos salir del hotel antes del mediodía."
+        }
+    },
+    {
+        "front": "clean up",
+        "back": "limpiar",
+        "exampleSentences": {
+            "en": "You need to clean up your room.",
+            "es": "Necesitas limpiar tu habitación."
+        }
+    },
+    {
+        "front": "clear up",
+        "back": "aclararse (tiempo), resolver",
+        "exampleSentences": {
+            "en": "I hope the weather clears up soon.",
+            "es": "Espero que el tiempo se aclare pronto."
+        }
+    },
+    {
+        "front": "come about",
+        "back": "suceder",
+        "exampleSentences": {
+            "en": "How did that come about?",
+            "es": "¿Cómo sucedió eso?"
+        }
+    },
+    {
+        "front": "come across",
+        "back": "encontrar inesperadamente",
+        "exampleSentences": {
+            "en": "I came across an old photo while cleaning my room.",
+            "es": "Me encontré con una foto antigua mientras limpiaba mi habitación."
+        }
+    },
+    {
+        "front": "come apart",
+        "back": "deshacerse",
+        "exampleSentences": {
+            "en": "The old book came apart in my hands.",
+            "es": "El viejo libro se deshizo en mis manos."
+        }
+    },
+    {
+        "front": "come back",
+        "back": "volver",
+        "exampleSentences": {
+            "en": "When are you coming back?",
+            "es": "¿Cuándo vuelves?"
+        }
+    },
+    {
+        "front": "come by",
+        "back": "conseguir, pasar por",
+        "exampleSentences": {
+            "en": "How did you come by that?",
+            "es": "¿Cómo conseguiste eso?"
+        }
+    },
+    {
+        "front": "come down with",
+        "back": "caer enfermo con",
+        "exampleSentences": {
+            "en": "I think I'm coming down with a cold.",
+            "es": "Creo que me estoy resfriando."
+        }
+    },
+    {
+        "front": "come in",
+        "back": "entrar",
+        "exampleSentences": {
+            "en": "Please come in and sit down.",
+            "es": "Por favor, entra y siéntate."
+        }
+    },
+    {
+        "front": "come up",
+        "back": "aparecer",
+        "exampleSentences": {
+            "en": "Racing around to come up behind you again",
+            "es": "Corriendo alrededor para aparecer detrás de ti de nuevo"
+        }
+    },
+    {
+        "front": "come up with",
+        "back": "ocurrirse una idea",
+        "exampleSentences": {
+            "en": "She came up with a great idea for the project.",
+            "es": "Se le ocurrió una gran idea para el proyecto."
+        }
+    },
+    {
+        "front": "cut back on",
+        "back": "reducir (gastos)",
+        "exampleSentences": {
+            "en": "We need to cut back on our expenses.",
+            "es": "Necesitamos reducir nuestros gastos."
+        }
+    },
+    {
+        "front": "cut down on",
+        "back": "reducir el consumo de",
+        "exampleSentences": {
+            "en": "I need to cut down on sugar.",
+            "es": "Necesito reducir el consumo de azúcar."
+        }
+    },
+    {
+        "front": "cut in",
+        "back": "interrumpir, meterse",
+        "exampleSentences": {
+            "en": "Don't cut in when I'm talking.",
+            "es": "No me interrumpas cuando estoy hablando."
+        }
+    },
+    {
+        "front": "cut off",
+        "back": "interrumpir, desconectar",
+        "exampleSentences": {
+            "en": "He was cut off in the middle of his speech.",
+            "es": "Fue interrumpido en medio de su discurso."
+        }
+    },
+    {
+        "front": "deal with",
+        "back": "lidiar con",
+        "exampleSentences": {
+            "en": "How do you deal with stress?",
+            "es": "¿Cómo lidias con el estrés?"
+        }
+    },
+    {
+        "front": "die out",
+        "back": "extinguirse",
+        "exampleSentences": {
+            "en": "Many species are dying out.",
+            "es": "Muchas especies se están extinguiendo."
+        }
+    },
+    {
+        "front": "do away with",
+        "back": "eliminar",
+        "exampleSentences": {
+            "en": "They want to do away with the old rules.",
+            "es": "Quieren eliminar las viejas reglas."
+        }
+    },
+    {
+        "front": "do up",
+        "back": "abrochar, decorar",
+        "exampleSentences": {
+            "en": "Can you help me do up my dress?",
+            "es": "¿Puedes ayudarme a abrocharme el vestido?"
+        }
+    },
+    {
+        "front": "do without",
+        "back": "arreglárselas sin",
+        "exampleSentences": {
+            "en": "I can't do without my morning coffee.",
+            "es": "No puedo arreglármelas sin mi café de la mañana."
+        }
+    },
+    {
+        "front": "draw on",
+        "back": "utilizar, inspirarse en",
+        "exampleSentences": {
+            "en": "He drew on his experience to solve the problem.",
+            "es": "Se basó en su experiencia para resolver el problema."
+        }
+    },
+    {
+        "front": "draw out",
+        "back": "alargar, extraer",
+        "exampleSentences": {
+            "en": "The meeting was drawn out for hours.",
+            "es": "La reunión se alargó durante horas."
+        }
+    },
+    {
+        "front": "draw up",
+        "back": "redactar",
+        "exampleSentences": {
+            "en": "The lawyer is drawing up a contract.",
+            "es": "El abogado está redactando un contrato."
+        }
+    },
+    {
+        "front": "dress up",
+        "back": "disfrazarse, vestirse elegante",
+        "exampleSentences": {
+            "en": "She likes to dress up for parties.",
+            "es": "Le gusta disfrazarse para las fiestas."
+        }
+    },
+    {
+        "front": "drop off",
+        "back": "dejar a alguien o algo en un lugar",
+        "exampleSentences": {
+            "en": "Can you drop me off at the station?",
+            "es": "¿Puedes dejarme en la estación?"
+        }
+    },
+    {
+        "front": "drop out",
+        "back": "abandonar (estudios)",
+        "exampleSentences": {
+            "en": "He dropped out of college after a year.",
+            "es": "Abandonó la universidad después de un año."
+        }
+    },
+    {
+        "front": "eat into",
+        "back": "consumir, reducir",
+        "exampleSentences": {
+            "en": "The repairs ate into our savings.",
+            "es": "Las reparaciones consumieron nuestros ahorros."
+        }
+    },
+    {
+        "front": "eat out",
+        "back": "comer fuera",
+        "exampleSentences": {
+            "en": "Let's eat out tonight.",
+            "es": "Vamos a comer fuera esta noche."
+        }
+    },
+    {
+        "front": "eat up",
+        "back": "comerse todo",
+        "exampleSentences": {
+            "en": "Eat up your vegetables!",
+            "es": "¡Cómete todas tus verduras!"
+        }
+    },
+    {
+        "front": "end up",
+        "back": "terminar en",
+        "exampleSentences": {
+            "en": "We ended up staying at home.",
+            "es": "Terminamos quedándonos en casa."
+        }
+    },
+    {
+        "front": "fall apart",
+        "back": "desmoronarse",
+        "exampleSentences": {
+            "en": "My old shoes are falling apart.",
+            "es": "Mis zapatos viejos se están desmoronando."
+        }
+    },
+    {
+        "front": "fall back on",
+        "back": "recurrir a",
+        "exampleSentences": {
+            "en": "He had to fall back on his savings.",
+            "es": "Tuvo que recurrir a sus ahorros."
+        }
+    },
+    {
+        "front": "fall behind",
+        "back": "retrasarse",
+        "exampleSentences": {
+            "en": "I'm falling behind in my studies.",
+            "es": "Me estoy retrasando en mis estudios."
+        }
+    },
+    {
+        "front": "fall in love",
+        "back": "enamorarse",
+        "exampleSentences": {
+            "en": "If I fell in love with you",
+            "es": "Si me enamorara de ti"
+        }
+    },
+    {
+        "front": "fall in with",
+        "back": "estar de acuerdo con",
+        "exampleSentences": {
+            "en": "I'm happy to fall in with your plans.",
+            "es": "Estoy feliz de estar de acuerdo con tus planes."
+        }
+    },
+    {
+        "front": "fall off",
+        "back": "caerse de",
+        "exampleSentences": {
+            "en": "He fell off his bike.",
+            "es": "Se cayó de su bicicleta."
+        }
+    },
+    {
+        "front": "fall through",
+        "back": "fracasar",
+        "exampleSentences": {
+            "en": "Our plans fell through at the last minute.",
+            "es": "Nuestros planes fracasaron en el último minuto."
+        }
+    },
+    {
+        "front": "feel up to",
+        "back": "sentirse con ganas de",
+        "exampleSentences": {
+            "en": "I don't feel up to going out tonight.",
+            "es": "No tengo ganas de salir esta noche."
+        }
+    },
+    {
+        "front": "figure out",
+        "back": "entender, resolver",
+        "exampleSentences": {
+            "en": "He finally figured out how to solve the puzzle.",
+            "es": "Finalmente descifró cómo resolver el rompecabezas."
+        }
+    },
+    {
+        "front": "fill in",
+        "back": "rellenar",
+        "exampleSentences": {
+            "en": "Please fill in this form.",
+            "es": "Por favor, rellena este formulario."
+        }
+    },
+    {
+        "front": "find oneself",
+        "back": "encontrarse a sí mismo",
+        "exampleSentences": {
+            "en": "She went traveling to find herself.",
+            "es": "Se fue de viaje para encontrarse a sí misma."
+        }
+    },
+    {
+        "front": "find out",
+        "back": "descubrir",
+        "exampleSentences": {
+            "en": "I need to find out more information.",
+            "es": "Necesito descubrir más información."
+        }
+    },
+    {
+        "front": "get across",
+        "back": "comunicar, hacerse entender",
+        "exampleSentences": {
+            "en": "It's hard to get my ideas across.",
+            "es": "Es difícil comunicar mis ideas."
+        }
+    },
+    {
+        "front": "get along",
+        "back": "llevarse bien con alguien",
+        "exampleSentences": {
+            "en": "My sister and I get along very well.",
+            "es": "Mi hermana y yo nos llevamos muy bien."
+        }
+    },
+    {
+        "front": "get along with",
+        "back": "llevarse bien con",
+        "exampleSentences": {
+            "en": "She gets along well with her colleagues.",
+            "es": "Se lleva bien con sus colegas."
+        }
+    },
+    {
+        "front": "get around",
+        "back": "moverse, evitar",
+        "exampleSentences": {
+            "en": "It's easy to get around the city by bike.",
+            "es": "Es fácil moverse por la ciudad en bicicleta."
+        }
+    },
+    {
+        "front": "get around to",
+        "back": "encontrar tiempo para",
+        "exampleSentences": {
+            "en": "I haven't got around to cleaning the garage yet.",
+            "es": "Todavía no he encontrado tiempo para limpiar el garaje."
+        }
+    },
+    {
+        "front": "get away",
+        "back": "escapar",
+        "exampleSentences": {
+            "en": "We need to get away for a few days.",
+            "es": "Necesitamos escapar por unos días."
+        }
+    },
+    {
+        "front": "get away with",
+        "back": "salir impune",
+        "exampleSentences": {
+            "en": "He always gets away with everything.",
+            "es": "Siempre se sale con la suya."
+        }
+    },
+    {
+        "front": "get back",
+        "back": "volver",
+        "exampleSentences": {
+            "en": "What time did you get back last night?",
+            "es": "¿A qué hora volviste anoche?"
+        }
+    },
+    {
+        "front": "get back at",
+        "back": "vengarse de",
+        "exampleSentences": {
+            "en": "He's trying to get back at his ex-girlfriend.",
+            "es": "Está intentando vengarse de su ex-novia."
+        }
+    },
+    {
+        "front": "get back to",
+        "back": "volver a contactar",
+        "exampleSentences": {
+            "en": "I'll get back to you later.",
+            "es": "Me pondré en contacto contigo más tarde."
+        }
+    },
+    {
+        "front": "get by",
+        "back": "arreglárselas",
+        "exampleSentences": {
+            "en": "I can get by with my limited Spanish.",
+            "es": "Puedo arreglármelas con mi español limitado."
+        }
+    },
+    {
+        "front": "get down",
+        "back": "deprimir",
+        "exampleSentences": {
+            "en": "This rainy weather really gets me down.",
+            "es": "Este tiempo lluvioso realmente me deprime."
+        }
+    },
+    {
+        "front": "get home",
+        "back": "llegar a casa",
+        "exampleSentences": {
+            "en": "But when I get home to you",
+            "es": "Pero cuando llego a casa contigo"
+        }
+    },
+    {
+        "front": "get into",
+        "back": "meterse en, interesarse por",
+        "exampleSentences": {
+            "en": "He's really getting into photography.",
+            "es": "Realmente se está metiendo en la fotografía."
+        }
+    },
+    {
+        "front": "get off",
+        "back": "bajarse (transporte), librarse",
+        "exampleSentences": {
+            "en": "I need to get off at the next stop.",
+            "es": "Necesito bajarme en la próxima parada."
+        }
+    },
+    {
+        "front": "get on",
+        "back": "subirse (transporte), llevarse bien",
+        "exampleSentences": {
+            "en": "How do you get on with your new boss?",
+            "es": "¿Cómo te llevas con tu nuevo jefe?"
+        }
+    },
+    {
+        "front": "get on with",
+        "back": "llevarse bien con, continuar con",
+        "exampleSentences": {
+            "en": "I get on well with my neighbors.",
+            "es": "Me llevo bien con mis vecinos."
+        }
+    },
+    {
+        "front": "get out",
+        "back": "salir, escapar",
+        "exampleSentences": {
+            "en": "Let's get out of here.",
+            "es": "¡Salgamos de aquí!"
+        }
+    },
+    {
+        "front": "get over",
+        "back": "superar",
+        "exampleSentences": {
+            "en": "It took her a long time to get over the flu.",
+            "es": "Le llevó mucho tiempo superar la gripe."
+        }
+    },
+    {
+        "front": "get rid of",
+        "back": "deshacerse de",
+        "exampleSentences": {
+            "en": "I want to get rid of all these old clothes.",
+            "es": "Quiero deshacerme de toda esta ropa vieja."
+        }
+    },
+    {
+        "front": "get through",
+        "back": "superar, terminar",
+        "exampleSentences": {
+            "en": "I don't know how I'll get through this.",
+            "es": "No sé cómo voy a superar esto."
+        }
+    },
+    {
+        "front": "get up",
+        "back": "levantarse",
+        "exampleSentences": {
+            "en": "I usually get up at 7 AM.",
+            "es": "Normalmente me levanto a las 7 de la mañana."
+        }
+    },
+    {
+        "front": "give away",
+        "back": "regalar, revelar",
+        "exampleSentences": {
+            "en": "Don't give away the ending of the movie.",
+            "es": "No reveles el final de la película."
+        }
+    },
+    {
+        "front": "give back",
+        "back": "devolver",
+        "exampleSentences": {
+            "en": "Please give back the book you borrowed.",
+            "es": "Por favor, devuelve el libro que te presté."
+        }
+    },
+    {
+        "front": "give in",
+        "back": "ceder",
+        "exampleSentences": {
+            "en": "He finally gave in to her demands.",
+            "es": "Finalmente cedió a sus demandas."
+        }
+    },
+    {
+        "front": "give up",
+        "back": "rendirse, dejar un hábito",
+        "exampleSentences": {
+            "en": "He decided to give up smoking last year.",
+            "es": "Él decidió dejar de fumar el año pasado."
+        }
+    },
+    {
+        "front": "go after",
+        "back": "perseguir",
+        "exampleSentences": {
+            "en": "He's going after his dreams.",
+            "es": "Está persiguiendo sus sueños."
+        }
+    },
+    {
+        "front": "go along with",
+        "back": "estar de acuerdo con",
+        "exampleSentences": {
+            "en": "I don't really go along with that idea.",
+            "es": "Realmente no estoy de acuerdo con esa idea."
+        }
+    },
+    {
+        "front": "go by",
+        "back": "pasar (tiempo), guiarse por",
+        "exampleSentences": {
+            "en": "Time goes by so fast.",
+            "es": "El tiempo pasa muy rápido."
+        }
+    },
+    {
+        "front": "go down",
+        "back": "bajar, ser aceptado",
+        "exampleSentences": {
+            "en": "The prices have gone down.",
+            "es": "Los precios han bajado."
+        }
+    },
+    {
+        "front": "go off",
+        "back": "sonar (alarma), explotar",
+        "exampleSentences": {
+            "en": "The alarm went off at 6 AM.",
+            "es": "La alarma sonó a las 6 de la mañana."
+        }
+    },
+    {
+        "front": "go on",
+        "back": "continuar",
+        "exampleSentences": {
+            "en": "The show must go on.",
+            "es": "El espectáculo debe continuar."
+        }
+    },
+    {
+        "front": "go out",
+        "back": "salir",
+        "exampleSentences": {
+            "en": "Let's go out tonight.",
+            "es": "Salgamos esta noche."
+        }
+    },
+    {
+        "front": "go through",
+        "back": "experimentar",
+        "exampleSentences": {
+            "en": "She's going through a difficult time.",
+            "es": "Está pasando por un momento difícil."
+        }
+    },
+    {
+        "front": "grow into",
+        "back": "crecer hasta caber en",
+        "exampleSentences": {
+            "en": "He'll grow into these shoes.",
+            "es": "Crecerá hasta que le queden estos zapatos."
+        }
+    },
+    {
+        "front": "grow out of",
+        "back": "quedar pequeño",
+        "exampleSentences": {
+            "en": "My son has grown out of his shoes.",
+            "es": "A mi hijo le han quedado pequeños sus zapatos."
+        }
+    },
+    {
+        "front": "grow up",
+        "back": "crecer",
+        "exampleSentences": {
+            "en": "I want to be a doctor when I grow up.",
+            "es": "Quiero ser médico cuando crezca."
+        }
+    },
+    {
+        "front": "hand in",
+        "back": "entregar",
+        "exampleSentences": {
+            "en": "Please hand in your assignments by Friday.",
+            "es": "Por favor, entrega tus tareas antes del viernes."
+        }
+    },
+    {
+        "front": "hand out",
+        "back": "repartir",
+        "exampleSentences": {
+            "en": "The teacher handed out the test papers.",
+            "es": "El profesor repartió los exámenes."
+        }
+    },
+    {
+        "front": "hand over",
+        "back": "entregar",
+        "exampleSentences": {
+            "en": "He handed over the documents to the police.",
+            "es": "Entregó los documentos a la policía."
+        }
+    },
+    {
+        "front": "hang on",
+        "back": "esperar",
+        "exampleSentences": {
+            "en": "Hang on a minute, I'll be right back.",
+            "es": "Espera un minuto, vuelvo enseguida."
+        }
+    },
+    {
+        "front": "hang out",
+        "back": "pasar el rato",
+        "exampleSentences": {
+            "en": "Do you want to hang out this weekend?",
+            "es": "¿Quieres pasar el rato este fin de semana?"
+        }
+    },
+    {
+        "front": "hang out with",
+        "back": "pasar el rato con",
+        "exampleSentences": {
+            "en": "Do you want to hang out with us tonight?",
+            "es": "¿Quieres pasar el rato con nosotros esta noche?"
+        }
+    },
+    {
+        "front": "hang up",
+        "back": "colgar (teléfono), colgar ropa",
+        "exampleSentences": {
+            "en": "Don't hang up on me!",
+            "es": "¡No me cuelgues!"
+        }
+    },
+    {
+        "front": "hold on",
+        "back": "esperar",
+        "exampleSentences": {
+            "en": "Hold on, I'm coming.",
+            "es": "Espera, ya voy."
+        }
+    },
+    {
+        "front": "keep back",
+        "back": "mantener alejado, ocultar",
+        "exampleSentences": {
+            "en": "Keep back from the edge.",
+            "es": "Mantente alejado del borde."
+        }
+    },
+    {
+        "front": "keep on",
+        "back": "seguir haciendo algo",
+        "exampleSentences": {
+            "en": "Keep on trying, you'll succeed.",
+            "es": "Sigue intentándolo, lo conseguirás."
+        }
+    },
+    {
+        "front": "keep up",
+        "back": "mantener el ritmo",
+        "exampleSentences": {
+            "en": "It's hard to keep up with all the changes.",
+            "es": "Es difícil mantener el ritmo con todos los cambios."
+        }
+    }
+]

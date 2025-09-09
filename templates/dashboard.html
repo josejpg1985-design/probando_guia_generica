@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Flashcard App</title>
+    <link rel="stylesheet" href="/static/css/style.css?v=1.0.1">
+    <script src="/static/js/theme.js" defer></script>
+    <script src="/static/js/auth.js" defer></script>
+</head>
+<body>
+    <div class="container dashboard-container">
+        <h1>Bienvenido a tu Dashboard</h1>
+        <p>Aquí gestionarás tus flashcards.</p>
+        <button id="logout-btn" class="btn">Cerrar Sesión</button>
+        <a href="/archived" class="btn btn-primary">Ver Archivadas</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const token = verificarAutenticacion();
+            if (!token) return; // La función ya se encarga de redirigir
+
+            // 2. Verificar el token con el backend.
+            fetch('/api/user_info', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    // Si el token es inválido o expiró, el backend dará error.
+                    localStorage.removeItem('jwt_token');
+                    throw new Error('Sesión inválida');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // 3. Si todo está bien, mostrar los datos del usuario.
+                document.querySelector('h1').textContent = `Dashboard de ${data.email}`;
+
+                // 3.1. Cargar y mostrar las categorías de estudio.
+                fetch('/api/categories', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                })
+                .then(res => res.json())
+                .then(cat_data => {
+                    if (cat_data.status === 'success' && cat_data.categories.length > 0) {
+                        const container = document.querySelector('.dashboard-container');
+                        
+                        const categoryWrapper = document.createElement('div');
+                        categoryWrapper.className = 'category-selector';
+                        
+                        const title = document.createElement('h2');
+                        title.textContent = 'Elige una categoría para estudiar:';
+                        categoryWrapper.appendChild(title);
+
+                        const buttonGroup = document.createElement('div');
+                        buttonGroup.className = 'button-group';
+
+                        cat_data.categories.forEach(category => {
+                            const categoryLink = document.createElement('a');
+                            categoryLink.href = `/study/${encodeURIComponent(category)}`; 
+                            categoryLink.className = 'btn btn-primary';
+                            categoryLink.textContent = category;
+                            buttonGroup.appendChild(categoryLink);
+                        });
+
+                        categoryWrapper.appendChild(buttonGroup);
+                        container.appendChild(categoryWrapper);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error de autenticación:', error);
+                window.location.href = '/';
+            });
+
+            // 4. Funcionalidad del botón de logout.
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                localStorage.removeItem('jwt_token');
+                window.location.href = '/';
+            });
+        });
+    </script>
+</body>
+</html>

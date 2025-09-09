@@ -1,0 +1,84 @@
+Términos clave para guiar a una IA en el desarrollo de un proyecto
+
+30. MVP (Minimum Viable Product)
+"Haz una versión mínima funcional del producto con solo las funciones esenciales para probar la idea."
+✅ Enfoque: rápido, funcional, para validar. 
+
+31. Production-ready
+"El código debe estar listo para producción: optimizado, seguro, bien documentado y sin errores graves."
+✅ Enfoque: profesional, estable, listo para usuarios reales. 
+
+32. SPA (Single Page Application)
+"Crea una app web que carga una sola página y cambia el contenido dinámicamente sin recargar."
+✅ Ejemplo: apps como Gmail o React.
+🛠️ Tecnologías típicas: React, Vue, Angular. 
+
+33. Responsiva / Responsive Design
+"El diseño debe adaptarse automáticamente a móviles, tablets y pantallas grandes."
+✅ Usa diseño flexible, grids y media queries. 
+
+34. PWA (Progressive Web App)
+"Haz una app web que se comporte como una app nativa: funcione sin internet, se pueda instalar, notificaciones, etc."
+✅ Ideal para apps móviles sin app store. 
+
+35. SSR (Server-Side Rendering)
+"Genera las páginas en el servidor antes de enviarlas al navegador."
+✅ Mejor SEO y velocidad inicial.
+🔧 Ejemplo: Next.js, Nuxt.js. 
+
+36. CSR (Client-Side Rendering)
+"La página se carga en el navegador y se actualiza con JavaScript."
+✅ Más dinámico, pero peor SEO inicial.
+🔧 Ejemplo: React puro. 
+
+37. API RESTful
+"Crea una interfaz para que el frontend se comunique con el backend usando URLs claras y métodos HTTP (GET, POST, etc)."
+✅ Estructura estándar y fácil de usar. 
+
+38. GraphQL
+"Usa GraphQL para que el frontend pida solo los datos que necesita, en una sola consulta."
+✅ Más eficiente que REST en algunos casos. 
+
+39. Headless CMS
+"Usa un sistema de gestión de contenidos sin interfaz visual, solo como base de datos que la app pueda consumir."
+✅ Ejemplo: Contentful, Strapi. Ideal para SPAs o PWAs. 
+
+40. UI/UX consistente
+"Sigue un diseño coherente: mismos colores, tipografías, botones y flujos de usuario en toda la app."
+✅ Mejora la experiencia y profesionalidad. 
+
+41. Dark Mode / Light Mode
+"Incluye un interruptor para cambiar entre tema oscuro y claro."
+✅ Mejora accesibilidad y comodidad visual. 
+
+42. Accesible (WCAG)
+"Haz que el sitio sea usable para personas con discapacidad: buen contraste, lectores de pantalla, teclado, etc."
+✅ Cumple estándares internacionales de accesibilidad. 
+
+43. Multi-idioma / i18n
+"Prepara la app para soportar varios idiomas (español, inglés, etc)."
+✅ Útil para llegar a más usuarios. 
+
+44. Modular / Escalable
+"Estructura el código en partes separadas (módulos) para que sea fácil de mantener y ampliar."
+✅ Evita código "enmarañado". 
+
+45. Real-time (en tiempo real)
+"Actualiza la información automáticamente sin recargar (como chats o notificaciones)."
+🔧 Tecnologías: WebSockets, Firebase, Socket.IO. 
+
+46. Offline-first
+"Diseña la app para que funcione incluso sin conexión, guardando datos localmente."
+✅ Ideal para PWAs o zonas con mala conexión. 
+
+47. SEO-friendly
+"Optimiza el sitio para que los motores de búsqueda lo indexen bien: metatags, URLs limpias, SSR, etc."
+✅ Para que aparezca en Google. 
+
+48. CI/CD (Integración y Despliegue Continuo)
+"Automatiza pruebas y despliegues: cada cambio se prueba y sube automáticamente."
+✅ Ahorra tiempo y reduce errores. 
+
+49. Estática (Static Site)
+"Genera un sitio con páginas pre-construidas, rápido y seguro (como un blog o portafolio)."
+🔧 Ejemplo: Gatsby, Hugo, Jekyll. 

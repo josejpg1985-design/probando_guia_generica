@@ -1,0 +1,500 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --background-color: #f4f7f6;
+    --card-background: #ffffff;
+    --text-color: #212529;
+    --border-color: #dee2e6;
+    --error-color: #d9534f;
+    --success-color: #5cb85c;
+    --card-back-bg: #e9f5ff;
+    --btn-bg: #f0f0f0;
+    --text-muted: #6c757d;
+}
+
+/* Dark mode variables */
+body.dark-mode {
+    --primary-color: #0d6efd;
+    --primary-hover: #0b5ed7;
+    --background-color: #121212;
+    --card-background: #1e1e1e;
+    --text-color: #e9ecef;
+    --border-color: #444;
+    --error-color: #ff7b72;
+    --success-color: #72ff7b;
+    --card-back-bg: #2a3b4c;
+    --btn-bg: #333;
+    --text-muted: #adb5bd;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    background-color: var(--card-background);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.auth-container {
+    max-width: 420px; /* Auth container is usually smaller */
+}
+
+.container h1 {
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.container p {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+#auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-weight: 500;
+}
+
+.form-group input {
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: var(--card-background);
+    color: var(--text-color);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.button-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    flex-grow: 1;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background-color: var(--btn-bg);
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    text-decoration: none; /* Para las etiquetas <a> */
+    text-align: center; /* Para las etiquetas <a> */
+    color: var(--text-color); /* Para las etiquetas <a> */
+}
+
+.btn.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.btn.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+#message-area {
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* --- Dashboard & Study Page Specific --- */
+
+.category-selector h2 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+
+
+/* --- Flashcard Styles --- */
+.flashcard-area {
+    perspective: 1000px; /* Da el efecto 3D */
+    margin: 2rem 0;
+}
+
+.flashcard {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
+    cursor: pointer;
+}
+
+.flashcard.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la cara trasera del elemento */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-size: 2rem;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.card-front {
+    background-color: var(--card-background);
+    z-index: 2; /* Asegura que la cara frontal esté por encima */
+}
+
+.card-back {
+    background-color: var(--card-back-bg);
+    transform: rotateY(180deg);
+    z-index: 1; /* Asegura que la cara trasera esté por debajo */
+}
+
+/* Cuando la tarjeta está girada, invertimos el z-index */
+.flashcard.is-flipped .card-front {
+    z-index: 1;
+}
+
+.flashcard.is-flipped .card-back {
+    z-index: 2;
+}
+
+.navigation {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* New container for top icons */
+.top-icons-container {
+    position: absolute; /* Position this container */
+    top: 15px;
+    right: 15px; /* Position the container at top-right */
+    display: flex;
+    gap: 8px; /* Reduced space between icons */
+    z-index: 10; /* Ensure it's above other elements */
+}
+
+/* Reset individual icon containers to be simple flex items */
+.example-icon-container,
+.archive-icon-container,
+.edit-icon-container {
+    position: static; /* Crucial: make them flex items */
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    z-index: auto;
+    padding: 0; /* Ensure no conflicting padding */
+    cursor: pointer;
+}
+
+.example-icon {
+    font-size: 1.2rem;
+}
+
+.example-icon-container .tooltip,
+.archive-icon-container .tooltip,
+.edit-icon-container .tooltip {
+    display: none;
+    width: auto;
+    white-space: nowrap;
+    background-color: var(--text-color);
+    color: var(--background-color);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    top: calc(100% + 5px); /* Position below the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.example-icon-container:hover .tooltip,
+.archive-icon-container:hover .tooltip,
+.edit-icon-container:hover .tooltip {
+    display: block; /* Show on hover */
+    opacity: 1;
+}
+
+/* Rating Buttons */
+.rating-buttons {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.btn-rating {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: 1px solid;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-rating[data-rating="easy"] {
+    border-color: var(--success-color);
+    color: var(--success-color);
+}
+.btn-rating[data-rating="easy"]:hover {
+    background-color: var(--success-color);
+    color: var(--card-background);
+}
+
+.btn-rating[data-rating="normal"] {
+    border-color: #ffc107;
+    color: #ffc107;
+}
+.btn-rating[data-rating="normal"]:hover {
+    background-color: #ffc107;
+    color: var(--card-background);
+}
+
+.btn-rating[data-rating="hard"] {
+    border-color: var(--error-color);
+    color: var(--error-color);
+}
+.btn-rating[data-rating="hard"]:hover {
+    background-color: var(--error-color);
+    color: var(--card-background);
+}
+
+/* Archive Icon */
+.archive-icon {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+
+.archive-icon:hover {
+    color: var(--primary-color);
+}
+
+/* Archived Cards List */
+#archived-cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 1rem;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--background-color);
+    min-height: 100px; /* Ensure it has some height even if empty */
+}
+
+.archived-card-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--card-background);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.archived-card-item input[type="checkbox"] {
+    min-width: 20px;
+    min-height: 20px;
+    cursor: pointer;
+}
+
+.archived-card-item label {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.archived-card-item label strong {
+    color: var(--primary-color);
+}
+
+/* --- Edit Mode Styles --- */
+.edit-icon-container {
+    position: static;
+    cursor: pointer;
+}
+
+.edit-icon {
+    font-size: 1.2rem;
+}
+
+.edit-mode-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.edit-textarea {
+    width: 100%;
+    height: 60%;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    resize: none;
+}
+
+.edit-controls {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.btn-danger {
+    background-color: var(--error-color);
+    border-color: var(--error-color);
+    color: white;
+}
+
+.btn-danger:hover {
+    opacity: 0.8;
+}
+
+/* --- Archived Cards Grid Styles --- */
+.archived-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+    min-height: 300px; /* Give it some space */
+}
+
+.archived-card-grid-item {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.archived-card-grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.archived-card-grid-item .card-content {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    word-break: break-word;
+}
+
+.archived-card-grid-item .card-category {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.archived-card-grid-item input[type="checkbox"] {
+    min-width: 20px;
+    min-height: 20px;
+    cursor: pointer;
+}
+
+/* --- Pagination Styles --- */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.pagination-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--btn-bg);
+    color: var(--text-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination-info {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
