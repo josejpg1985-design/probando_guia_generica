@@ -25,56 +25,30 @@ Antes de nada, tienes que presentarte. Git necesita saber quién eres para "firm
     git config --global user.name "Tu Nombre o Alias"
     git config --global user.email "tu_correo@ejemplo.com"
     ```
-*   **¿Para qué sirven?**
-    *   Para registrar tu nombre y correo. Cada "commit" (guardado) que hagas llevará tu firma.
-    *   Es fundamental para saber quién es el autor de cada cambio.
 *   **Recomendación:** Usa el mismo email que usarás en GitHub para que tus contribuciones se asocien a tu perfil.
 
 ---
 
 ### **Paso 1: Empezar un Proyecto con Git (Abrir tu Cuaderno de Laboratorio)**
 
-Lo primero es decirle a Git: "¡Oye, quiero que empieces a llevar un registro de esta carpeta!"
-
 *   **El Comando:** `git init`
-*   **¿Para qué sirve?**
-    *   Convierte una carpeta normal en un "repositorio Git".
-*   **Cuándo usarlo:**
-    *   Solo se hace **una vez** por proyecto.
-*   **Ejemplo Real:**
-    ```bash
-    # Ve a la carpeta de tu proyecto
-    cd C:\web_scraping\proyectos\mi_proyecto
-
-    # Inicializa Git en esa carpeta:
-    git init
-    ```
-    Verás un mensaje como "Initialized empty Git repository...". ¡Felicidades, tu cuaderno está listo!
+*   **¿Para qué sirve?** Convierte una carpeta normal en un "repositorio Git".
+*   **Cuándo usarlo:** Solo se hace **una vez** por proyecto.
 
 ---
 
-### **Paso 2: El Ciclo Básico de Guardado (Tu Rutina Diaria)**
-
-Este es el proceso que repetirás una y otra vez.
+### **Paso 2: El Ciclo Básico de Guardado (Tu Rutina Local)**
 
 *   **Comando Esencial: `git status` (El Chismoso de Git)**
-    *   **¿Para qué sirve?** Es tu mejor amigo. Te dice exactamente qué está pasando:
-        *   Qué archivos has modificado.
-        *   Qué archivos están listos para ser guardados ("en preparación").
-        *   Si tienes cambios pendientes.
-    *   **Cuándo usarlo:** ¡Todo el tiempo! Antes de añadir, después de añadir, si te sientes perdido... `git status` te da claridad.
+    *   **¿Para qué sirve?** Es tu mejor amigo. Te dice exactamente qué está pasando: qué archivos has modificado, cuáles están listos para ser guardados, etc.
+    *   **Cuándo usarlo:** ¡Todo el tiempo! `git status` te da claridad.
 
 *   **Comando 1: `git add .` (Poner en la Mesa de Preparación)**
-    *   **¿Para qué sirve?**
-        *   Es como decir: "¡Git, pon **todos estos cambios** en la 'mesa de preparación' para el próximo guardado!"
-        *   El `.` significa "todos los archivos modificados en esta carpeta y subcarpetas".
-    *   **Cuándo usarlo:** Después de hacer cambios y antes de "guardarlos" definitivamente.
+    *   **¿Para qué sirve?** Prepara todos tus cambios para el próximo guardado.
+    *   El `.` significa "todos los archivos en esta carpeta y subcarpetas".
 
 *   **Comando 2: `git commit -m "Tu mensaje"` (Hacer la Anotación)**
-    *   **¿Para qué sirve?**
-        *   Es como decir: "¡Git, toma todo lo de la 'mesa de preparación' y **guárdalo como una anotación definitiva** en mi cuaderno!"
-        *   El `-m` es para que escribas un mensaje corto y claro que describa qué cambios hiciste. ¡Sé específico!
-    *   **Cuándo usarlo:** Después de `git add .`.
+    *   **¿Para qué sirve?** Guarda definitivamente en tu historial local todo lo que preparaste con `git add`.
 
 ---
 
@@ -83,7 +57,6 @@ Este es el proceso que repetirás una y otra vez.
 No quieres guardar todo en tu repositorio. Archivos de caché, bases de datos, o secretos no deben estar ahí.
 
 *   **¿Qué es?** Un archivo de texto llamado `.gitignore` que le dice a Git qué ignorar.
-*   **¿Cómo funciona?** Creas el archivo en la raíz de tu proyecto y escribes los nombres de archivos o carpetas que no quieres rastrear.
 *   **Ejemplo de `.gitignore` para un proyecto Python:**
     ```
     # Archivos de caché de Python
@@ -98,66 +71,54 @@ No quieres guardar todo en tu repositorio. Archivos de caché, bases de datos, o
     ```
 
 *   **¡Ups! Ya guardé un archivo que quería ignorar, ¿y ahora?**
-    *   Si ya hiciste "commit" de un archivo (ej. `flashcards.db`) y luego lo añades al `.gitignore`, Git seguirá rastreándolo.
-    *   Necesitas quitarlo del "área de preparación" de Git, ¡pero sin borrarlo de tu disco!
-    *   **El Comando Mágico:** `git rm --cached [archivo]`
-    *   **Ejemplo Real:**
-        ```bash
-        # Para un archivo
-        git rm --cached flashcards.db
-
-        # Para una carpeta (con -r de recursivo)
-        git rm -r --cached __pycache__
-        ```
-    *   Después de usar este comando, haz un `git commit` para guardar el hecho de que ahora estás ignorando esos archivos.
+    *   Usa `git rm --cached [archivo]` para que Git lo olvide pero no lo borre de tu PC. Después, haz un commit para guardar este cambio.
 
 ---
 
 ### **Paso 4: Ver el Historial (Revisar tus Anotaciones)**
 
 *   **El Comando:** `git log`
-*   **¿Para qué sirve?**
-    *   Es como abrir tu cuaderno y **ver todas las anotaciones** que has hecho, de la más reciente a la más antigua.
-    *   Te muestra el ID del commit, el autor, la fecha y el mensaje.
-*   **Ejemplo Real:**
-    ```bash
-    git log
-    ```
+*   **¿Para qué sirve?** Muestra todas las anotaciones que has hecho, de la más reciente a la más antigua.
     (Presiona `q` para salir)
 
 ---
 
-### **Paso 5: Conectar con GitHub (Compartir tu Cuaderno en la Nube)**
+### **Paso 5: Conectar y Subir a GitHub (Tu Respaldo en la Nube)**
 
-GitHub es como una **biblioteca en la nube** para tus repositorios. Genial para respaldos y colaborar.
+Esto conecta tu repositorio local con uno vacío en GitHub y sube tus archivos.
 
-*   **Comando 1: `git remote add origin [URL]`**
-    *   Le dice a tu Git local dónde está su "casa" en la nube. `origin` es el apodo estándar para esa URL.
-*   **Comando 2: `git push -u origin main`**
-    *   **Envía todas las anotaciones** de tu cuaderno local a la nube (GitHub).
-    *   La primera vez se usa `-u origin main` para enlazar tu rama `main` local con la de `origin`. Las siguientes veces, solo necesitarás `git push`.
+*   **Paso 5.1: Crear el Repositorio en GitHub**
+    *   Ve a tu cuenta de GitHub, haz clic en "Create repository".
+    *   Dale un nombre, asegúrate de que sea **Público** y **NO** marques las casillas de `README`, `.gitignore` o `license`. Debe estar vacío.
+    *   Copia la URL que te da al final (termina en `.git`).
 
----
+*   **Paso 5.2: Conectar tu local con GitHub**
+    *   **Comando:** `git remote add origin [URL_que_copiaste]`
+    *   **¿Para qué sirve?** Le dice a tu Git local dónde está su "casa" en la nube. `origin` es el apodo para esa URL.
 
-### **Paso 6: Traer Cambios de GitHub (Actualizar tu Cuaderno)**
-
-*   **El Comando:** `git pull`
-*   **¿Para qué sirve?** Trae las anotaciones nuevas que haya en la nube y actualiza tu cuaderno local.
-*   **Cuándo usarlo:** Si trabajas en equipo o en varias computadoras, úsalo antes de empezar a programar.
-
----
-
-### **Paso 7: Deshacer Cambios (La Máquina del Tiempo)**
-
-*   **Descartar cambios locales (antes de `git add`):**
-    *   **Comando:** `git restore .`
-    *   **Para qué sirve:** Vuelve al estado de tu último commit, borrando cualquier modificación que no hayas puesto en el "área de preparación". ¡Cuidado!
-*   **Volver al último "commit" (¡Con mucha precaución!):**
-    *   **Comando:** `git reset --hard HEAD`
-    *   **Para qué sirve:** Borra commits y cambios locales. Es una herramienta poderosa y destructiva. Úsala solo si estás seguro.
+*   **Paso 5.3: Subir tu código por primera vez**
+    *   **Comando:** `git push -u origin main`
+    *   **¿Para qué sirve?** Envía todas las anotaciones de tu cuaderno local a la nube (GitHub).
+    *   **¡Ojo!** La primera vez que haces esto, se abrirá tu navegador para que inicies sesión y autorices la conexión. Es una medida de seguridad normal y solo pasa una vez.
 
 ---
 
-¡Con estos comandos, ya tienes una base sólida! La clave es la práctica y usar `git status` constantemente para saber dónde estás parado.
+### **El Flujo de Trabajo Diario (Tu Rutina Simplificada en 3 Pasos)**
+
+¡Felicidades! Ya superaste la configuración inicial, que es lo más largo. De ahora en adelante, tu rutina cada vez que trabajes en el proyecto es mucho más sencilla:
+
+*   **Paso 1: Modifica tu código.**
+    *   (Programas, corriges errores, añades archivos, etc.)
+
+*   **Paso 2: Guarda tus cambios en tu "cuaderno local".**
+    *   `git add .`
+    *   `git commit -m "Un mensaje que describa lo que hiciste"`
+
+*   **Paso 3: Sube tu trabajo a GitHub.**
+    *   `git push`
+
+¡Y ya está! Ese es el ciclo que repetirás el 99% del tiempo: **Modificas -> Guardas localmente (`add/commit`) -> Subes a la nube (`push`)**.
 
 ---
+
+*Otros comandos útiles de la guía original como `git pull` y `git restore` los puedes consultar cuando los necesites.*

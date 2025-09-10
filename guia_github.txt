@@ -1,0 +1,79 @@
+Guía de Supervivencia en GitHub (Tu Portafolio y Centro de Colaboración)
+
+¡Hola! Ya dominas los comandos de Git en tu terminal. Ahora, vamos a explorar GitHub, la página web donde vive tu código. No es solo un respaldo, es tu portafolio, tu centro de colaboración y tu lista de tareas.
+
+---
+
+### **¿Git vs. GitHub? (La Herramienta vs. El Taller)**
+
+Una analogía para que no te confundas:
+
+*   **Git:** Es tu caja de herramientas (comandos como `commit`, `push`, `pull`). Funciona en tu computadora.
+*   **GitHub:** Es el taller o la biblioteca donde guardas tus proyectos y colaboras con otros. Es una página web.
+
+Usas **Git** para construir y guardar localmente; usas **GitHub** para almacenar, mostrar y compartir tu trabajo.
+
+---
+
+### **Anatomía de tu Repositorio (La Página Principal de tu Proyecto)**
+
+Cuando entras a tu repositorio en GitHub, ves mucha información. Aquí está lo más importante:
+
+*   **Pestaña `<> Code`:** Es la vista principal. Aquí ves todos tus archivos y carpetas, tal como los tienes en tu PC.
+*   **El archivo `README.md`:** Es la "portada" de tu proyecto. GitHub la muestra automáticamente en la página principal. Es tu oportunidad para explicar de qué va tu proyecto, cómo instalarlo y cómo usarlo. (Hablaremos más de esto abajo).
+*   **Lista de Commits:** Usualmente arriba de tus archivos, hay un enlace que dice "X commits" (ej. "4 commits"). Si haces clic, verás el mismo historial de `git log`, pero de forma visual y más amigable.
+*   **Botón Verde `Code`:** Si haces clic aquí, puedes volver a copiar la URL `.git` de tu repositorio. También te da la opción de descargar el proyecto como un archivo ZIP.
+
+---
+
+### **El `README.md`: La Cara de tu Proyecto**
+
+El archivo `README.md` es crucial. Es lo primero que la gente ve.
+
+*   **¿Qué es `.md`?** Es un archivo de **Markdown**, un lenguaje de formato de texto muy simple para escribir documentos bonitos con títulos, listas, negritas, enlaces, etc.
+*   **¿Qué poner aquí?**
+    *   Un título claro.
+    *   Una descripción de qué hace tu proyecto.
+    *   Instrucciones de instalación y uso.
+    *   La tecnología que usaste.
+*   **Tip:** Un buen README hace que tu proyecto se vea profesional y es una excelente carta de presentación para futuros empleadores.
+
+---
+
+### **Explorando el Historial de Commits (La Máquina del Tiempo Visual)**
+
+Ya conoces `git log`. En GitHub, es aún mejor.
+
+1.  En la página de tu repositorio, haz clic en el enlace que dice **"X commits"**.
+2.  Verás la lista de todos tus guardados, con el autor y el mensaje.
+3.  **¡Aquí viene la magia!** Haz clic en cualquier commit de la lista. GitHub te mostrará un "diff", que es una vista que resalta exactamente qué líneas de código se añadieron (en verde) y cuáles se quitaron (en rojo) en ese guardado específico. Es una forma increíblemente visual de ver la evolución de tu código.
+
+---
+
+### **Pestaña `Issues` (Tu Lista de Tareas y Reporte de Errores)**
+
+La pestaña `Issues` es tu centro de gestión de tareas.
+
+*   **¿Para qué sirve?**
+    *   **Para ti mismo:** Puedes crear "Issues" a modo de recordatorios o lista de tareas (ej. "Crear la base de datos", "Corregir el error en el login").
+    *   **Para otros:** Si tu proyecto es público, otras personas pueden reportar errores (`bugs`) o sugerir nuevas funcionalidades (`features`) creando un Issue.
+*   **¿Cómo se usa?**
+    1.  Ve a la pestaña `Issues`.
+    2.  Haz clic en `New issue`.
+    3.  Ponle un título descriptivo y un comentario explicando la tarea o el problema.
+
+Es una forma muy organizada de llevar el control de lo que hay que hacer en tu proyecto.
+
+---
+
+### **Introducción a los `Pull Requests` (PRs)**
+
+Este es un concepto más avanzado, pero es el corazón de la colaboración en GitHub.
+
+*   **La idea:** Imagina que quieres proponer un cambio en el proyecto de otra persona (o incluso en tu propio proyecto, pero de forma ordenada). En lugar de "empujar" (`push`) tus cambios directamente, creas un **Pull Request**.
+*   **Analogía:** Es como si en un documento compartido de Google Docs, en lugar de escribir directamente, usaras el modo "Sugerir cambios". Le dices al dueño del proyecto: "Oye, he hecho estas mejoras. ¿Te gustaría incorporarlas (hacer `pull`) a tu proyecto principal?"
+*   **¿Por qué es útil?** Permite que otros revisen los cambios antes de que se integren, asegurando la calidad del código. Por ahora, quédate con la idea de que es el mecanismo para colaborar en equipo.
+
+---
+
+¡Con esto ya entiendes la interfaz de GitHub! Te animo a que hagas clic en todo, explores la página de tus commits y crees un Issue de prueba en tu repositorio. ¡La mejor forma de aprender es curiosear!
