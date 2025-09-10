@@ -150,6 +150,28 @@ def rate_flashcard(current_user):
     else:
         return jsonify({"status": "error", "message": "No se pudo actualizar la tarjeta."}), 500
 
+@app.route('/api/flashcards/<int:card_id>/flip', methods=['POST'])
+@token_required
+@api_error_handler
+def flip_card(current_user, card_id):
+    """Incrementa el contador de giros de una flashcard."""
+    # Asegurarse de que la tarjeta pertenece al usuario actual antes de actualizar
+    conn = database.get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT user_id FROM flashcards WHERE id = ?", (card_id,))
+    card_owner = cursor.fetchone()
+    conn.close()
+
+    if not card_owner or card_owner['user_id'] != current_user['id']:
+        return jsonify({"status": "error", "message": "Tarjeta no encontrada o no pertenece al usuario."}), 403
+
+    success = database.increment_flip_count(card_id)
+
+    if success:
+        return jsonify({"status": "success", "message": "Contador de giros incrementado."})
+    else:
+        return jsonify({"status": "error", "message": "No se pudo incrementar el contador."}), 500
+
 @app.route('/api/flashcards/archive', methods=['POST'])
 @token_required
 @api_error_handler

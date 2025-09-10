@@ -59,9 +59,12 @@
                 }
                 
                 const card = flashcards[index];
-                cardFrontEl.innerHTML = `<p>${card.front_content}</p>`;
+                // Añadido: Mostrar el contador de giros en la cara frontal
+                cardFrontEl.innerHTML = `
+                    <span class="flip-counter" title="Veces girada">🔄 ${card.flip_count || 0}</span>
+                    <p>${card.front_content}</p>
+                `;
                 
-                // Simplified structure for the back of the card
                 let backHtml = `
                     <div class="card-content-display"><p>${card.back_content}</p></div>
                     
@@ -174,7 +177,17 @@
             flashcardEl.addEventListener('click', (event) => {
                 const isIcon = event.target.closest('.top-icons-container, .rating-buttons, .edit-mode-container');
                 if (!flashcardEl.classList.contains('is-flipped') && !isIcon) {
-                    if(flashcards.length > 0) flashcardEl.classList.add('is-flipped');
+                    if (flashcards.length > 0) {
+                        const card = flashcards[currentCardIndex];
+                        
+                        // Añadido: Llama a la API para incrementar el contador, no espera la respuesta
+                        fetch(`/api/flashcards/${card.id}/flip`, {
+                            method: 'POST',
+                            headers: { 'Authorization': `Bearer ${token}` }
+                        }).catch(err => console.error('Error al incrementar el contador:', err));
+
+                        flashcardEl.classList.add('is-flipped');
+                    }
                 }
             });
 
