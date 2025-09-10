@@ -13,7 +13,7 @@ def get_db_connection():
     return conn
 
 def setup_database():
-    """Crea las tablas de la base de datos si no existen."""
+    """Crea las tablas de la base de datos y añade nuevas columnas si es necesario."""
     conn = get_db_connection()
     cursor = conn.cursor()
 
@@ -27,7 +27,7 @@ def setup_database():
     )
     ''')
 
-    # Crear tabla de flashcards
+    # Crear tabla de flashcards con la nueva columna
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS flashcards (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -42,10 +42,25 @@ def setup_database():
         ease_factor REAL DEFAULT 2.5,
         next_review_date TEXT DEFAULT (date('now')),
         is_archived INTEGER DEFAULT 0,
+        flip_count INTEGER DEFAULT 0,  -- Nueva columna
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (user_id) REFERENCES users (id)
     )
     ''')
+
+    # --- Bloque para añadir la columna a tablas existentes (migración) ---
+    try:
+        # Revisar si la columna ya existe
+        cursor.execute("PRAGMA table_info(flashcards)")
+        columns = [column['name'] for column in cursor.fetchall()]
+        if 'flip_count' not in columns:
+            print("Añadiendo columna 'flip_count' a la tabla 'flashcards'...")
+            cursor.execute("ALTER TABLE flashcards ADD COLUMN flip_count INTEGER DEFAULT 0")
+            print("Columna 'flip_count' añadida exitosamente.")
+    except Exception as e:
+        print(f"Error al intentar modificar la tabla 'flashcards': {e}")
+    # --- Fin del bloque de migración ---
+
 
     print("Tablas 'users' y 'flashcards' creadas o ya existentes.")
     conn.commit()
@@ -102,7 +117,7 @@ def get_flashcards_by_category(user_id, category):
     conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute(
-        "SELECT id, front_content, back_content, example_en, example_es FROM flashcards WHERE user_id = ? AND category = ? AND next_review_date <= date('now') AND is_archived = 0",
+        "SELECT id, front_content, back_content, example_en, example_es, flip_count FROM flashcards WHERE user_id = ? AND category = ? AND next_review_date <= date('now') AND is_archived = 0",
         (user_id, category)
     )
     flashcards = [dict(row) for row in cursor.fetchall()]
@@ -189,6 +204,26 @@ def archive_flashcard(card_id, user_id):
     conn.commit()
     conn.close()
     return cursor.rowcount > 0
+
+def increment_flip_count(card_id):
+    """Incrementa en 1 el contador de giros de una flashcard."""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute(
+            "UPDATE flashcards SET flip_count = flip_count + 1 WHERE id = ?",
+            (card_id,)
+        )
+        conn.commit()
+        # Devolvemos True si se actualizó una fila
+        success = cursor.rowcount > 0
+    except sqlite3.Error as e:
+        print(f"Error al incrementar el flip_count para la tarjeta {card_id}: {e}")
+        success = False
+    finally:
+        conn.close()
+    return success
+
 
 def unarchive_flashcards(card_ids, user_id):
     """Desarchiva una o varias flashcards."""
