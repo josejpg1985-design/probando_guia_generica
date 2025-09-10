@@ -121,4 +121,41 @@ Esto conecta tu repositorio local con uno vacío en GitHub y sube tus archivos.
 
 ---
 
+### **El Siguiente Nivel: Trabajando en Orden con Ramas (Branches)**
+
+Cuando un proyecto se vuelve más serio o colaboras con gente, hacer todos los cambios directamente en la rama `main` es arriesgado. Para evitar "romper" la versión principal, usamos **ramas**.
+
+*   **¿Qué es una Rama?**
+    *   Imagina que `main` es la versión oficial de tu proyecto. Una rama es una **copia de esa versión** donde puedes trabajar en una nueva funcionalidad o un arreglo de forma aislada y segura. Si algo sale mal, no afecta a `main`. Si todo va bien, unes los cambios de tu rama a `main`.
+
+*   **Comando Clave: `git checkout -b <nombre-rama>` (Crear y Moverse a una Rama)**
+    *   **¿Para qué sirve?** Es un atajo que hace dos cosas: **crea** una nueva rama y te **mueve** a ella para que sea tu espacio de trabajo activo.
+    *   **Desglose del comando:**
+        *   `checkout`: El comando para "moverte" entre ramas.
+        *   `-b`: La opción que le dice a `checkout` que **cree** la rama antes de moverse.
+        *   `<nombre-rama>`: El nombre que le das a tu nueva rama (ej: `anadir-login`, `corregir-bug-css`).
+
+*   **El Flujo de Trabajo Profesional con Ramas:**
+    1.  **Asegúrate de estar en `main` y actualizado:**
+        *   `git checkout main`
+        *   `git pull origin main` (Trae los últimos cambios de GitHub a tu `main` local).
+
+    2.  **Crea tu rama para la nueva tarea:**
+        *   `git checkout -b <nombre-de-tu-rama>`
+
+    3.  **Trabaja y haz commits en tu rama:**
+        *   Modifica tu código.
+        *   `git add .`
+        *   `git commit -m "Mensaje sobre lo que hiciste en la rama"`
+
+    4.  **Sube tu rama a GitHub:**
+        *   `git push origin <nombre-de-tu-rama>`
+
+    5.  **Crea un Pull Request en GitHub:**
+        *   En la página de GitHub, verás un botón para crear un "Pull Request" desde tu nueva rama. Esto es una solicitud para revisar y fusionar tus cambios en `main`.
+
+---
+
+---
+
 *Otros comandos útiles de la guía original como `git pull` y `git restore` los puedes consultar cuando los necesites.*
