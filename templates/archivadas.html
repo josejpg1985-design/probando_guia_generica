@@ -92,37 +92,63 @@
 
             function renderPagination(data) {
                 paginationControls.innerHTML = '';
-                if (data.total_pages <= 1) return; // No mostrar paginación si solo hay una página
+                if (data.total_pages <= 1) return;
 
+                const { page, total_pages } = data;
                 let paginationHtml = '';
 
-                // Botón Anterior
-                paginationHtml += `
-                    <button type="button" class="pagination-btn" id="prev-page" ${data.page === 1 ? 'disabled' : ''}>
-                        &larr; Anterior
-                    </button>
-                `;
+                // Botón Primera
+                paginationHtml += `<button type="button" class="pagination-btn" data-page="1" ${page === 1 ? 'disabled' : ''}>&laquo; Primera</button>`;
 
-                // Información de página
-                paginationHtml += `<span class="pagination-info">Página ${data.page} de ${data.total_pages}</span>`;
+                // Botón Anterior
+                paginationHtml += `<button type="button" class="pagination-btn" data-page="${page - 1}" ${page === 1 ? 'disabled' : ''}>&larr; Anterior</button>`;
+
+                // Page numbers
+                const pagesToShow = 5;
+                let startPage = Math.max(1, page - Math.floor(pagesToShow / 2));
+                let endPage = Math.min(total_pages, startPage + pagesToShow - 1);
+
+                if (endPage - startPage + 1 < pagesToShow) {
+                    startPage = Math.max(1, endPage - pagesToShow + 1);
+                }
+
+                if (startPage > 1) {
+                    paginationHtml += `<button type="button" class="pagination-btn" data-page="1">1</button>`;
+                    if (startPage > 2) {
+                        paginationHtml += `<span class="pagination-ellipsis">...</span>`;
+                    }
+                }
+
+                for (let i = startPage; i <= endPage; i++) {
+                    paginationHtml += `<button type="button" class="pagination-btn ${i === page ? 'active' : ''}" data-page="${i}">${i}</button>`;
+                }
+
+                if (endPage < total_pages) {
+                    if (endPage < total_pages - 1) {
+                        paginationHtml += `<span class="pagination-ellipsis">...</span>`;
+                    }
+                    paginationHtml += `<button type="button" class="pagination-btn" data-page="${total_pages}">${total_pages}</button>`;
+                }
+
 
                 // Botón Siguiente
-                paginationHtml += `
-                    <button type="button" class="pagination-btn" id="next-page" ${data.page === data.total_pages ? 'disabled' : ''}>
-                        Siguiente &rarr;
-                    </button>
-                `;
+                paginationHtml += `<button type="button" class="pagination-btn" data-page="${page + 1}" ${page === total_pages ? 'disabled' : ''}>Siguiente &rarr;</button>`;
+
+                // Botón Última
+                paginationHtml += `<button type="button" class="pagination-btn" data-page="${total_pages}" ${page === total_pages ? 'disabled' : ''}>Última &raquo;</button>`;
+
 
                 paginationControls.innerHTML = paginationHtml;
             }
 
             // --- Event Listeners ---
             paginationControls.addEventListener('click', (event) => {
-                if (event.target.id === 'prev-page') {
-                    fetchAndRenderArchivedCards(currentPage - 1);
-                }
-                if (event.target.id === 'next-page') {
-                    fetchAndRenderArchivedCards(currentPage + 1);
+                const target = event.target.closest('.pagination-btn');
+                if (!target || target.disabled) return;
+
+                const page = parseInt(target.dataset.page);
+                if (page) {
+                    fetchAndRenderArchivedCards(page);
                 }
             });
 
