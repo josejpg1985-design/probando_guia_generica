@@ -105,6 +105,15 @@ def get_user_info(current_user):
     """Devuelve información del usuario autenticado."""
     return jsonify({'email': current_user['email'], 'id': current_user['id']})
 
+@app.route('/api/user/progress')
+@token_required
+@api_error_handler
+def get_user_progress_api(current_user):
+    """Devuelve el progreso del usuario."""
+    progress_data = database.get_user_progress(current_user['id'])
+    return jsonify({"status": "success", "progress": progress_data})
+
+
 @app.route('/api/categories')
 @token_required
 @api_error_handler
@@ -146,6 +155,8 @@ def rate_flashcard(current_user):
     success = database.update_flashcard_sm2_data(card_id, rating)
 
     if success:
+        # También incrementamos el contador de calificación
+        database.increment_rating_count(card_id, rating)
         return jsonify({"status": "success", "message": "Calificación registrada y tarjeta actualizada."})
     else:
         return jsonify({"status": "error", "message": "No se pudo actualizar la tarjeta."}), 500
