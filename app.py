@@ -224,17 +224,21 @@ def get_archived_cards(current_user):
         page = int(request.args.get('page', 1))
     except (TypeError, ValueError):
         page = 1
+    
+    search_term = request.args.get('search', None)
     per_page = 8 # 2 filas de 4 tarjetas
 
-    archived_data = database.get_archived_flashcards(current_user['id'], page, per_page)
+    archived_data = database.get_archived_flashcards(current_user['id'], page, per_page, search=search_term)
     
+    total_pages = (archived_data['total_cards'] + per_page - 1) // per_page if archived_data['total_cards'] > 0 else 1
+
     return jsonify({
         "status": "success",
         "flashcards": archived_data['flashcards'],
         "total_cards": archived_data['total_cards'],
         "page": page,
         "per_page": per_page,
-        "total_pages": (archived_data['total_cards'] + per_page - 1) // per_page
+        "total_pages": total_pages
     })
 
 @app.route('/api/flashcards/<int:card_id>', methods=['PUT'])

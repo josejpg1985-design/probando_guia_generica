@@ -307,26 +307,32 @@ def delete_flashcard_by_id(card_id, user_id):
     conn.close()
     return cursor.rowcount > 0
 
-def get_archived_flashcards(user_id, page=1, per_page=8):
-    """Devuelve una lista paginada de flashcards archivadas para un usuario."""
+def get_archived_flashcards(user_id, page=1, per_page=8, search=None):
+    """Devuelve una lista paginada de flashcards archivadas para un usuario, con opción de búsqueda."""
     conn = get_db_connection()
     cursor = conn.cursor()
 
-    # Contar el total de tarjetas archivadas para la paginación
-    cursor.execute(
-        "SELECT COUNT(id) FROM flashcards WHERE user_id = ? AND is_archived = 1",
-        (user_id,)
-    )
+    # Base query and parameters
+    base_where = "WHERE user_id = ? AND is_archived = 1"
+    params = [user_id]
+
+    if search:
+        base_where += " AND front_content LIKE ?"
+        params.append(f"%{search}%")
+
+    # Contar el total de tarjetas (filtradas o no)
+    count_query = f"SELECT COUNT(id) FROM flashcards {base_where}"
+    cursor.execute(count_query, tuple(params))
     total_cards = cursor.fetchone()[0]
 
     # Calcular el offset
     offset = (page - 1) * per_page
 
     # Obtener las tarjetas para la página actual
-    cursor.execute(
-        "SELECT id, front_content, back_content, category FROM flashcards WHERE user_id = ? AND is_archived = 1 ORDER BY created_at DESC LIMIT ? OFFSET ?",
-        (user_id, per_page, offset)
-    )
+    select_query = f"SELECT id, front_content, back_content, category FROM flashcards {base_where} ORDER BY created_at DESC LIMIT ? OFFSET ?"
+    params.extend([per_page, offset])
+    
+    cursor.execute(select_query, tuple(params))
     flashcards = [dict(row) for row in cursor.fetchall()]
     conn.close()
 

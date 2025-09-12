@@ -20,6 +20,10 @@
         <h1>Tarjetas Archivadas</h1>
         <p>Aquí puedes ver y gestionar las tarjetas que has dominado.</p>
 
+        <div class="search-container">
+            <input type="text" id="search-input" class="form-control" placeholder="Buscar tarjetas archivadas...">
+        </div>
+
         <form id="unarchive-form">
             <div id="archived-grid" class="archived-grid-container">
                 <!-- Las tarjetas se cargarán aquí -->
@@ -44,12 +48,29 @@
             const paginationControls = document.getElementById('pagination-controls');
             const unarchiveForm = document.getElementById('unarchive-form');
             const unarchiveBtn = document.getElementById('unarchive-btn');
+            const searchInput = document.getElementById('search-input');
 
             let currentPage = 1;
+            let currentSearch = '';
+            let debounceTimeout;
 
-            async function fetchAndRenderArchivedCards(page = 1) {
+            function debounce(func, delay) {
+                return function(...args) {
+                    clearTimeout(debounceTimeout);
+                    debounceTimeout = setTimeout(() => {
+                        func.apply(this, args);
+                    }, delay);
+                };
+            }
+
+            async function fetchAndRenderArchivedCards(page = 1, search = '') {
                 try {
-                    const response = await fetch(`/api/flashcards/archived?page=${page}`, {
+                    let url = `/api/flashcards/archived?page=${page}`;
+                    if (search) {
+                        url += `&search=${encodeURIComponent(search)}`;
+                    }
+
+                    const response = await fetch(url, {
                         headers: { 'Authorization': `Bearer ${token}` }
                     });
                     if (!response.ok) throw new Error('Error en la respuesta del servidor.');
@@ -60,6 +81,7 @@
                         renderGrid(data.flashcards);
                         renderPagination(data);
                         currentPage = data.page;
+                        currentSearch = search;
                     } else {
                         gridContainer.innerHTML = `<p>Error al cargar tarjetas: ${data.message}</p>`;
                     }
@@ -70,10 +92,10 @@
             }
 
             function renderGrid(cards) {
-                gridContainer.innerHTML = ''; // Limpiar la cuadrícula
+                gridContainer.innerHTML = '';
                 if (cards.length === 0) {
-                    gridContainer.innerHTML = '<p>No tienes tarjetas archivadas aún.</p>';
-                    unarchiveBtn.style.display = 'none'; // Ocultar botón si no hay tarjetas
+                    gridContainer.innerHTML = '<p>No se encontraron tarjetas con los criterios actuales.</p>';
+                    unarchiveBtn.style.display = 'none';
                     return;
                 }
 
@@ -97,13 +119,9 @@
                 const { page, total_pages } = data;
                 let paginationHtml = '';
 
-                // Botón Primera
                 paginationHtml += `<button type="button" class="pagination-btn" data-page="1" ${page === 1 ? 'disabled' : ''}>&laquo; Primera</button>`;
-
-                // Botón Anterior
                 paginationHtml += `<button type="button" class="pagination-btn" data-page="${page - 1}" ${page === 1 ? 'disabled' : ''}>&larr; Anterior</button>`;
 
-                // Page numbers
                 const pagesToShow = 5;
                 let startPage = Math.max(1, page - Math.floor(pagesToShow / 2));
                 let endPage = Math.min(total_pages, startPage + pagesToShow - 1);
@@ -130,25 +148,27 @@
                     paginationHtml += `<button type="button" class="pagination-btn" data-page="${total_pages}">${total_pages}</button>`;
                 }
 
-
-                // Botón Siguiente
                 paginationHtml += `<button type="button" class="pagination-btn" data-page="${page + 1}" ${page === total_pages ? 'disabled' : ''}>Siguiente &rarr;</button>`;
-
-                // Botón Última
                 paginationHtml += `<button type="button" class="pagination-btn" data-page="${total_pages}" ${page === total_pages ? 'disabled' : ''}>Última &raquo;</button>`;
-
 
                 paginationControls.innerHTML = paginationHtml;
             }
 
-            // --- Event Listeners ---
+            const debouncedSearch = debounce((searchTerm) => {
+                fetchAndRenderArchivedCards(1, searchTerm);
+            }, 300);
+
+            searchInput.addEventListener('input', (event) => {
+                debouncedSearch(event.target.value);
+            });
+
             paginationControls.addEventListener('click', (event) => {
                 const target = event.target.closest('.pagination-btn');
                 if (!target || target.disabled) return;
 
                 const page = parseInt(target.dataset.page);
                 if (page) {
-                    fetchAndRenderArchivedCards(page);
+                    fetchAndRenderArchivedCards(page, currentSearch);
                 }
             });
 
@@ -174,7 +194,7 @@
                     const result = await response.json();
                     if (result.status === 'success') {
                         alert(result.message);
-                        fetchAndRenderArchivedCards(currentPage); // Recargar la página actual
+                        fetchAndRenderArchivedCards(currentPage, currentSearch);
                     } else {
                         alert('Error al desarchivar: ' + result.message);
                     }
@@ -184,7 +204,6 @@
                 }
             });
 
-            // Carga inicial
             fetchAndRenderArchivedCards();
         });
     </script>

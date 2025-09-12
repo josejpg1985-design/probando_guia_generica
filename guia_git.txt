@@ -122,3 +122,44 @@ Esto conecta tu repositorio local con uno vacío en GitHub y sube tus archivos.
 ---
 
 *Otros comandos útiles de la guía original como `git pull` y `git restore` los puedes consultar cuando los necesites.*
+
+---
+
+### **Paso 6: Trabajando como los Profesionales con Ramas (Branches)**
+
+Hasta ahora, has trabajado directamente en la rama `main`. Esto está bien para proyectos pequeños y personales. Pero en el mundo real, para mantener el orden y la seguridad, se usan **ramas** (`branches`).
+
+*   **Analogía:** Imagina que la rama `main` es la **versión final y publicada de un libro**. Si quieres escribir un nuevo capítulo o corregir un error, no editas directamente el libro publicado. Haces una **copia o un borrador aparte** (una `rama`), trabajas en ella, y una vez que está perfecta, la incorporas al libro principal.
+
+**El Flujo de Trabajo con Ramas (El Ciclo Completo que acabamos de hacer):**
+
+*   **Paso 6.1: Crea tu "borrador" (la nueva rama)**
+    *   **Comando:** `git checkout -b nombre-de-la-rama`
+    *   **Ejemplo:** `git checkout -b feature/agregar-login`
+    *   **¿Qué hace?** Crea una nueva rama y te mueve a ella inmediatamente. Todo lo que hagas a partir de ahora ocurrirá en esta rama, sin afectar a `main`.
+
+*   **Paso 6.2: Trabaja y guarda en tu rama**
+    *   Haz tus cambios en el código.
+    *   Guarda tus cambios en tu rama como ya sabes:
+        *   `git add .`
+        *   `git commit -m "Un mensaje sobre lo que hiciste en la rama"`
+
+*   **Paso 6.3: Sube tu rama a GitHub**
+    *   **Comando:** `git push -u origin nombre-de-la-rama`
+    *   **¿Qué hace?** Sube tu "borrador" a GitHub, separado de `main`.
+
+*   **Paso 6.4: Propón tus cambios (¡El Pull Request!)**
+    *   **¡Ahora vas a GitHub!** Al subir tu rama, verás un mensaje en la terminal con un enlace para crear un **Pull Request (PR)**.
+    *   Un Pull Request es una solicitud formal para "fusionar" (`merge`) los cambios de tu rama en la rama `main`.
+    *   *(Este es el corazón de la colaboración. Para más detalles, consulta tu `guia_github.txt`)*.
+
+*   **Paso 6.5: Limpieza después de fusionar**
+    *   Una vez que tu Pull Request ha sido aprobado y fusionado en GitHub (y has borrado la rama remota desde la web), es hora de ordenar tu repositorio local.
+    *   **1. Vuelve a la rama principal:**
+        *   `git checkout main`
+    *   **2. Actualiza tu `main` local:** (¡Muy importante!)
+        *   `git pull origin main` (Trae los cambios que acabas de fusionar en GitHub).
+    *   **3. Borra la rama local que ya no necesitas:**
+        *   `git branch -d nombre-de-la-rama`
+
+¡Y listo! Tu rama `main` está actualizada y tu repositorio local está limpio, preparado para crear la siguiente rama.
