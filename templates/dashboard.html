@@ -12,6 +12,13 @@
     <div class="container dashboard-container">
         <h1>Bienvenido a tu Dashboard</h1>
         <p>Aquí gestionarás tus flashcards.</p>
+        <div class="progress-container">
+            <h3>Tu Progreso</h3>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="progress-fill"></div>
+            </div>
+            <span id="progress-text">Cargando...</span>
+        </div>
         <button id="logout-btn" class="btn">Cerrar Sesión</button>
         <a href="/archived" class="btn btn-primary">Ver Archivadas</a>
     </div>
@@ -70,6 +77,28 @@
                         categoryWrapper.appendChild(buttonGroup);
                         container.appendChild(categoryWrapper);
                     }
+
+                    // Fetch and display user progress
+                    fetch('/api/user/progress', {
+                        headers: { 'Authorization': `Bearer ${token}` }
+                    })
+                    .then(res => res.json())
+                    .then(progressData => {
+                        if (progressData.status === 'success') {
+                            const { total_cards, archived_cards } = progressData.progress;
+                            const progressFill = document.getElementById('progress-fill');
+                            const progressText = document.getElementById('progress-text');
+
+                            if (total_cards > 0) {
+                                const percentage = (archived_cards / total_cards) * 100;
+                                progressFill.style.width = `${percentage}%`;
+                                progressText.textContent = `${archived_cards} / ${total_cards} tarjetas dominadas (${percentage.toFixed(1)}%)`;
+                            } else {
+                                progressFill.style.width = '0%';
+                                progressText.textContent = 'Aún no tienes tarjetas.';
+                            }
+                        }
+                    });
                 });
             })
             .catch(error => {

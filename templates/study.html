@@ -11,6 +11,7 @@
 <body>
     <div class="container study-container">
         <a href="/dashboard" class="home-link" aria-label="Volver al Dashboard" title="Volver al Dashboard">🏠</a>
+        <div class="study-progress" id="study-progress"></div>
         <h1>Estudiando: <span id="category-title">{{ category }}</span></h1>
 
         <div class="flashcard-area">
@@ -38,9 +39,30 @@
             const flashcardEl = document.getElementById('flashcard');
             const cardFrontEl = document.getElementById('card-front');
             const cardBackEl = document.getElementById('card-back');
+            const studyProgressEl = document.getElementById('study-progress');
 
             let flashcards = [];
             let currentCardIndex = 0;
+
+            function updateStudyProgress() {
+                fetch('/api/user/progress', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        const { total_cards, archived_cards } = data.progress;
+                        if (total_cards > 0) {
+                            const percentage = (archived_cards / total_cards) * 100;
+                            studyProgressEl.textContent = `Progreso: ${percentage.toFixed(1)}%`;
+                        } else {
+                            studyProgressEl.textContent = 'Progreso: 0%';
+                        }
+                    }
+                });
+            }
+
+            updateStudyProgress();
 
             function shuffleArray(array) {
                 for (let i = array.length - 1; i > 0; i--) {
@@ -95,9 +117,8 @@
                     </div>
 
                     <div class="rating-buttons">
-                        <button class="btn btn-rating" data-rating="easy">Fácil</button>
-                        <button class="btn btn-rating" data-rating="normal">Normal</button>
-                        <button class="btn btn-rating" data-rating="hard">Difícil</button>
+                        <button class="btn btn-rating" data-rating="easy">Fácil (${card.easy_count || 0})</button>
+                        <button class="btn btn-rating" data-rating="hard">Difícil (${card.hard_count || 0})</button>
                     </div>
                 `;
 
@@ -198,14 +219,25 @@
                 // --- Rating Logic ---
                 if (event.target.classList.contains('btn-rating')) {
                     const ratingText = event.target.dataset.rating;
-                    const ratingValue = { 'easy': 3, 'normal': 2, 'hard': 1 }[ratingText];
+                    const ratingValue = { 'easy': 3, 'hard': 1 }[ratingText];
                     fetch('/api/flashcards/rate', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
                         body: JSON.stringify({ card_id: currentCard.id, rating: ratingValue })
                     }).then(res => res.json()).then(data => {
-                        if (data.status === 'success') goNextCard();
-                        else alert('Error al calificar: ' + data.message);
+                        if (data.status === 'success') {
+                            // Increment the local counter for instant feedback
+                            const ratingKey = `${ratingText}_count`;
+                            if (currentCard.hasOwnProperty(ratingKey)) {
+                                currentCard[ratingKey]++;
+                            } else {
+                                currentCard[ratingKey] = 1;
+                            }
+                            goNextCard();
+                            updateStudyProgress();
+                        } else {
+                            alert('Error al calificar: ' + data.message);
+                        }
                     }).catch(err => alert('Error de red al calificar.'));
                 }
 
@@ -219,6 +251,7 @@
                         if (data.status === 'success') {
                             flashcards.splice(currentCardIndex, 1);
                             goNextCard();
+                            updateStudyProgress();
                         } else alert('Error al archivar: ' + data.message);
                     }).catch(err => alert('Error de red al archivar.'));
                 }

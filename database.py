@@ -42,7 +42,10 @@ def setup_database():
         ease_factor REAL DEFAULT 2.5,
         next_review_date TEXT DEFAULT (date('now')),
         is_archived INTEGER DEFAULT 0,
-        flip_count INTEGER DEFAULT 0,  -- Nueva columna
+        flip_count INTEGER DEFAULT 0,
+        easy_count INTEGER DEFAULT 0,
+        normal_count INTEGER DEFAULT 0,
+        hard_count INTEGER DEFAULT 0,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (user_id) REFERENCES users (id)
     )
@@ -50,13 +53,29 @@ def setup_database():
 
     # --- Bloque para añadir la columna a tablas existentes (migración) ---
     try:
-        # Revisar si la columna ya existe
         cursor.execute("PRAGMA table_info(flashcards)")
         columns = [column['name'] for column in cursor.fetchall()]
+        
         if 'flip_count' not in columns:
             print("Añadiendo columna 'flip_count' a la tabla 'flashcards'...")
             cursor.execute("ALTER TABLE flashcards ADD COLUMN flip_count INTEGER DEFAULT 0")
             print("Columna 'flip_count' añadida exitosamente.")
+
+        if 'easy_count' not in columns:
+            print("Añadiendo columna 'easy_count' a la tabla 'flashcards'...")
+            cursor.execute("ALTER TABLE flashcards ADD COLUMN easy_count INTEGER DEFAULT 0")
+            print("Columna 'easy_count' añadida exitosamente.")
+
+        if 'normal_count' not in columns:
+            print("Añadiendo columna 'normal_count' a la tabla 'flashcards'...")
+            cursor.execute("ALTER TABLE flashcards ADD COLUMN normal_count INTEGER DEFAULT 0")
+            print("Columna 'normal_count' añadida exitosamente.")
+
+        if 'hard_count' not in columns:
+            print("Añadiendo columna 'hard_count' a la tabla 'flashcards'...")
+            cursor.execute("ALTER TABLE flashcards ADD COLUMN hard_count INTEGER DEFAULT 0")
+            print("Columna 'hard_count' añadida exitosamente.")
+
     except Exception as e:
         print(f"Error al intentar modificar la tabla 'flashcards': {e}")
     # --- Fin del bloque de migración ---
@@ -117,12 +136,37 @@ def get_flashcards_by_category(user_id, category):
     conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute(
-        "SELECT id, front_content, back_content, example_en, example_es, flip_count FROM flashcards WHERE user_id = ? AND category = ? AND next_review_date <= date('now') AND is_archived = 0",
+        "SELECT id, front_content, back_content, example_en, example_es, flip_count, easy_count, normal_count, hard_count FROM flashcards WHERE user_id = ? AND category = ? AND next_review_date <= date('now') AND is_archived = 0",
         (user_id, category)
     )
     flashcards = [dict(row) for row in cursor.fetchall()]
     conn.close()
     return flashcards
+
+def increment_rating_count(card_id, rating):
+    """Incrementa el contador de calificación para una tarjeta específica."""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    field_to_increment = None
+    if rating == 3: # Fácil
+        field_to_increment = "easy_count"
+    elif rating == 2: # Normal
+        field_to_increment = "normal_count"
+    elif rating == 1: # Difícil
+        field_to_increment = "hard_count"
+
+    if field_to_increment:
+        try:
+            cursor.execute(
+                f"UPDATE flashcards SET {field_to_increment} = {field_to_increment} + 1 WHERE id = ?",
+                (card_id,)
+            )
+            conn.commit()
+        except sqlite3.Error as e:
+            print(f"Error al incrementar el contador de calificación para la tarjeta {card_id}: {e}")
+        finally:
+            conn.close()
 
 def update_flashcard_sm2_data(card_id, rating):
     """
@@ -331,6 +375,29 @@ def populate_user_with_default_cards(user_id):
     conn.close()
     print(f"Importadas {total_imported} tarjetas por defecto para el nuevo usuario con ID: {user_id}")
     return total_imported
+
+def get_user_progress(user_id):
+    """Calculates the user's progress."""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    # Contar el total de tarjetas del usuario
+    cursor.execute(
+        "SELECT COUNT(id) FROM flashcards WHERE user_id = ?",
+        (user_id,)
+    )
+    total_cards = cursor.fetchone()[0]
+
+    # Contar el total de tarjetas archivadas del usuario
+    cursor.execute(
+        "SELECT COUNT(id) FROM flashcards WHERE user_id = ? AND is_archived = 1",
+        (user_id,)
+    )
+    archived_cards = cursor.fetchone()[0]
+
+    conn.close()
+
+    return {"total_cards": total_cards, "archived_cards": archived_cards}
 
 # Si ejecutamos este script directamente, configurará la base de datos
 if __name__ == '__main__':
