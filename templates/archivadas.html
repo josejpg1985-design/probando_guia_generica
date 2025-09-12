@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarjetas Archivadas - Flashcard App</title>
-    <link rel="stylesheet" href="/static/css/style.css?v=1.0.2">
+    <link rel="stylesheet" href="/static/css/style.css?v=1.0.3">
     <script src="/static/js/theme.js" defer></script>
     <script src="/static/js/auth.js" defer></script>
     <style>
-        /* Aumentar el ancho del contenedor solo para esta página */
         .container.archived-container {
             max-width: 1000px;
         }
@@ -37,175 +36,43 @@
                 <button type="submit" id="unarchive-btn" class="btn btn-primary">Desarchivar Seleccionadas</button>
             </div>
         </form>
+
+        <hr class="section-divider">
+
+        <div class="ai-assistant-container">
+            <h2>Asistente de Párrafos con IA</h2>
+            <p>Selecciona algunas tarjetas de vocabulario de la lista de arriba y haz clic en el botón para generar un párrafo con ellas.</p>
+            
+            
+
+            <div class="button-group">
+                <button type="button" id="generate-paragraph-btn" class="btn btn-secondary">Generar Párrafo</button>
+                <button type="button" id="random-select-btn" class="btn btn-outline">Seleccionar 10 al Azar</button>
+                <div id="random-select-tooltip-container" class="tooltip-container" style="display: none;">
+                    <span class="tooltip-trigger">?</span>
+                    <div class="tooltip-panel">
+                        <strong>Palabras seleccionadas:</strong>
+                        <ul id="random-words-list"></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="ai-result-container" style="display: none; margin-top: 15px;">
+                <div class="paragraph-wrapper">
+                    <textarea id="ai-generated-paragraph" class="form-control" rows="5" placeholder="El párrafo generado por la IA aparecerá aquí..." readonly></textarea>
+                    <button type="button" id="translate-accordion-btn" class="btn-accordion" title="Mostrar/Ocultar Traducción" style="display: none;">+</button>
+                </div>
+                <div id="ai-loading-spinner" class="spinner" style="display: none;"></div>
+                <div id="translation-wrapper" style="display: none; margin-top: 10px;">
+                    <textarea id="ai-translated-paragraph" class="form-control" rows="5" placeholder="La traducción aparecerá aquí..." readonly></textarea>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <script src="/static/js/main.js" defer></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const token = verificarAutenticacion();
-            if (!token) return;
-
-            const gridContainer = document.getElementById('archived-grid');
-            const paginationControls = document.getElementById('pagination-controls');
-            const unarchiveForm = document.getElementById('unarchive-form');
-            const unarchiveBtn = document.getElementById('unarchive-btn');
-            const searchInput = document.getElementById('search-input');
-
-            let currentPage = 1;
-            let currentSearch = '';
-            let debounceTimeout;
-
-            function debounce(func, delay) {
-                return function(...args) {
-                    clearTimeout(debounceTimeout);
-                    debounceTimeout = setTimeout(() => {
-                        func.apply(this, args);
-                    }, delay);
-                };
-            }
-
-            async function fetchAndRenderArchivedCards(page = 1, search = '') {
-                try {
-                    let url = `/api/flashcards/archived?page=${page}`;
-                    if (search) {
-                        url += `&search=${encodeURIComponent(search)}`;
-                    }
-
-                    const response = await fetch(url, {
-                        headers: { 'Authorization': `Bearer ${token}` }
-                    });
-                    if (!response.ok) throw new Error('Error en la respuesta del servidor.');
-                    
-                    const data = await response.json();
-                    
-                    if (data.status === 'success') {
-                        renderGrid(data.flashcards);
-                        renderPagination(data);
-                        currentPage = data.page;
-                        currentSearch = search;
-                    } else {
-                        gridContainer.innerHTML = `<p>Error al cargar tarjetas: ${data.message}</p>`;
-                    }
-                } catch (err) {
-                    console.error("Fetch error:", err);
-                    gridContainer.innerHTML = `<p>Error de red al cargar tarjetas archivadas.</p>`;
-                }
-            }
-
-            function renderGrid(cards) {
-                gridContainer.innerHTML = '';
-                if (cards.length === 0) {
-                    gridContainer.innerHTML = '<p>No se encontraron tarjetas con los criterios actuales.</p>';
-                    unarchiveBtn.style.display = 'none';
-                    return;
-                }
-
-                unarchiveBtn.style.display = 'block';
-                cards.forEach(card => {
-                    const cardDiv = document.createElement('div');
-                    cardDiv.className = 'archived-card-grid-item';
-                    cardDiv.innerHTML = `
-                        <div class="card-content">${card.front_content}</div>
-                        <div class="card-category">(${card.category})</div>
-                        <input type="checkbox" name="card_id" value="${card.id}" id="card-${card.id}">
-                    `;
-                    gridContainer.appendChild(cardDiv);
-                });
-            }
-
-            function renderPagination(data) {
-                paginationControls.innerHTML = '';
-                if (data.total_pages <= 1) return;
-
-                const { page, total_pages } = data;
-                let paginationHtml = '';
-
-                paginationHtml += `<button type="button" class="pagination-btn" data-page="1" ${page === 1 ? 'disabled' : ''}>&laquo; Primera</button>`;
-                paginationHtml += `<button type="button" class="pagination-btn" data-page="${page - 1}" ${page === 1 ? 'disabled' : ''}>&larr; Anterior</button>`;
-
-                const pagesToShow = 5;
-                let startPage = Math.max(1, page - Math.floor(pagesToShow / 2));
-                let endPage = Math.min(total_pages, startPage + pagesToShow - 1);
-
-                if (endPage - startPage + 1 < pagesToShow) {
-                    startPage = Math.max(1, endPage - pagesToShow + 1);
-                }
-
-                if (startPage > 1) {
-                    paginationHtml += `<button type="button" class="pagination-btn" data-page="1">1</button>`;
-                    if (startPage > 2) {
-                        paginationHtml += `<span class="pagination-ellipsis">...</span>`;
-                    }
-                }
-
-                for (let i = startPage; i <= endPage; i++) {
-                    paginationHtml += `<button type="button" class="pagination-btn ${i === page ? 'active' : ''}" data-page="${i}">${i}</button>`;
-                }
-
-                if (endPage < total_pages) {
-                    if (endPage < total_pages - 1) {
-                        paginationHtml += `<span class="pagination-ellipsis">...</span>`;
-                    }
-                    paginationHtml += `<button type="button" class="pagination-btn" data-page="${total_pages}">${total_pages}</button>`;
-                }
-
-                paginationHtml += `<button type="button" class="pagination-btn" data-page="${page + 1}" ${page === total_pages ? 'disabled' : ''}>Siguiente &rarr;</button>`;
-                paginationHtml += `<button type="button" class="pagination-btn" data-page="${total_pages}" ${page === total_pages ? 'disabled' : ''}>Última &raquo;</button>`;
-
-                paginationControls.innerHTML = paginationHtml;
-            }
-
-            const debouncedSearch = debounce((searchTerm) => {
-                fetchAndRenderArchivedCards(1, searchTerm);
-            }, 300);
-
-            searchInput.addEventListener('input', (event) => {
-                debouncedSearch(event.target.value);
-            });
-
-            paginationControls.addEventListener('click', (event) => {
-                const target = event.target.closest('.pagination-btn');
-                if (!target || target.disabled) return;
-
-                const page = parseInt(target.dataset.page);
-                if (page) {
-                    fetchAndRenderArchivedCards(page, currentSearch);
-                }
-            });
-
-            unarchiveForm.addEventListener('submit', async (event) => {
-                event.preventDefault();
-                const selectedCheckboxes = document.querySelectorAll('input[name="card_id"]:checked');
-                const cardIdsToUnarchive = Array.from(selectedCheckboxes).map(cb => parseInt(cb.value));
-
-                if (cardIdsToUnarchive.length === 0) {
-                    alert('Por favor, selecciona al menos una tarjeta para desarchivar.');
-                    return;
-                }
-
-                try {
-                    const response = await fetch('/api/flashcards/unarchive', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${token}`
-                        },
-                        body: JSON.stringify({ card_ids: cardIdsToUnarchive })
-                    });
-                    const result = await response.json();
-                    if (result.status === 'success') {
-                        alert(result.message);
-                        fetchAndRenderArchivedCards(currentPage, currentSearch);
-                    } else {
-                        alert('Error al desarchivar: ' + result.message);
-                    }
-                } catch (error) {
-                    console.error('Error de red al desarchivar:', error);
-                    alert('Error de red al desarchivar tarjetas.');
-                }
-            });
-
-            fetchAndRenderArchivedCards();
-        });
+        // El script existente se moverá a main.js para mejor organización
+        // y se adaptará para coexistir con la nueva funcionalidad.
     </script>
 </body>
 </html>
