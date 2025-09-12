@@ -307,6 +307,28 @@ def delete_flashcard_by_id(card_id, user_id):
     conn.close()
     return cursor.rowcount > 0
 
+def get_random_archived_cards(user_id, count):
+    """
+    Devuelve una lista de flashcards archivadas al azar para un usuario.
+    """
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    query = """
+        SELECT id, front_content 
+        FROM flashcards 
+        WHERE user_id = ? AND is_archived = 1
+        ORDER BY RANDOM() 
+        LIMIT ?
+    """
+    
+    cursor.execute(query, (user_id, count))
+    
+    flashcards = [dict(row) for row in cursor.fetchall()]
+    conn.close()
+    
+    return flashcards
+
 def get_archived_flashcards(user_id, page=1, per_page=8, search=None):
     """Devuelve una lista paginada de flashcards archivadas para un usuario, con opción de búsqueda."""
     conn = get_db_connection()

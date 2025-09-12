@@ -1,13 +1,23 @@
+import os
+from dotenv import load_dotenv
+import google.generativeai as genai
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 from werkzeug.security import check_password_hash
 import jwt
 import datetime
 import database
+import json
 from functools import wraps
 
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 
 app.config['SECRET_KEY'] = 'esto-es-un-secreto-temporal'
+
+# Cargar variables de entorno y configurar Gemini
+load_dotenv()
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+if GEMINI_API_KEY:
+    genai.configure(api_key=GEMINI_API_KEY)
 
 # --- Decorador para proteger rutas con JWT ---
 def token_required(f):
@@ -269,6 +279,111 @@ def delete_flashcard(current_user, card_id):
         return jsonify({"status": "success", "message": "Tarjeta eliminada permanentemente."})
     else:
         return jsonify({"status": "error", "message": "No se pudo eliminar la tarjeta o no pertenece al usuario."}), 404
+
+@app.route('/api/flashcards/archived/random/<int:count>', methods=['GET'])
+@token_required
+def get_random_cards(current_user, count):
+    """
+    Devuelve una lista de flashcards archivadas al azar.
+    """
+    if count <= 0 or count > 100: # Limitar para evitar abusos
+        return jsonify({"status": "error", "message": "La cantidad debe estar entre 1 y 100."}), 400
+
+    try:
+        random_cards = database.get_random_archived_cards(current_user['id'], count)
+        return jsonify({"status": "success", "flashcards": random_cards})
+
+    except Exception as e:
+        app.logger.error(f"Error getting random cards: {str(e)}")
+        return jsonify({"status": "error", "message": "No se pudieron obtener las tarjetas aleatorias."}), 500
+
+@app.route('/api/translate', methods=['POST'])
+@token_required
+def translate_text(current_user):
+    """
+    Traduce un texto proporcionado a un idioma de destino (por defecto, español).
+    """
+    if not GEMINI_API_KEY:
+        return jsonify({"status": "error", "message": "La clave de API de Gemini no está configurada en el servidor."}), 500
+
+    data = request.get_json()
+    text_to_translate = data.get('text')
+    target_language = data.get('target_language', 'Spanish') # Por defecto a español
+
+    if not text_to_translate:
+        return jsonify({"status": "error", "message": "Se requiere texto para traducir."}), 400
+
+    try:
+        model = genai.GenerativeModel('gemini-1.5-flash-latest')
+        prompt = f"Translate the following English text to {target_language}: '{text_to_translate}'"
+        
+        response = model.generate_content(prompt)
+        
+        translated_text = response.text.strip()
+        
+        return jsonify({"status": "success", "translated_text": translated_text})
+
+    except Exception as e:
+        app.logger.error(f"Error translating text with Gemini: {str(e)}")
+        return jsonify({"status": "error", "message": "No se pudo traducir el texto."}), 500
+
+@app.route('/api/generate-paragraph', methods=['POST'])
+@token_required
+def generate_paragraph(current_user):
+    """
+    Genera un párrafo coloquial A1-A2 en inglés y su traducción al español.
+    """
+    if not GEMINI_API_KEY:
+        return jsonify({"status": "error", "message": "La clave de API de Gemini no está configurada en el servidor."}), 500
+
+    data = request.get_json()
+    words = data.get('words')
+
+    if not words or not isinstance(words, list):
+        return jsonify({"status": "error", "message": "Se requiere una lista de palabras."}), 400
+
+    try:
+        model = genai.GenerativeModel('gemini-1.5-flash-latest')
+        words_str = ", ".join(words)
+        
+        prompt = f"""You are an assistant for an English learner at A1-A2 level.
+Your task is to generate a very simple, short, and colloquial paragraph in English.
+The paragraph should incorporate the following words: {words_str}.
+It must be grammatically correct, natural-sounding, and easy to understand, using basic vocabulary and sentence structures suitable for an A1-A2 learner.
+After the English paragraph, provide its accurate and natural-sounding translation in Spanish.
+Format your response as a single JSON object with two keys: "english_paragraph" and "spanish_paragraph".
+Do not include any other text or markdown formatting like ```json. Just the raw JSON object.
+Example response for words "cat, house, happy":
+{{
+  "english_paragraph": "The happy cat is in the house. It likes to play there.",
+  "spanish_paragraph": "El gato feliz está en la casa. Le gusta jugar allí."
+}}
+"""
+        
+        response = model.generate_content(prompt)
+        
+        text_response = response.text.strip()
+        
+        try:
+            data = json.loads(text_response)
+            english_paragraph = data.get("english_paragraph")
+            spanish_paragraph = data.get("spanish_paragraph")
+
+            if not english_paragraph or not spanish_paragraph:
+                raise ValueError("JSON response did not contain the expected keys.")
+
+            return jsonify({
+                "status": "success",
+                "english_paragraph": english_paragraph,
+                "spanish_paragraph": spanish_paragraph
+            })
+        except (json.JSONDecodeError, ValueError) as e:
+            app.logger.error(f"Could not parse JSON response from Gemini: {text_response} - Error: {e}")
+            return jsonify({"status": "error", "message": "La IA no devolvió un formato de respuesta válido. Inténtalo de nuevo."}), 500
+
+    except Exception as e:
+        app.logger.error(f"Error generating paragraph with Gemini: {str(e)}")
+        return jsonify({"status": "error", "message": "No se pudo generar el párrafo. Verifica tu clave de API y la disponibilidad del modelo."}), 500
 
 # --- Arranque de la App ---
 def setup_app_database():

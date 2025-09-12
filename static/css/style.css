@@ -12,6 +12,7 @@
     --card-back-bg: #e9f5ff;
     --btn-bg: #f0f0f0;
     --text-muted: #6c757d;
+    --highlight-bg: #cfe2ff;
 }
 
 /* Dark mode variables */
@@ -27,6 +28,7 @@ body.dark-mode {
     --card-back-bg: #2a3b4c;
     --btn-bg: #333;
     --text-muted: #adb5bd;
+    --highlight-bg: #3a5378;
 }
 
 * {
@@ -440,12 +442,16 @@ body {
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
 }
 
 .archived-card-grid-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.archived-card-grid-item.highlight {
+    background-color: var(--highlight-bg);
 }
 
 .archived-card-grid-item .card-content {
@@ -612,4 +618,273 @@ body {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* --- AI Assistant --- */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 40px 0;
+}
+
+.ai-assistant-container {
+    padding: 20px;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 1px solid var(--border-color);
+}
+
+body.light-mode .ai-assistant-container {
+    background-color: #f8f9fa;
+}
+
+.ai-assistant-container h2 {
+    margin-top: 0;
+    color: var(--text-color);
+    text-align: left;
+}
+
+.ai-assistant-container p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.btn-secondary {
+    background-color: #5a6268;
+    border-color: #545b62;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #4e555b;
+    border-color: #484e53;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#ai-generated-paragraph {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    padding-right: 40px; /* Added to prevent overlap with accordion button */
+}
+
+/* --- AI Assistant Settings & Translate --- */
+.ai-settings {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #555;
+    transition: .4s;
+}
+
+body.light-mode .slider {
+    background-color: #ccc;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--primary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 24px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.btn-translate {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+    background-color: var(--btn-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    border-radius: 0.2rem;
+    flex-grow: 0; /* Prevent small buttons from growing */
+}
+
+#ai-translated-paragraph {
+    background-color: var(--card-back-bg);
+}
+
+/* --- Random Selection Tooltip --- */
+.tooltip-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.tooltip-container::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    height: 10px; /* Same as the gap size */
+    background-color: transparent; /* Invisible */
+}
+
+.tooltip-trigger {
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid var(--text-muted);
+    color: var(--text-muted);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.tooltip-trigger:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.tooltip-panel {
+    display: none; /* Hidden by default, shown on hover/click */
+    position: absolute;
+    bottom: calc(100% + 10px); /* Position above the trigger with a gap */
+    left: 50%;
+    transform: translateX(-90%); /* Adjust to position it better */
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 280px;
+    z-index: 100;
+}
+
+.tooltip-container:hover .tooltip-panel {
+    display: block;
+}
+
+.tooltip-panel strong {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.tooltip-panel ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.tooltip-panel li {
+    padding: 5px 2px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tooltip-panel li:last-child {
+    border-bottom: none;
+}
+
+/* --- Accordion Translation Button --- */
+.paragraph-wrapper {
+    position: relative;
+}
+
+.btn-accordion {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background-color: var(--btn-bg);
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    padding-bottom: 4px; /* Adjust for '+' alignment */
+    transition: background-color 0.2s, color 0.2s;
+    z-index: 5;
+}
+
+.btn-accordion:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
 }
