@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-function initializeArchivedPage(token) {
+async function initializeArchivedPage(token) {
     // --- Elementos del DOM ---
     const gridContainer = document.getElementById('archived-grid');
     const paginationControls = document.getElementById('pagination-controls');
@@ -27,6 +27,7 @@ function initializeArchivedPage(token) {
     const randomWordsList = document.getElementById('random-words-list');
     const translateAccordionBtn = document.getElementById('translate-accordion-btn');
     const translationWrapper = document.getElementById('translation-wrapper');
+    const clearSelectionBtn = document.getElementById('clear-selection-btn');
 
     // --- Estado de la Aplicación ---
     let cachedTranslation = null;
@@ -36,6 +37,19 @@ function initializeArchivedPage(token) {
     const selectedCards = new Map();
 
     // --- Funciones Principales ---
+
+    function updateButtonStates() {
+        const hasSelection = selectedCards.size > 0;
+        if (unarchiveBtn) {
+            unarchiveBtn.disabled = !hasSelection;
+        }
+        if (clearSelectionBtn) {
+            clearSelectionBtn.disabled = !hasSelection;
+        }
+        if (generateBtn) {
+            generateBtn.disabled = !hasSelection;
+        }
+    }
 
     function debounce(func, delay) {
         return function(...args) {
@@ -58,6 +72,7 @@ function initializeArchivedPage(token) {
                 renderPagination(data);
                 currentPage = data.page;
                 currentSearch = search;
+                updateButtonStates(); // Call after rendering to update button states
             } else {
                 gridContainer.innerHTML = `<p>Error al cargar tarjetas: ${data.message}</p>`;
             }
@@ -76,8 +91,7 @@ function initializeArchivedPage(token) {
             return;
         }
 
-        if(unarchiveBtn) unarchiveBtn.style.display = 'block';
-        if(generateBtn) generateBtn.style.display = 'block';
+        
         
         cards.forEach(card => {
             const cardDiv = document.createElement('div');
@@ -166,6 +180,7 @@ function initializeArchivedPage(token) {
             } else {
                 selectedCards.delete(cardId);
             }
+            updateButtonStates(); // Update button states after selection changes
         }
     });
 
@@ -186,7 +201,7 @@ function initializeArchivedPage(token) {
             if (result.status === 'success') {
                 alert(result.message);
                 selectedCards.clear();
-                fetchAndRenderArchivedCards(currentPage, currentSearch);
+                fetchAndRenderArchivedCards(currentPage, currentSearch).then(updateButtonStates); // Update button states after clearing selection
             } else {
                 alert('Error al desarchivar: ' + result.message);
             }
@@ -225,6 +240,7 @@ function initializeArchivedPage(token) {
                 
                 // Refresh the current view to show the new selections
                 await fetchAndRenderArchivedCards(currentPage, currentSearch);
+                updateButtonStates(); // Update button states after random selection
 
                 // Highlight newly selected cards visible on the current page
                 gridContainer.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
@@ -290,8 +306,25 @@ function initializeArchivedPage(token) {
         }
     });
 
+    if (clearSelectionBtn) {
+        clearSelectionBtn.addEventListener('click', () => {
+            selectedCards.clear();
+            gridContainer.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            if (randomSelectTooltip) {
+                randomSelectTooltip.style.display = 'none';
+            }
+            gridContainer.querySelectorAll('.archived-card-grid-item.highlight').forEach(cardEl => {
+                cardEl.classList.remove('highlight');
+            });
+            updateButtonStates(); // Update button states after clearing selection
+        });
+    }
+
     // --- Inicialización ---
-    fetchAndRenderArchivedCards();
+    await fetchAndRenderArchivedCards(); // Await the initial fetch and render
+    updateButtonStates(); // Then update button states
 
     if (translateAccordionBtn) {
         translateAccordionBtn.addEventListener('click', () => {
