@@ -8,6 +8,7 @@ import datetime
 import database
 import json
 from functools import wraps
+import re
 
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 
@@ -136,8 +137,9 @@ def get_categories(current_user):
 @token_required
 @api_error_handler
 def get_flashcards(current_user, category):
-    """Devuelve las flashcards para una categoría específica."""
-    flashcards = database.get_flashcards_by_category(current_user['id'], category)
+    """Devuelve las flashcards para una categoría específica, con opción de búsqueda."""
+    search_term = request.args.get('search', None)
+    flashcards = database.get_flashcards_by_category(current_user['id'], category, search_term=search_term)
     return jsonify({'status': 'success', 'flashcards': flashcards})
 
 @app.route('/api/flashcards/rate', methods=['POST'])
@@ -384,6 +386,122 @@ Example response for words "cat, house, happy":
     except Exception as e:
         app.logger.error(f"Error generating paragraph with Gemini: {str(e)}")
         return jsonify({"status": "error", "message": "No se pudo generar el párrafo. Verifica tu clave de API y la disponibilidad del modelo."}), 500
+
+@app.route('/api/analyze-lyrics', methods=['POST'])
+@token_required
+@api_error_handler
+def analyze_lyrics(current_user):
+    if not GEMINI_API_KEY:
+        return jsonify({"status": "error", "message": "La clave de API de Gemini no está configurada en el servidor."}), 500
+
+    data = request.get_json()
+    lyrics_paragraph = data.get('lyrics')
+    if not lyrics_paragraph:
+        return jsonify({"status": "error", "message": "Se requiere un párrafo de letras para analizar."}), 400
+
+    stopwords = set(["a", "an", "the", "and", "it", "is", "in", "on", "at", "for", "with", "to", "of"])
+    words = re.findall(r'\b[a-z]+\b', lyrics_paragraph.lower())
+    unique_words = sorted(list(set(word for word in words if word not in stopwords and len(word) > 2)))
+
+    results = []
+    model = genai.GenerativeModel('gemini-1.5-flash-latest')
+
+    for word in unique_words:
+        flashcard_data = database.get_flashcard_by_front_content(current_user['id'], word, "Lyrics")
+        is_duplicate = flashcard_data is not None
+
+        word_translation = ""
+        new_en_phrase = ""
+        new_es_phrase = ""
+        existing_en_phrase = ""
+        existing_es_phrase = ""
+
+        if is_duplicate:
+            existing_en_phrase = flashcard_data.get('example_en', '')
+            existing_es_phrase = flashcard_data.get('example_es', '')
+
+        # AI Call 1: Get single word translation
+        try:
+            prompt_translate = f'Translate the English word "{word}" to its single most common Spanish equivalent. Provide only the single translated word, nothing else. For example, for "house", return only "casa".'
+            response_translate = model.generate_content(prompt_translate)
+            word_translation = response_translate.text.strip().lower()
+        except Exception as e:
+            app.logger.error(f"Error getting single translation for '{word}': {str(e)}")
+            word_translation = f"Translate Error: {str(e)}"
+
+        # AI Call 2: Get example phrases
+        try:
+            prompt_phrase = f"""You are an assistant for an English learner at A1-A2 level.
+            Your task is to provide a short, simple, and colloquial English phrase that uses the word "{word}" from the following lyrics: "{lyrics_paragraph}".
+            The phrase should be directly from or clearly inspired by the context of the lyrics provided.
+            After the English phrase, provide its accurate and natural-sounding translation in Spanish.
+            Format your response as a single JSON object with two keys: "english_phrase" and "spanish_phrase".
+            Do not include any other text or markdown formatting like ```json. Just the raw JSON object.
+            Example response for word "love" from lyrics "All you need is love":
+            {{
+              "english_phrase": "All you need is love.",
+              "spanish_phrase": "Todo lo que necesitas es amor."
+            }}
+            """
+            response_phrase = model.generate_content(prompt_phrase)
+            ai_phrases = json.loads(response_phrase.text.strip())
+            new_en_phrase = ai_phrases.get("english_phrase", "")
+            new_es_phrase = ai_phrases.get("spanish_phrase", "")
+        except Exception as e:
+            app.logger.error(f"Error generating phrase for '{word}' with Gemini: {str(e)}")
+            new_en_phrase = f"Phrase Error: {str(e)}"
+            new_es_phrase = ""
+
+        results.append({
+            "word": word,
+            "word_translation": word_translation,
+            "new_en_phrase": new_en_phrase,
+            "new_es_phrase": new_es_phrase,
+            "is_duplicate": is_duplicate,
+            "existing_en_phrase": existing_en_phrase,
+            "existing_es_phrase": existing_es_phrase,
+            "flashcard_id": flashcard_data['id'] if is_duplicate else None
+        })
+    
+    return jsonify({"status": "success", "words": results})
+
+@app.route('/api/flashcards/add', methods=['POST'])
+@token_required
+@api_error_handler
+def add_flashcard_api(current_user):
+    data = request.get_json()
+    front_content = data.get('front_content')
+    back_content = data.get('back_content')
+    category = data.get('category', 'Lyrics') # Default category
+    example_en = data.get('example_en')
+    example_es = data.get('example_es')
+
+    if not all([front_content, back_content, example_en, example_es]):
+        return jsonify({"status": "error", "message": "Faltan datos requeridos para la flashcard."}), 400
+
+    result = database.add_flashcard(current_user['id'], front_content, back_content, category, example_en, example_es)
+    if result['status'] == 'success':
+        return jsonify({"status": "success", "message": "Flashcard añadida correctamente.", "card_id": result['card_id']}), 201
+    else:
+        return jsonify({"status": "error", "message": result['message']}), 500
+
+@app.route('/api/flashcards/update_phrases/<int:card_id>', methods=['PUT'])
+@token_required
+@api_error_handler
+def update_flashcard_phrases_api(current_user, card_id):
+    data = request.get_json()
+    back_content = data.get('back_content')
+    example_en = data.get('example_en')
+    example_es = data.get('example_es')
+
+    if not all([back_content, example_en, example_es]):
+        return jsonify({"status": "error", "message": "Faltan datos requeridos para actualizar la flashcard."}), 400
+
+    success = database.update_flashcard_phrases(card_id, current_user['id'], back_content, example_en, example_es)
+    if success:
+        return jsonify({"status": "success", "message": "Flashcard actualizada correctamente."})
+    else:
+        return jsonify({"status": "error", "message": "No se pudo actualizar la flashcard o no pertenece al usuario."}), 404
 
 # --- Arranque de la App ---
 def setup_app_database():

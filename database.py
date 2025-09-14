@@ -131,17 +131,30 @@ def get_categories_for_user(user_id):
     conn.close()
     return categories
 
-def get_flashcards_by_category(user_id, category):
-    """Devuelve una lista de flashcards para un usuario y categoría específicos que están pendientes de revisión."""
+def get_flashcards_by_category(user_id, category, search_term=None):
+    """
+    Devuelve las flashcards activas para un usuario y categoría.
+    Si se proporciona un search_term, filtra por el anverso del contenido.
+    """
     conn = get_db_connection()
     cursor = conn.cursor()
-    cursor.execute(
-        "SELECT id, front_content, back_content, example_en, example_es, flip_count, easy_count, normal_count, hard_count FROM flashcards WHERE user_id = ? AND category = ? AND next_review_date <= date('now') AND is_archived = 0",
-        (user_id, category)
-    )
-    flashcards = [dict(row) for row in cursor.fetchall()]
+    
+    query = """
+        SELECT * FROM flashcards
+        WHERE user_id = ? AND category = ? AND is_archived = 0
+    """
+    params = [user_id, category]
+
+    if search_term:
+        query += " AND front_content LIKE ?"
+        params.append(f"%{search_term}%")
+
+    query += " ORDER BY next_review_date ASC"
+
+    cursor.execute(query, tuple(params))
+    flashcards = cursor.fetchall()
     conn.close()
-    return flashcards
+    return [dict(row) for row in flashcards]
 
 def increment_rating_count(card_id, rating):
     """Incrementa el contador de calificación para una tarjeta específica."""
@@ -359,6 +372,56 @@ def get_archived_flashcards(user_id, page=1, per_page=8, search=None):
     conn.close()
 
     return {"flashcards": flashcards, "total_cards": total_cards}
+
+def get_flashcard_by_front_content(user_id, front_content, category):
+    """Busca una flashcard por su contenido frontal dentro de una categoría específica."""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM flashcards WHERE user_id = ? AND front_content = ? AND category = ?", (user_id, front_content, category))
+    flashcard = cursor.fetchone()
+    conn.close()
+    return dict(flashcard) if flashcard else None
+
+def add_flashcard(user_id, front_content, back_content, category, example_en, example_es):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute(
+            """
+            INSERT INTO flashcards (user_id, front_content, back_content, category, example_en, example_es)
+            VALUES (?, ?, ?, ?, ?, ?)
+            """,
+            (
+                user_id, front_content, back_content, category, example_en, example_es
+            )
+        )
+        conn.commit()
+        card_id = cursor.lastrowid
+        conn.close()
+        return {"status": "success", "card_id": card_id}
+    except sqlite3.Error as e:
+        conn.close()
+        return {"status": "error", "message": str(e)}
+
+def update_flashcard_phrases(card_id, user_id, back_content, example_en, example_es):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute(
+            """
+            UPDATE flashcards
+            SET back_content = ?, example_en = ?, example_es = ?
+            WHERE id = ? AND user_id = ?
+            """,
+            (back_content, example_en, example_es, card_id, user_id)
+        )
+        conn.commit()
+        conn.close()
+        return cursor.rowcount > 0
+    except sqlite3.Error as e:
+        conn.close()
+        print(f"Error updating flashcard phrases: {e}")
+        return False
 
 JSON_FILES_WITH_CATEGORIES = {
     'Vocabulario': 'json/1_flashcards_vocabulario.txt',
