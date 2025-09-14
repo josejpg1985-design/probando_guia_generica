@@ -4,14 +4,223 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    // Initialize functionalities based on the current page
     if (document.getElementById('archived-grid')) {
         initializeArchivedPage(token);
     }
+
+    // The AI modal is on the dashboard, so we initialize it if the trigger button exists
+    if (document.getElementById('open-ai-modal-btn')) {
+        initializeAIModal(token);
+    }
 });
 
+function initializeAIModal(token) {
+    const openModalBtn = document.getElementById('open-ai-modal-btn');
+    const closeModalBtn = document.getElementById('close-ai-modal-btn');
+    const modalOverlay = document.getElementById('ai-analyzer-modal');
+
+    if (!openModalBtn || !closeModalBtn || !modalOverlay) {
+        console.error('Modal elements not found!');
+        return;
+    }
+
+    // Function to open the modal
+    const openModal = () => {
+        modalOverlay.style.display = 'flex';
+        setTimeout(() => modalOverlay.classList.add('visible'), 10);
+    };
+
+    // Function to close the modal
+    const closeModal = () => {
+        modalOverlay.classList.remove('visible');
+        setTimeout(() => {
+            modalOverlay.style.display = 'none';
+            clearLyricsAnalysisResults(); // Clear results when closing
+        }, 300); // Match CSS transition duration
+    };
+
+    // Event listeners
+    openModalBtn.addEventListener('click', openModal);
+    closeModalBtn.addEventListener('click', closeModal);
+
+    // Close modal if clicking on the overlay background
+    modalOverlay.addEventListener('click', (event) => {
+        if (event.target === modalOverlay) {
+            closeModal();
+        }
+    });
+
+    // Initialize the lyrics analyzer logic inside the modal
+    initializeLyricsAnalyzer(token);
+}
+
+
+async function initializeLyricsAnalyzer(token) {
+    const lyricsInput = document.getElementById('lyrics-input');
+    const analyzeLyricsBtn = document.getElementById('analyze-lyrics-btn');
+    const lyricsAnalysisResults = document.getElementById('lyrics-analysis-results');
+
+    if (!lyricsInput || !analyzeLyricsBtn || !lyricsAnalysisResults) {
+        return; // Do not run if elements are not on the page
+    }
+
+    analyzeLyricsBtn.addEventListener('click', async () => {
+        const lyrics = lyricsInput.value.trim();
+        if (!lyrics) {
+            alert('Por favor, introduce las letras de la canción para analizar.');
+            return;
+        }
+
+        analyzeLyricsBtn.disabled = true;
+        lyricsAnalysisResults.innerHTML = '<div class="spinner"></div><p>Analizando letras...</p>'; // Improved loading state
+
+        try {
+            const response = await fetch('/api/analyze-lyrics', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({ lyrics: lyrics })
+            });
+
+            const result = await response.json();
+
+            if (result.status === 'success') {
+                renderLyricsAnalysisResults(result.words, token);
+            } else {
+                lyricsAnalysisResults.innerHTML = `<p>Error al analizar letras: ${result.message}</p>`;
+            }
+        } catch (error) {
+            console.error('Error al analizar letras:', error);
+            lyricsAnalysisResults.innerHTML = '<p>Error de red al analizar letras.</p>';
+        } finally {
+            analyzeLyricsBtn.disabled = false;
+        }
+    });
+}
+
+function renderLyricsAnalysisResults(words, token) {
+    const resultsContainer = document.getElementById('lyrics-analysis-results');
+    resultsContainer.innerHTML = ''; // Clear previous results
+
+    if (words.length === 0) {
+        resultsContainer.innerHTML = '<p>No se encontraron palabras nuevas o relevantes.</p>';
+        return;
+    }
+
+    const ul = document.createElement('ul');
+    ul.className = 'lyrics-analysis-list';
+
+    words.forEach(wordData => {
+        const li = document.createElement('li');
+        li.className = 'lyrics-analysis-item';
+        li.id = `word-item-${wordData.word}`;
+
+        let content = `<strong>${wordData.word}</strong> → <strong>${wordData.word_translation}</strong><br>`;
+        content += `<small>Ejemplo (EN): <em>${wordData.new_en_phrase}</em></small><br>`;
+        content += `<small>Ejemplo (ES): <em>${wordData.new_es_phrase}</em></small><br>`;
+
+        if (wordData.is_duplicate) {
+            content += `<span class="duplicate-warning">¡Duplicado! Se actualizarán los ejemplos.</span><br>`;
+            
+            const replaceBtn = document.createElement('button');
+            replaceBtn.textContent = 'Actualizar ejemplos';
+            replaceBtn.className = 'btn btn-sm btn-warning';
+            replaceBtn.addEventListener('click', () => updateFlashcardPhrases(token, wordData));
+            li.innerHTML = content;
+            li.appendChild(replaceBtn);
+
+        } else {
+            const addBtn = document.createElement('button');
+            addBtn.textContent = 'Añadir';
+            addBtn.className = 'btn btn-sm btn-success';
+            addBtn.addEventListener('click', () => addFlashcard(token, wordData));
+            li.innerHTML = content;
+            li.appendChild(addBtn);
+        }
+        ul.appendChild(li);
+    });
+    resultsContainer.appendChild(ul);
+}
+
+async function addFlashcard(token, wordData) {
+    try {
+        const response = await fetch('/api/flashcards/add', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+            body: JSON.stringify({
+                front_content: wordData.word,
+                back_content: wordData.word_translation, // Use the single word translation
+                category: 'Lyrics',
+                example_en: wordData.new_en_phrase, // Use the new example phrase
+                example_es: wordData.new_es_phrase
+            })
+        });
+        const result = await response.json();
+        if (result.status === 'success') {
+            alert('Flashcard añadida con éxito!');
+            const listItem = document.getElementById(`word-item-${wordData.word}`);
+            if (listItem) {
+                listItem.remove();
+            }
+        } else {
+            alert('Error al añadir flashcard: ' + result.message);
+        }
+    } catch (error) {
+        console.error('Error de red al añadir flashcard:', error);
+        alert('Error de red al añadir flashcard.');
+    }
+}
+
+async function updateFlashcardPhrases(token, wordData) {
+    try {
+        // Note: We are not updating the back_content (the single translation) here,
+        // only the example phrases associated with the card.
+        const response = await fetch(`/api/flashcards/update_phrases/${wordData.flashcard_id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+            body: JSON.stringify({
+                // The backend endpoint requires back_content, so we send the existing one.
+                // A more advanced implementation could have a dedicated endpoint for just updating examples.
+                back_content: wordData.word_translation,
+                example_en: wordData.new_en_phrase,
+                example_es: wordData.new_es_phrase
+            })
+        });
+        const result = await response.json();
+        if (result.status === 'success') {
+            alert('Frases de ejemplo actualizadas con éxito!');
+            const listItem = document.getElementById(`word-item-${wordData.word}`);
+            if (listItem) {
+                listItem.remove();
+            }
+        } else {
+            alert('Error al actualizar flashcard: ' + result.message);
+        }
+    } catch (error) {
+        console.error('Error de red al actualizar flashcard:', error);
+        alert('Error de red al actualizar flashcard.');
+    }
+}
+
+function clearLyricsAnalysisResults() {
+    const lyricsInput = document.getElementById('lyrics-input');
+    const lyricsAnalysisResults = document.getElementById('lyrics-analysis-results');
+    if (lyricsInput) {
+        lyricsInput.value = '';
+    }
+    if (lyricsAnalysisResults) {
+        lyricsAnalysisResults.innerHTML = '';
+    }
+}
+
 async function initializeArchivedPage(token) {
-    // --- Elementos del DOM ---
+    // This function remains unchanged as it belongs to a different page
     const gridContainer = document.getElementById('archived-grid');
+    if (!gridContainer) return;
+    
     const paginationControls = document.getElementById('pagination-controls');
     const searchInput = document.getElementById('search-input');
     const unarchiveForm = document.getElementById('unarchive-form');
@@ -20,7 +229,6 @@ async function initializeArchivedPage(token) {
     const aiResultContainer = document.getElementById('ai-result-container');
     const aiParagraph = document.getElementById('ai-generated-paragraph');
     const aiSpinner = document.getElementById('ai-loading-spinner');
-    
     const aiTranslatedParagraph = document.getElementById('ai-translated-paragraph');
     const randomSelectBtn = document.getElementById('random-select-btn');
     const randomSelectTooltip = document.getElementById('random-select-tooltip-container');
@@ -29,26 +237,17 @@ async function initializeArchivedPage(token) {
     const translationWrapper = document.getElementById('translation-wrapper');
     const clearSelectionBtn = document.getElementById('clear-selection-btn');
 
-    // --- Estado de la Aplicación ---
     let cachedTranslation = null;
     let currentPage = 1;
     let currentSearch = '';
     let debounceTimeout;
     const selectedCards = new Map();
 
-    // --- Funciones Principales ---
-
     function updateButtonStates() {
         const hasSelection = selectedCards.size > 0;
-        if (unarchiveBtn) {
-            unarchiveBtn.disabled = !hasSelection;
-        }
-        if (clearSelectionBtn) {
-            clearSelectionBtn.disabled = !hasSelection;
-        }
-        if (generateBtn) {
-            generateBtn.disabled = !hasSelection;
-        }
+        if (unarchiveBtn) unarchiveBtn.disabled = !hasSelection;
+        if (clearSelectionBtn) clearSelectionBtn.disabled = !hasSelection;
+        if (generateBtn) generateBtn.disabled = !hasSelection;
     }
 
     function debounce(func, delay) {
@@ -72,7 +271,7 @@ async function initializeArchivedPage(token) {
                 renderPagination(data);
                 currentPage = data.page;
                 currentSearch = search;
-                updateButtonStates(); // Call after rendering to update button states
+                updateButtonStates();
             } else {
                 gridContainer.innerHTML = `<p>Error al cargar tarjetas: ${data.message}</p>`;
             }
@@ -90,8 +289,6 @@ async function initializeArchivedPage(token) {
             if(generateBtn) generateBtn.style.display = 'none';
             return;
         }
-
-        
         
         cards.forEach(card => {
             const cardDiv = document.createElement('div');
@@ -148,10 +345,6 @@ async function initializeArchivedPage(token) {
         paginationControls.innerHTML = paginationHtml;
     }
 
-    
-
-    // --- Event Listeners Generales ---
-
     const debouncedSearch = debounce((searchTerm) => fetchAndRenderArchivedCards(1, searchTerm), 300);
     searchInput.addEventListener('input', (event) => debouncedSearch(event.target.value));
 
@@ -164,7 +357,6 @@ async function initializeArchivedPage(token) {
 
     gridContainer.addEventListener('change', (event) => {
         if (event.target.name === 'card_id') {
-            // On manual selection, clear highlights and hide tooltip
             gridContainer.querySelectorAll('.archived-card-grid-item.highlight').forEach(cardEl => {
                 cardEl.classList.remove('highlight');
             });
@@ -180,7 +372,7 @@ async function initializeArchivedPage(token) {
             } else {
                 selectedCards.delete(cardId);
             }
-            updateButtonStates(); // Update button states after selection changes
+            updateButtonStates();
         }
     });
 
@@ -201,7 +393,7 @@ async function initializeArchivedPage(token) {
             if (result.status === 'success') {
                 alert(result.message);
                 selectedCards.clear();
-                fetchAndRenderArchivedCards(currentPage, currentSearch).then(updateButtonStates); // Update button states after clearing selection
+                fetchAndRenderArchivedCards(currentPage, currentSearch).then(updateButtonStates);
             } else {
                 alert('Error al desarchivar: ' + result.message);
             }
@@ -212,7 +404,7 @@ async function initializeArchivedPage(token) {
     });
 
     randomSelectBtn.addEventListener('click', async () => {
-        aiSpinner.style.display = 'block'; // Show spinner
+        aiSpinner.style.display = 'block';
         randomSelectBtn.disabled = true;
         generateBtn.disabled = true;
 
@@ -223,14 +415,13 @@ async function initializeArchivedPage(token) {
             const result = await response.json();
 
             if (response.ok && result.status === 'success') {
-                selectedCards.clear(); // Clear previous selections
+                selectedCards.clear();
                 const randomWords = [];
                 result.flashcards.forEach(card => {
                     selectedCards.set(card.id, card.front_content);
                     randomWords.push(card.front_content);
                 });
 
-                // Populate and show tooltip
                 if (randomWordsList) {
                     randomWordsList.innerHTML = randomWords.map(word => `<li>${word}</li>`).join('');
                 }
@@ -238,11 +429,9 @@ async function initializeArchivedPage(token) {
                     randomSelectTooltip.style.display = 'flex';
                 }
                 
-                // Refresh the current view to show the new selections
                 await fetchAndRenderArchivedCards(currentPage, currentSearch);
-                updateButtonStates(); // Update button states after random selection
+                updateButtonStates();
 
-                // Highlight newly selected cards visible on the current page
                 gridContainer.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
                     const cardItem = checkbox.closest('.archived-card-grid-item');
                     if (cardItem) {
@@ -257,7 +446,7 @@ async function initializeArchivedPage(token) {
             console.error('Error en la selección aleatoria:', error);
             alert('Error de red al intentar seleccionar tarjetas aleatorias.');
         } finally {
-            aiSpinner.style.display = 'none'; // Hide spinner
+            aiSpinner.style.display = 'none';
             randomSelectBtn.disabled = false;
             generateBtn.disabled = false;
         }
@@ -318,13 +507,13 @@ async function initializeArchivedPage(token) {
             gridContainer.querySelectorAll('.archived-card-grid-item.highlight').forEach(cardEl => {
                 cardEl.classList.remove('highlight');
             });
-            updateButtonStates(); // Update button states after clearing selection
+            updateButtonStates();
+            clearLyricsAnalysisResults();
         });
     }
 
-    // --- Inicialización ---
-    await fetchAndRenderArchivedCards(); // Await the initial fetch and render
-    updateButtonStates(); // Then update button states
+    await fetchAndRenderArchivedCards();
+    updateButtonStates();
 
     if (translateAccordionBtn) {
         translateAccordionBtn.addEventListener('click', () => {
@@ -334,13 +523,11 @@ async function initializeArchivedPage(token) {
                 translationWrapper.style.display = 'none';
                 translateAccordionBtn.textContent = '+';
             } else {
-                // Expand
                 if (cachedTranslation) {
                     aiTranslatedParagraph.value = cachedTranslation;
                     translationWrapper.style.display = 'block';
                     translateAccordionBtn.textContent = '-';
                 } else {
-                    // This case should not happen if backend works correctly
                     aiTranslatedParagraph.value = 'No se encontró la traducción.';
                     translationWrapper.style.display = 'block';
                 }

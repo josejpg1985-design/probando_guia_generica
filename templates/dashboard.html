@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/static/css/style.css?v=1.0.1">
     <script src="/static/js/theme.js" defer></script>
     <script src="/static/js/auth.js" defer></script>
+    <script src="/static/js/main.js" defer></script>
 </head>
 <body>
     <div class="container dashboard-container">
@@ -21,6 +22,28 @@
         </div>
         <button id="logout-btn" class="btn">Cerrar Sesión</button>
         <a href="/archived" class="btn btn-primary">Ver Archivadas</a>
+
+        <!-- Botón para abrir el modal de IA -->
+        <button id="open-ai-modal-btn" class="btn-ai-modal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2s2-.9 2-2V5c0-1.1-.9-2-2-2zM5 12c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2s2-.9 2-2v-2c0-1.1-.9-2-2-2zM19 12c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2s2-.9 2-2v-2c0-1.1-.9-2-2-2z"/></svg>
+            <span>Analizar con IA</span>
+        </button>
+    </div>
+
+    <!-- El Modal de Análisis de IA -->
+    <div id="ai-analyzer-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <button id="close-ai-modal-btn" class="modal-close-btn">&times;</button>
+            <h2>Analizar Letras de Canciones</h2>
+            <p>Pega la letra de una canción para encontrar vocabulario nuevo.</p>
+            <div class="lyrics-analyzer-section">
+                <textarea id="lyrics-input" placeholder="Pega aquí las letras de la canción..." rows="10"></textarea>
+                <button id="analyze-lyrics-btn" class="btn btn-secondary">Extraer Nuevas Palabras</button>
+                <div id="lyrics-analysis-results" class="results-container">
+                    <!-- Results will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>

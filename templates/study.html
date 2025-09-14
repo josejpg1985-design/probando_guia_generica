@@ -14,6 +14,10 @@
         <div class="study-progress" id="study-progress"></div>
         <h1>Estudiando: <span id="category-title">{{ category }}</span></h1>
 
+        <div class="search-container" style="margin-bottom: 1rem;">
+            <input type="search" id="study-search-input" class="form-control" placeholder="Buscar en esta categoría...">
+        </div>
+
         <div class="flashcard-area">
             <div class="flashcard" id="flashcard">
                 <div class="card-face card-front" id="card-front">
@@ -33,36 +37,58 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const token = verificarAutenticacion();
-            if (!token) return; 
+            if (!token) return;
 
+            // --- Elementos del DOM ---
             const category = "{{ category }}";
             const flashcardEl = document.getElementById('flashcard');
             const cardFrontEl = document.getElementById('card-front');
             const cardBackEl = document.getElementById('card-back');
             const studyProgressEl = document.getElementById('study-progress');
+            const searchInput = document.getElementById('study-search-input');
 
+            // --- Estado de la aplicación ---
             let flashcards = [];
             let currentCardIndex = 0;
+            let debounceTimeout;
 
+            // --- Funciones de Lógica ---
+            function highlightTerm(text, term) {
+                if (!text || !term) return text;
+                try {
+                    const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\            // --- Funciones de Lógica ---');
+                    const regex = new RegExp(`(\\b${escapedTerm}\\b)`, 'gi');
+                    return text.replace(regex, '<strong>$1</strong>');
+                } catch (e) {
+                    console.error("Error during highlight:", e);
+                    return text;
+                }
+            }
+            function highlightTerm(text, term) {
+                if (!text || !term) return text;
+                try {
+                    const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\// --- Funciones de Lógica ---');
+                    const regex = new RegExp(`(\\b${escapedTerm}\\b)`, 'gi');
+                    return text.replace(regex, '<strong>$1</strong>');
+                } catch (e) {
+                    console.error("Error during highlight:", e);
+                    return text;
+                }
+            }
             function updateStudyProgress() {
-                fetch('/api/user/progress', {
-                    headers: { 'Authorization': `Bearer ${token}` }
-                })
+                fetch('/api/user/progress', { headers: { 'Authorization': `Bearer ${token}` } })
                 .then(res => res.json())
                 .then(data => {
-                    if (data.status === 'success') {
-                        const { total_cards, archived_cards } = data.progress;
-                        if (total_cards > 0) {
-                            const percentage = (archived_cards / total_cards) * 100;
-                            studyProgressEl.textContent = `Progreso: ${percentage.toFixed(1)}%`;
-                        } else {
-                            studyProgressEl.textContent = 'Progreso: 0%';
-                        }
+                    if (data.status !== 'success') return;
+                    const { total_cards, archived_cards } = data.progress;
+                    if (total_cards > 0) {
+                        const percentage = (archived_cards / total_cards) * 100;
+                        studyProgressEl.textContent = `Progreso: ${percentage.toFixed(1)}%`;
+                    } else {
+                        studyProgressEl.textContent = 'Progreso: 0%';
                     }
                 });
             }
-
-            updateStudyProgress();
 
             function shuffleArray(array) {
                 for (let i = array.length - 1; i > 0; i--) {
@@ -71,17 +97,45 @@
                 }
             }
 
+            function fetchAndRenderCards(searchTerm = '') {
+                const url = `/api/flashcards/${category}?search=${encodeURIComponent(searchTerm)}`;
+                fetch(url, { headers: { 'Authorization': `Bearer ${token}` } })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            flashcards = data.flashcards;
+                            currentCardIndex = 0;
+                            if (flashcards.length > 0) {
+                                // Solo barajar si no es una búsqueda, para mantener el orden
+                                if (searchTerm === '') {
+                                    shuffleArray(flashcards);
+                                }
+                                showCard(currentCardIndex);
+                            } else {
+                                // Mensaje diferente si no hay resultados de búsqueda
+                                const message = searchTerm 
+                                    ? 'No se encontraron tarjetas con ese término de búsqueda.'
+                                    : '¡Felicidades! Has completado todas las tarjetas de esta categoría.';
+                                showEmptyState(message);
+                            }
+                        } else {
+                            showEmptyState(`Error: ${data.message}`);
+                        }
+                    }).catch(err => showEmptyState('Error de red al cargar las tarjetas.'));
+            }
+
+            function showEmptyState(message) {
+                flashcardEl.classList.remove('is-flipped');
+                cardFrontEl.innerHTML = `<p>${message}</p>`;
+                cardBackEl.innerHTML = '';
+                document.querySelector('.navigation').innerHTML = '';
+            }
+
             function showCard(index) {
                 flashcardEl.classList.remove('is-flipped');
-                if (flashcards.length === 0) {
-                    cardFrontEl.innerHTML = '<p>¡Felicidades! Has completado todas las tarjetas de esta categoría.</p>';
-                    cardBackEl.innerHTML = '';
-                    document.querySelector('.navigation').innerHTML = '';
-                    return;
-                }
+                if (flashcards.length === 0) return; // Debería ser manejado por showEmptyState
                 
                 const card = flashcards[index];
-                // Añadido: Mostrar el contador de giros en la cara frontal
                 cardFrontEl.innerHTML = `
                     <span class="flip-counter" title="Veces girada">🔄 ${card.flip_count || 0}</span>
                     <p>${card.front_content}</p>
@@ -89,10 +143,8 @@
                 
                 let backHtml = `
                     <div class="card-content-display"><p>${card.back_content}</p></div>
-                    
                     <div class="top-icons-container">
                 `;
-
                 if (card.example_en && card.example_es) {
                     backHtml += `
                         <div class="example-icon-container">
@@ -104,7 +156,6 @@
                         </div>
                     `;
                 }
-                
                 backHtml += `
                         <div class="edit-icon-container">
                             <span class="edit-icon" data-card-id="${card.id}">✏️</span>
@@ -115,26 +166,27 @@
                             <div class="tooltip">Archivar tarjeta</div>
                         </div>
                     </div>
-
                     <div class="rating-buttons">
                         <button class="btn btn-rating" data-rating="easy">Fácil (${card.easy_count || 0})</button>
                         <button class="btn btn-rating" data-rating="hard">Difícil (${card.hard_count || 0})</button>
                     </div>
                 `;
-
                 cardBackEl.innerHTML = backHtml;
             }
 
             function goNextCard() {
                 flashcardEl.classList.remove('is-flipped');
                 setTimeout(() => {
-                    if (flashcards.length === 0) {
-                        showCard(0); // Will show completion message
+                    if (flashcards.length <= 1) { // Si solo queda una o ninguna, mostramos mensaje de fin
+                        fetchAndRenderCards(searchInput.value); // Recargar para mostrar mensaje de completado
                         return;
                     }
-                    currentCardIndex = (currentCardIndex + 1) % flashcards.length;
+                    flashcards.splice(currentCardIndex, 1); // Eliminar la tarjeta actual de la lista
+                    if (currentCardIndex >= flashcards.length) {
+                        currentCardIndex = 0; // Volver al inicio si era la última
+                    }
                     showCard(currentCardIndex);
-                }, 300); 
+                }, 300);
             }
 
             function enterEditMode() {
@@ -177,38 +229,26 @@
                 cardBackEl.querySelector('.top-icons-container').style.display = 'flex';
             }
 
-            // --- Initial Data Fetch ---
-            fetch(`/api/flashcards/${category}`, { headers: { 'Authorization': `Bearer ${token}` } })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.status === 'success') {
-                        flashcards = data.flashcards;
-                        if (flashcards.length > 0) {
-                            shuffleArray(flashcards);
-                            showCard(currentCardIndex);
-                        } else {
-                            showCard(0); // Shows empty message
-                        }
-                    } else {
-                        cardFrontEl.innerHTML = `<p>Error: ${data.message}</p>`;
-                    }
-                }).catch(err => cardFrontEl.innerHTML = `<p>Error de red.</p>`);
+            // --- Inicialización y Event Listeners ---
+            updateStudyProgress();
+            fetchAndRenderCards(); // Carga inicial de tarjetas
 
-            // --- Main Event Listeners ---
+            searchInput.addEventListener('input', (event) => {
+                clearTimeout(debounceTimeout);
+                debounceTimeout = setTimeout(() => {
+                    fetchAndRenderCards(event.target.value);
+                }, 300);
+            });
+
             flashcardEl.addEventListener('click', (event) => {
                 const isIcon = event.target.closest('.top-icons-container, .rating-buttons, .edit-mode-container');
-                if (!flashcardEl.classList.contains('is-flipped') && !isIcon) {
-                    if (flashcards.length > 0) {
-                        const card = flashcards[currentCardIndex];
-                        
-                        // Añadido: Llama a la API para incrementar el contador, no espera la respuesta
-                        fetch(`/api/flashcards/${card.id}/flip`, {
-                            method: 'POST',
-                            headers: { 'Authorization': `Bearer ${token}` }
-                        }).catch(err => console.error('Error al incrementar el contador:', err));
-
-                        flashcardEl.classList.add('is-flipped');
-                    }
+                if (!flashcardEl.classList.contains('is-flipped') && !isIcon && flashcards.length > 0) {
+                    const card = flashcards[currentCardIndex];
+                    fetch(`/api/flashcards/${card.id}/flip`, {
+                        method: 'POST',
+                        headers: { 'Authorization': `Bearer ${token}` }
+                    }).catch(err => console.error('Error al incrementar el contador:', err));
+                    flashcardEl.classList.add('is-flipped');
                 }
             });
 
@@ -216,7 +256,6 @@
                 const currentCard = flashcards[currentCardIndex];
                 if (!currentCard) return;
 
-                // --- Rating Logic ---
                 if (event.target.classList.contains('btn-rating')) {
                     const ratingText = event.target.dataset.rating;
                     const ratingValue = { 'easy': 3, 'hard': 1 }[ratingText];
@@ -226,13 +265,6 @@
                         body: JSON.stringify({ card_id: currentCard.id, rating: ratingValue })
                     }).then(res => res.json()).then(data => {
                         if (data.status === 'success') {
-                            // Increment the local counter for instant feedback
-                            const ratingKey = `${ratingText}_count`;
-                            if (currentCard.hasOwnProperty(ratingKey)) {
-                                currentCard[ratingKey]++;
-                            } else {
-                                currentCard[ratingKey] = 1;
-                            }
                             goNextCard();
                             updateStudyProgress();
                         } else {
@@ -241,7 +273,6 @@
                     }).catch(err => alert('Error de red al calificar.'));
                 }
 
-                // --- Archive Logic ---
                 if (event.target.classList.contains('archive-icon')) {
                     fetch('/api/flashcards/archive', {
                         method: 'POST',
@@ -249,20 +280,15 @@
                         body: JSON.stringify({ card_id: currentCard.id })
                     }).then(res => res.json()).then(data => {
                         if (data.status === 'success') {
-                            flashcards.splice(currentCardIndex, 1);
                             goNextCard();
                             updateStudyProgress();
                         } else alert('Error al archivar: ' + data.message);
                     }).catch(err => alert('Error de red al archivar.'));
                 }
 
-                // --- Edit Mode Logic ---
-                if (event.target.classList.contains('edit-icon')) {
-                    enterEditMode();
-                }
-                if (event.target.classList.contains('cancel-btn')) {
-                    exitEditMode();
-                }
+                if (event.target.classList.contains('edit-icon')) enterEditMode();
+                if (event.target.classList.contains('cancel-btn')) exitEditMode();
+                
                 if (event.target.classList.contains('save-btn')) {
                     const newContent = document.getElementById('edit-textarea').value;
                     fetch(`/api/flashcards/${currentCard.id}`, {
@@ -275,7 +301,6 @@
                     }).catch(err => alert('Error de red al guardar.'));
                 }
 
-                // --- Delete Logic ---
                 if (event.target.classList.contains('delete-btn')) {
                     if (confirm('¿Estás seguro de que quieres eliminar esta tarjeta permanentemente?')) {
                         if (confirm('Esta acción no se puede deshacer. ¿Confirmas la eliminación?')) {
@@ -284,7 +309,6 @@
                                 headers: { 'Authorization': `Bearer ${token}` }
                             }).then(res => res.json()).then(data => {
                                 if (data.status === 'success') {
-                                    flashcards.splice(currentCardIndex, 1);
                                     goNextCard();
                                 } else alert('Error al eliminar: ' + data.message);
                             }).catch(err => alert('Error de red al eliminar.'));
