@@ -105,7 +105,7 @@ def login_user():
     if not email or not password: return jsonify({"status": "error", "message": "Email y contraseña son requeridos."}), 400
     user = database.get_user_by_email(email)
     if not user or not check_password_hash(user['password_hash'], password): return jsonify({"status": "error", "message": "Credenciales inválidas."}), 401
-    token = jwt.encode({'user_id': user['id'], 'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm="HS256")
+    token = jwt.encode({'user_id': user['id'], 'exp': datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm="HS256")
     return jsonify({"status": "success", "token": token})
 
 # --- API Protegida ---
@@ -391,79 +391,124 @@ Example response for words "cat, house, happy":
 @token_required
 @api_error_handler
 def analyze_lyrics(current_user):
-    if not GEMINI_API_KEY:
-        return jsonify({"status": "error", "message": "La clave de API de Gemini no está configurada en el servidor."}), 500
+    try:
+        if not GEMINI_API_KEY:
+            return jsonify({"status": "error", "message": "La clave de API de Gemini no está configurada en el servidor."}), 500
 
-    data = request.get_json()
-    lyrics_paragraph = data.get('lyrics')
-    if not lyrics_paragraph:
-        return jsonify({"status": "error", "message": "Se requiere un párrafo de letras para analizar."}), 400
+        data = request.get_json()
+        lyrics_paragraph = data.get('lyrics')
+        if not lyrics_paragraph:
+            return jsonify({"status": "error", "message": "Se requiere un párrafo de letras para analizar."}), 400
 
-    stopwords = set(["a", "an", "the", "and", "it", "is", "in", "on", "at", "for", "with", "to", "of"])
-    words = re.findall(r'\b[a-z]+\b', lyrics_paragraph.lower())
-    unique_words = sorted(list(set(word for word in words if word not in stopwords and len(word) > 2)))
+        # 1. Extraer palabras únicas de la letra
+        stopwords = set(["a", "an", "the", "and", "it", "is", "in", "on", "at", "for", "with", "to", "of", "i", "you", "he", "she", "they", "we", "my", "your"])
+        words = re.findall(r'\b[a-z]+\b', lyrics_paragraph.lower())
+        unique_words = sorted(list(set(word for word in words if word not in stopwords and len(word) > 2)))
 
-    results = []
-    model = genai.GenerativeModel('gemini-1.5-flash-latest')
+        if not unique_words:
+            return jsonify({"status": "success", "words": []})
 
-    for word in unique_words:
-        flashcard_data = database.get_flashcard_by_front_content(current_user['id'], word, "Lyrics")
-        is_duplicate = flashcard_data is not None
-
-        word_translation = ""
-        new_en_phrase = ""
-        new_es_phrase = ""
-        existing_en_phrase = ""
-        existing_es_phrase = ""
-
-        if is_duplicate:
-            existing_en_phrase = flashcard_data.get('example_en', '')
-            existing_es_phrase = flashcard_data.get('example_es', '')
-
-        # AI Call 1: Get single word translation
+        # 2. Hacer una única llamada a la API para todas las palabras
         try:
-            prompt_translate = f'Translate the English word "{word}" to its single most common Spanish equivalent. Provide only the single translated word, nothing else. For example, for "house", return only "casa".'
-            response_translate = model.generate_content(prompt_translate)
-            word_translation = response_translate.text.strip().lower()
-        except Exception as e:
-            app.logger.error(f"Error getting single translation for '{word}': {str(e)}")
-            word_translation = f"Translate Error: {str(e)}"
+            model = genai.GenerativeModel('gemini-1.5-flash-latest')
+            
+            words_json_string = json.dumps(unique_words)
 
-        # AI Call 2: Get example phrases
-        try:
-            prompt_phrase = f"""You are an assistant for an English learner at A1-A2 level.
-            Your task is to provide a short, simple, and colloquial English phrase that uses the word "{word}" from the following lyrics: "{lyrics_paragraph}".
-            The phrase should be directly from or clearly inspired by the context of the lyrics provided.
-            After the English phrase, provide its accurate and natural-sounding translation in Spanish.
-            Format your response as a single JSON object with two keys: "english_phrase" and "spanish_phrase".
-            Do not include any other text or markdown formatting like ```json. Just the raw JSON object.
-            Example response for word "love" from lyrics "All you need is love":
-            {{
-              "english_phrase": "All you need is love.",
-              "spanish_phrase": "Todo lo que necesitas es amor."
-            }}
-            """
-            response_phrase = model.generate_content(prompt_phrase)
-            ai_phrases = json.loads(response_phrase.text.strip())
-            new_en_phrase = ai_phrases.get("english_phrase", "")
-            new_es_phrase = ai_phrases.get("spanish_phrase", "")
-        except Exception as e:
-            app.logger.error(f"Error generating phrase for '{word}' with Gemini: {str(e)}")
-            new_en_phrase = f"Phrase Error: {str(e)}"
-            new_es_phrase = ""
+            prompt = f"""You are an expert linguistic assistant for an English learner at the A1-A2 level.
+Your task is to process a list of English words extracted from a song's lyrics and provide structured information for each word.
+The lyrics are: "{lyrics_paragraph}"
+The words to analyze are: {words_json_string}
 
-        results.append({
-            "word": word,
-            "word_translation": word_translation,
-            "new_en_phrase": new_en_phrase,
-            "new_es_phrase": new_es_phrase,
-            "is_duplicate": is_duplicate,
-            "existing_en_phrase": existing_en_phrase,
-            "existing_es_phrase": existing_es_phrase,
-            "flashcard_id": flashcard_data['id'] if is_duplicate else None
-        })
-    
-    return jsonify({"status": "success", "words": results})
+For each word in the list, you must provide:
+1.  `word_translation`: The single most common Spanish equivalent.
+2.  `english_phrase`: A simple, short, and colloquial English phrase using the word. This phrase MUST be directly from or clearly inspired by the context of the provided lyrics.
+3.  `spanish_phrase`: An accurate and natural-sounding Spanish translation of the `english_phrase`.
+
+Your response MUST be a single, valid JSON array where each element is an object containing the original `word`, `word_translation`, `english_phrase`, and `spanish_phrase`.
+
+Do not include any other text, explanations, or markdown formatting like ```json. Just the raw JSON array.
+
+Example response for words ["sun", "happy"] from lyrics "The sun is shining, I feel so happy.":
+[
+  {{
+    "word": "sun",
+    "word_translation": "sol",
+    "english_phrase": "The sun is shining.",
+    "spanish_phrase": "El sol está brillando."
+  }},
+  {{
+    "word": "happy",
+    "word_translation": "feliz",
+    "english_phrase": "I feel so happy.",
+    "spanish_phrase": "Me siento muy feliz."
+  }}
+]
+"""
+            
+            response = model.generate_content(prompt)
+
+            if not response.text:
+                raise ValueError("La respuesta de la IA está vacía.")
+            
+            # Limpiar la respuesta para asegurarse de que sea un JSON válido
+            cleaned_response_text = response.text.strip()
+            if cleaned_response_text.startswith("```json"):
+                cleaned_response_text = cleaned_response_text[7:]
+            if cleaned_response_text.endswith("```"):
+                cleaned_response_text = cleaned_response_text[:-3]
+
+            if not cleaned_response_text:
+                raise ValueError("La respuesta de la IA está vacía después de la limpieza.")
+            
+            try:
+                ai_results = json.loads(cleaned_response_text)
+                # Crear un mapa para acceso rápido
+                ai_results_map = {item['word']: item for item in ai_results}
+            except (json.JSONDecodeError, TypeError, KeyError) as e:
+                app.logger.error(f"Error al procesar la respuesta JSON de la IA: {cleaned_response_text} - Error: {e}")
+                raise ValueError(f"La IA devolvió un formato de respuesta inesperado. Detalles: {e}")
+
+        except Exception as e:
+            app.logger.error(f"Error processing batch analysis with Gemini: {str(e)}")
+            return jsonify({"status": "error", "message": f"Error de la IA: {str(e)}"}), 500
+
+        # 3. Combinar resultados de la IA con datos de la base de datos
+        results = []
+        for word in unique_words:
+            flashcard_data = database.get_flashcard_by_front_content(current_user['id'], word, "Lyrics")
+            is_duplicate = flashcard_data is not None
+            
+            ai_word_data = ai_results_map.get(word)
+
+            # Construir el resultado de forma segura
+            result_item = {
+                "word": word,
+                "is_duplicate": is_duplicate,
+                "existing_en_phrase": "",
+                "existing_es_phrase": "",
+                "flashcard_id": None
+            }
+
+            if is_duplicate and flashcard_data:
+                result_item["existing_en_phrase"] = flashcard_data.get('example_en', '')
+                result_item["existing_es_phrase"] = flashcard_data.get('example_es', '')
+                result_item["flashcard_id"] = flashcard_data.get('id')
+
+            if ai_word_data:
+                result_item["word_translation"] = ai_word_data.get("word_translation", "Error")
+                result_item["new_en_phrase"] = ai_word_data.get("english_phrase", "Error")
+                result_item["new_es_phrase"] = ai_word_data.get("spanish_phrase", "Error")
+            else:
+                result_item["word_translation"] = "No encontrado"
+                result_item["new_en_phrase"] = "No generado"
+                result_item["new_es_phrase"] = "No generado"
+                
+            results.append(result_item)
+
+        return jsonify({"status": "success", "words": results})
+    except Exception as e:
+        app.logger.error(f"FATAL ERROR in analyze_lyrics: {e}")
+        return jsonify({"status": "fatal_error", "message": str(e)}), 500
 
 @app.route('/api/flashcards/add', methods=['POST'])
 @token_required
