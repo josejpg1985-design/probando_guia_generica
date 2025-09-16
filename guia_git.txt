@@ -125,41 +125,57 @@ Esto conecta tu repositorio local con uno vacío en GitHub y sube tus archivos.
 
 ---
 
-### **Paso 6: Trabajando como los Profesionales con Ramas (Branches)**
+### **Paso 6: El Flujo de Trabajo Real (El Ciclo Completo que Acabamos de Hacer)**
 
-Hasta ahora, has trabajado directamente en la rama `main`. Esto está bien para proyectos pequeños y personales. Pero en el mundo real, para mantener el orden y la seguridad, se usan **ramas** (`branches`).
+Hasta ahora, la guía te ha mostrado los comandos por separado. Ahora, vamos a juntar todo en el orden exacto en que lo usas en un día de trabajo normal, justo como lo hicimos nosotros. Este es el flujo que seguirás el 99% del tiempo.
 
-*   **Analogía:** Imagina que la rama `main` es la **versión final y publicada de un libro**. Si quieres escribir un nuevo capítulo o corregir un error, no editas directamente el libro publicado. Haces una **copia o un borrador aparte** (una `rama`), trabajas en ella, y una vez que está perfecta, la incorporas al libro principal.
+**La idea es simple:** Creas una copia (`rama`) para no tocar el original, haces tus cambios, los propones para que se integren al original y, finalmente, limpias todo.
 
-**El Flujo de Trabajo con Ramas (El Ciclo Completo que acabamos de hacer):**
+---
 
-*   **Paso 6.1: Crea tu "borrador" (la nueva rama)**
-    *   **Comando:** `git checkout -b nombre-de-la-rama`
-    *   **Ejemplo:** `git checkout -b feature/agregar-login`
-    *   **¿Qué hace?** Crea una nueva rama y te mueve a ella inmediatamente. Todo lo que hagas a partir de ahora ocurrirá en esta rama, sin afectar a `main`.
+#### **Fase 1: Trabajar en tu computadora**
 
-*   **Paso 6.2: Trabaja y guarda en tu rama**
-    *   Haz tus cambios en el código.
-    *   Guarda tus cambios en tu rama como ya sabes:
-        *   `git add .`
-        *   `git commit -m "Un mensaje sobre lo que hiciste en la rama"`
+**Paso 1: Crear una copia para trabajar seguro (Crear una Rama)**
+*   **Comando:** `git checkout -b nombre-de-la-rama`
+*   **Qué hace:** Crea una "línea de tiempo" paralela para que puedas hacer cambios sin afectar el proyecto principal (`main`).
 
-*   **Paso 6.3: Sube tu rama a GitHub**
-    *   **Comando:** `git push -u origin nombre-de-la-rama`
-    *   **¿Qué hace?** Sube tu "borrador" a GitHub, separado de `main`.
+**Paso 2: Preparar los archivos para guardarlos (Añadir al "área de preparación")**
+*   **Comando:** `git add .`
+*   **Qué hace:** Pone todos tus archivos modificados en una "caja" listos para ser guardados.
 
-*   **Paso 6.4: Propón tus cambios (¡El Pull Request!)**
-    *   **¡Ahora vas a GitHub!** Al subir tu rama, verás un mensaje en la terminal con un enlace para crear un **Pull Request (PR)**.
-    *   Un Pull Request es una solicitud formal para "fusionar" (`merge`) los cambios de tu rama en la rama `main`.
-    *   *(Este es el corazón de la colaboración. Para más detalles, consulta tu `guia_github.txt`)*.
+**Paso 3: Hacer el guardado permanente (Hacer un "Commit")**
+*   **Comando:** `git commit -m "Un mensaje que describa tu cambio"`
+*   **Qué hace:** Guarda una "foto" de tus cambios en el historial de tu computadora.
 
-*   **Paso 6.5: Limpieza después de fusionar**
-    *   Una vez que tu Pull Request ha sido aprobado y fusionado en GitHub (y has borrado la rama remota desde la web), es hora de ordenar tu repositorio local.
-    *   **1. Vuelve a la rama principal:**
-        *   `git checkout main`
-    *   **2. Actualiza tu `main` local:** (¡Muy importante!)
-        *   `git pull origin main` (Trae los cambios que acabas de fusionar en GitHub).
-    *   **3. Borra la rama local que ya no necesitas:**
-        *   `git branch -d nombre-de-la-rama`
+**Paso 4: Subir tu trabajo a GitHub (Hacer "Push")**
+*   **Comando:** `git push -u origin nombre-de-la-rama`
+*   **Qué hace:** Sube tu rama con los cambios guardados a tu perfil de GitHub. Ahora tu trabajo está respaldado en internet.
 
-¡Y listo! Tu rama `main` está actualizada y tu repositorio local está limpio, preparado para crear la siguiente rama.
+---
+
+#### **Fase 2: Integrar tus cambios en GitHub (El "Pull Request")**
+
+**Paso 5: Mezclar tus cambios en la web**
+*   **Acciones en GitHub.com:** `Crear Pull Request` -> `Merge` -> `Delete Branch`
+*   **Qué haces:**
+    1.  **Pides permiso** para incorporar tus cambios a la rama principal (`Pull Request`).
+    2.  **Mezclas** tus cambios con la rama principal (`Merge`).
+    3.  **Borras** la rama de internet, porque su trabajo ya terminó.
+
+---
+
+#### **Fase 3: Sincronizar y limpiar tu computadora**
+
+**Paso 6: Volver a tu rama principal**
+*   **Comando:** `git checkout main`
+*   **Qué hace:** Regresas a la línea de tiempo principal en tu computadora.
+
+**Paso 7: Actualizar tu computadora con lo último de GitHub (Hacer "Pull")**
+*   **Comando:** `git pull origin main`
+*   **Qué hace:** Descargas los cambios que se mezclaron en GitHub para que tu computadora tenga la versión más reciente.
+
+**Paso 8: Borrar la rama que ya no usas**
+*   **Comando:** `git branch -d nombre-de-la-rama`
+*   **Qué hace:** Borras la rama temporal de tu computadora para dejar todo limpio y ordenado.
+
+¡Y eso es todo! Este es el ciclo completo. Repetirás estos pasos una y otra vez en tus proyectos.
