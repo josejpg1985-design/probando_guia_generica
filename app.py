@@ -12,7 +12,7 @@ import re
 
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 
-app.config['SECRET_KEY'] = 'esto-es-un-secreto-temporal'
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 # Cargar variables de entorno y configurar Gemini
 load_dotenv()
@@ -75,6 +75,38 @@ def archived_cards_page():
 def study(category):
     """Renderiza la página de estudio para una categoría específica."""
     return render_template('study.html', category=category)
+
+# --- Modo Inmersión ---
+@app.route('/inmersion/<escenario>')
+def inmersion(escenario):
+    """Renderiza la página del modo inmersión para un escenario específico."""
+    try:
+        # Validar que el usuario esté 'logueado' podría ir aquí si es necesario
+        # Por ahora, lo dejamos abierto para simplicidad.
+        
+        with open('json/3_inmersion_dialogos.json', 'r', encoding='utf-8') as f:
+            dialogos_data = json.load(f)
+        
+        dialogo = dialogos_data.get(escenario)
+        if not dialogo:
+            # Podríamos redirigir al dashboard o mostrar un error amigable
+            return redirect(url_for('dashboard'))
+
+        escenario_titulo = escenario.replace('_', ' ').capitalize()
+
+        return render_template(
+            'inmersion.html', 
+            escenario=escenario,
+            escenario_titulo=escenario_titulo,
+            dialogo_json=dialogo # Pasamos el diálogo como JSON
+        )
+    except FileNotFoundError:
+        # Manejo del error si el archivo JSON no se encuentra
+        return "Error: El archivo de diálogos no fue encontrado.", 404
+    except Exception as e:
+        # Manejo de otros posibles errores
+        app.logger.error(f"Error en modo inmersión para escenario '{escenario}': {e}")
+        return "Ocurrió un error inesperado.", 500
 
 # --- API de Autenticación ---
 @app.route('/api/register', methods=['POST'])

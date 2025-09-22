@@ -4,7 +4,10 @@ import json
 import os
 from werkzeug.security import generate_password_hash
 
-DB_NAME = 'flashcards.db'
+from dotenv import load_dotenv
+
+load_dotenv()
+DB_NAME = os.getenv('DATABASE_NAME', 'flashcards.db')
 
 def get_db_connection():
     """Crea y retorna una conexión a la base de datos."""
