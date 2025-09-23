@@ -25,6 +25,7 @@ def setup_database():
     CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         email TEXT NOT NULL UNIQUE,
+        alias TEXT UNIQUE,
         password_hash TEXT NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
@@ -54,33 +55,42 @@ def setup_database():
     )
     ''')
 
-    # --- Bloque para añadir la columna a tablas existentes (migración) ---
+    # --- Bloque para añadir columnas a tablas existentes (migración) ---
     try:
+        # Migración para la tabla users
+        cursor.execute("PRAGMA table_info(users)")
+        user_columns = [column['name'] for column in cursor.fetchall()]
+        if 'alias' not in user_columns:
+            print("Añadiendo columna 'alias' a la tabla 'users'...")
+            cursor.execute("ALTER TABLE users ADD COLUMN alias TEXT")
+            print("Columna 'alias' añadida exitosamente.")
+
+        # Migración para la tabla flashcards
         cursor.execute("PRAGMA table_info(flashcards)")
-        columns = [column['name'] for column in cursor.fetchall()]
+        flashcard_columns = [column['name'] for column in cursor.fetchall()]
         
-        if 'flip_count' not in columns:
+        if 'flip_count' not in flashcard_columns:
             print("Añadiendo columna 'flip_count' a la tabla 'flashcards'...")
             cursor.execute("ALTER TABLE flashcards ADD COLUMN flip_count INTEGER DEFAULT 0")
             print("Columna 'flip_count' añadida exitosamente.")
 
-        if 'easy_count' not in columns:
+        if 'easy_count' not in flashcard_columns:
             print("Añadiendo columna 'easy_count' a la tabla 'flashcards'...")
             cursor.execute("ALTER TABLE flashcards ADD COLUMN easy_count INTEGER DEFAULT 0")
             print("Columna 'easy_count' añadida exitosamente.")
 
-        if 'normal_count' not in columns:
+        if 'normal_count' not in flashcard_columns:
             print("Añadiendo columna 'normal_count' a la tabla 'flashcards'...")
             cursor.execute("ALTER TABLE flashcards ADD COLUMN normal_count INTEGER DEFAULT 0")
             print("Columna 'normal_count' añadida exitosamente.")
 
-        if 'hard_count' not in columns:
+        if 'hard_count' not in flashcard_columns:
             print("Añadiendo columna 'hard_count' a la tabla 'flashcards'...")
             cursor.execute("ALTER TABLE flashcards ADD COLUMN hard_count INTEGER DEFAULT 0")
             print("Columna 'hard_count' añadida exitosamente.")
 
     except Exception as e:
-        print(f"Error al intentar modificar la tabla 'flashcards': {e}")
+        print(f"Error al intentar modificar las tablas: {e}")
     # --- Fin del bloque de migración ---
 
 
@@ -88,24 +98,29 @@ def setup_database():
     conn.commit()
     conn.close()
 
-def add_user(email, password):
-    """Añade un nuevo usuario a la base de datos con contraseña hasheada."""
+def add_user(email, password, alias=None):
+    """Añade un nuevo usuario a la base de datos con contraseña hasheada y alias opcional."""
     conn = get_db_connection()
     cursor = conn.cursor()
     
     try:
         hashed_password = generate_password_hash(password)
         cursor.execute(
-            "INSERT INTO users (email, password_hash) VALUES (?, ?)",
-            (email, hashed_password)
+            "INSERT INTO users (email, password_hash, alias) VALUES (?, ?, ?)",
+            (email, hashed_password, alias)
         )
         conn.commit()
         user_id = cursor.lastrowid
         conn.close()
         return {"status": "success", "user_id": user_id}
-    except sqlite3.IntegrityError:
+    except sqlite3.IntegrityError as e:
         conn.close()
-        return {"status": "error", "message": "El correo electrónico ya existe."}
+        if 'users.email' in str(e):
+            return {"status": "error", "message": "El correo electrónico ya existe."}
+        elif 'users.alias' in str(e):
+            return {"status": "error", "message": "El alias ya está en uso."}
+        else:
+            return {"status": "error", "message": "Error de integridad de la base de datos."}
 
 def get_user_by_email(email):
     """Busca un usuario por su email y devuelve sus datos."""
@@ -425,6 +440,22 @@ def update_flashcard_phrases(card_id, user_id, back_content, example_en, example
         conn.close()
         print(f"Error updating flashcard phrases: {e}")
         return False
+
+def update_user_alias(user_id, new_alias):
+    """Actualiza el alias de un usuario."""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute(
+            "UPDATE users SET alias = ? WHERE id = ?",
+            (new_alias, user_id)
+        )
+        conn.commit()
+        conn.close()
+        return {"status": "success"}
+    except sqlite3.IntegrityError:
+        conn.close()
+        return {"status": "error", "message": "El alias ya está en uso."}
 
 JSON_FILES_WITH_CATEGORIES = {
     'Vocabulario': 'json/1_flashcards_vocabulario.txt',

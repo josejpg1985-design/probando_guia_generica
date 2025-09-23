@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const registerBtn = document.getElementById('register-btn');
         const emailInput = document.getElementById('email');
         const passwordInput = document.getElementById('password');
+        const aliasInput = document.getElementById('alias'); // Get the alias input
         const messageArea = document.getElementById('message-area');
 
         loginBtn.addEventListener('click', async (e) => {
@@ -19,7 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             handleAuth('/api/register', {
                 email: emailInput.value,
-                password: passwordInput.value
+                password: passwordInput.value,
+                alias: aliasInput.value // Add alias to the data
             });
         });
 

@@ -11,7 +11,18 @@
 </head>
 <body>
     <div class="container dashboard-container">
-        <h1>Bienvenido a tu Dashboard</h1>
+        <h1>Dashboard</h1>
+        <div class="profile-header">
+            <h2 id="user-display-name"></h2>
+            <button id="edit-alias-btn" class="btn-icon-text" title="Editar alias">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
+            </button>
+        </div>
+        <div id="edit-alias-form" class="button-group" style="display: none;">
+            <input type="text" id="alias-input" class="form-control" placeholder="Nuevo alias">
+            <button id="save-alias-btn" class="btn btn-primary">Guardar</button>
+            <button id="cancel-alias-btn" class="btn">Cancelar</button>
+        </div>
         <p>Aquí gestionarás tus flashcards.</p>
         <div class="progress-container">
             <h3>Tu Progreso</h3>
@@ -20,8 +31,17 @@
             </div>
             <span id="progress-text">Cargando...</span>
         </div>
-        <button id="logout-btn" class="btn">Cerrar Sesión</button>
-        <a href="/archived" class="btn btn-primary">Ver Archivadas</a>
+        <div class="button-group">
+            <button id="logout-btn" class="btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                <span>Cerrar Sesión</span>
+            </button>
+            <a href="/archived" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 8 21 21 3 21 3 8"></polyline><rect x="1" y="3" width="22" height="5"></rect><line x1="10" y1="12" x2="14" y2="12"></line></svg>
+                <span>Ver Archivadas</span>
+            </a>
+            <a href="/espanol" class="btn btn-secondary">ES</a>
+        </div>
 
         <!-- Botón para abrir el modal de IA -->
         <button id="open-ai-modal-btn" class="btn-ai-modal">
@@ -68,7 +88,60 @@
             })
             .then(data => {
                 // 3. Si todo está bien, mostrar los datos del usuario.
-                document.querySelector('h1').textContent = `Dashboard de ${data.email}`;
+                const userDisplayName = document.getElementById('user-display-name');
+                const updateDisplayName = () => {
+                    const displayName = data.alias || data.email;
+                    userDisplayName.textContent = displayName;
+                };
+                updateDisplayName();
+
+                // --- Lógica para editar el alias ---
+                const editAliasBtn = document.getElementById('edit-alias-btn');
+                const editAliasForm = document.getElementById('edit-alias-form');
+                const aliasInput = document.getElementById('alias-input');
+                const saveAliasBtn = document.getElementById('save-alias-btn');
+                const cancelAliasBtn = document.getElementById('cancel-alias-btn');
+
+                editAliasBtn.addEventListener('click', () => {
+                    editAliasForm.style.display = 'flex';
+                    aliasInput.value = data.alias || '';
+                    aliasInput.focus();
+                });
+
+                cancelAliasBtn.addEventListener('click', () => {
+                    editAliasForm.style.display = 'none';
+                });
+
+                saveAliasBtn.addEventListener('click', async () => {
+                    const newAlias = aliasInput.value.trim();
+                    if (!newAlias) {
+                        // Maybe show a small error message here
+                        return;
+                    }
+
+                    try {
+                        const response = await fetch('/api/user/alias', {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${token}`
+                            },
+                            body: JSON.stringify({ alias: newAlias })
+                        });
+
+                        const result = await response.json();
+
+                        if (response.ok && result.status === 'success') {
+                            data.alias = newAlias; // Update local data
+                            updateDisplayName();
+                            editAliasForm.style.display = 'none';
+                        } else {
+                            alert(`Error: ${result.message}`);
+                        }
+                    } catch (error) {
+                        alert('Error de red al guardar el alias.');
+                    }
+                });
 
                 // 3.1. Cargar y mostrar las categorías de estudio.
                 fetch('/api/categories', {
