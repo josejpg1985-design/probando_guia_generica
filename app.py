@@ -76,6 +76,10 @@ def study(category):
     """Renderiza la página de estudio para una categoría específica."""
     return render_template('study.html', category=category)
 
+@app.route('/espanol')
+def espanol():
+    return render_template('espanol.html')
+
 # --- Modo Inmersión ---
 @app.route('/inmersion/<escenario>')
 def inmersion(escenario):
@@ -115,10 +119,12 @@ def register_user():
     data = request.get_json()
     email = data.get('email')
     password = data.get('password')
+    alias = data.get('alias')
+
     if not email or not password:
         return jsonify({"status": "error", "message": "Email y contraseña son requeridos."}), 400
     
-    result = database.add_user(email, password)
+    result = database.add_user(email, password, alias)
     
     if result["status"] == "success":
         # Populate new user with default flashcards
@@ -146,7 +152,27 @@ def login_user():
 @api_error_handler
 def get_user_info(current_user):
     """Devuelve información del usuario autenticado."""
-    return jsonify({'email': current_user['email'], 'id': current_user['id']})
+    user_info = {
+        'id': current_user['id'],
+        'email': current_user['email'],
+        'alias': current_user['alias']
+    }
+    return jsonify(user_info)
+
+@app.route('/api/user/alias', methods=['PUT'])
+@token_required
+@api_error_handler
+def update_user_alias_route(current_user):
+    """Actualiza el alias del usuario autenticado."""
+    data = request.get_json()
+    new_alias = data.get('alias')
+
+    if not new_alias or len(new_alias.strip()) == 0:
+        return jsonify({"status": "error", "message": "El alias no puede estar vacío."}), 400
+
+    result = database.update_user_alias(current_user['id'], new_alias.strip())
+
+    return jsonify(result)
 
 @app.route('/api/user/progress')
 @token_required
@@ -360,6 +386,63 @@ def translate_text(current_user):
     except Exception as e:
         app.logger.error(f"Error translating text with Gemini: {str(e)}")
         return jsonify({"status": "error", "message": "No se pudo traducir el texto."}), 500
+
+@app.route('/api/analyze_spanish', methods=['POST'])
+@token_required
+@api_error_handler
+def analyze_spanish_text(current_user):
+    """
+    Analiza un texto en español proporcionado por el usuario y devuelve una explicación.
+    """
+    if not GEMINI_API_KEY:
+        return jsonify({"status": "error", "message": "La clave de API de Gemini no está configurada en el servidor."}), 500
+
+    data = request.get_json()
+    text_to_analyze = data.get('text')
+    context = data.get('context') # Get context from request
+
+    if not text_to_analyze:
+        return jsonify({"status": "error", "message": "Se requiere texto para analizar."}), 400
+
+    try:
+        model = genai.GenerativeModel('gemini-1.5-flash-latest')
+        
+        # Construct the prompt with optional context
+        prompt_parts = [
+            "**Instrucción Maestra:** Vas a actuar como un experto en lingüística y gramática del español. Tu objetivo es aplicar una \"Descomposición Estructural Progresiva\" sobre el tema solicitado.",
+            f"**Tema a Analizar:** \"{text_to_analyze}\"",
+        ]
+        if context and len(context.strip()) > 0:
+            prompt_parts.append(f"**Contexto Proporcionado:** \"{context}\" ")
+        
+        prompt_parts.extend([
+            "**Contexto General:** Lingüística y gramática del idioma español.",
+            "**Nivel de Comprensión Requerido:** 3 (Ridículamente fácil de entender).",
+            "",
+            "**--- PASOS OBLIGATORIOS --**",
+            "",
+            "**1. Explicación Técnica y Literal (Nivel 3):**",
+            "Explica el tema usando solo lenguaje literal, técnico y preciso. Evita por completo el uso de metáforas, analogías o lenguaje figurado. Usa oraciones simples y define cada término técnico la primera vez que lo uses. Después de cada definición de un término técnico, añade una explicación coloquial entre paréntesis. ",
+            "*Ejemplo de formato: \"El **sujeto** (la persona o cosa que hace la acción) es el elemento de la oración que...*\"",
+            "",
+            "**2. Diagrama de Flujo Escrito:**",
+            "Redacta una lista numerada que funcione como un diagrama de flujo. Debe explicar de manera breve y coherente las conexiones lógicas y sucesivas de los componentes del tema, desde el concepto más básico hasta su aplicación o formación completa.",
+            "",
+            "**3. Conclusión (Minificación Progresiva):**",
+            "Redacta un resumen gradual y progresivo de toda la información anterior. Empieza con la idea más compleja y ve simplificándola hasta llegar a una sola oración que capture la esencia del tema de la forma más simple posible.",
+        ])
+        
+        prompt = "\n".join(prompt_parts)
+        
+        response = model.generate_content(prompt)
+        
+        analysis = response.text.strip()
+        
+        return jsonify({"status": "success", "analysis": analysis})
+
+    except Exception as e:
+        app.logger.error(f"Error analyzing spanish text with Gemini: {str(e)}")
+        return jsonify({"status": "error", "message": "No se pudo analizar el texto."}), 500
 
 @app.route('/api/generate-paragraph', methods=['POST'])
 @token_required
